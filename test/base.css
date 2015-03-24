@@ -1,0 +1,225 @@
+/*  HTML5 âœ° Boilerplate  */
+
+/* @group RESET */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font: inherit;
+  vertical-align:baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display:block;
+}
+
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+table { border-collapse:collapse; border-spacing:0; } 
+hr { display:block; height:0; border:0px; border-top:1px solid #ccc; margin:0; padding:0; }
+input, select { vertical-align:middle; }
+
+/* @end */
+
+/* @group TYPOGRAPHY */
+
+body { font:13px/18px sans-serif; *font-size:small; }  /* hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; } /* normalize monospace sizing */
+
+/* @end */
+
+/* @group BASE */
+
+/* 1: General font color and size, set your base font here, to apply evenly  */
+body, select, input, textarea { color: #444; }
+
+/* 2: Header styles, add font size and colors here */
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+
+/* 3: Link styles */
+a:hover, a:active { outline: none; }
+a, a:active, a:visited { color: #4183C4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:link { -webkit-tap-highlight-color: #d5d5d5; }
+
+/* 4: List styles */
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; }
+
+/* 5: Form stlyes */
+textarea { overflow: auto; }
+.ie6 legend, .ie7 legend { margin-left: -7px; }
+
+/* align checkboxes, radios, text inputs with their label */
+input[type="radio"], input[type="checkbox"] { margin:0 2px 3px 0;}
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* make buttons play nice in IE */
+button {  width: auto; overflow: visible; }
+
+/* Remove button focus outline. http://www.karlrixon.co.uk/articles/css/remove-button-focus-outline-using-css/ */
+:focus { -moz-outline-style: none; outline:none; }
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner { border: none; padding: 0; outline: none; }
+
+/* Remove resizing textarea feature in webkit */
+textarea { resize: none;}
+
+/* colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+  border-radius: 1px;
+  -moz-box-shadow:    0px 0px 3px red;
+  -webkit-box-shadow: 0px 0px 3px red;
+  box-shadow:         0px 0px 3px red;
+
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+/* 6: Text styling */
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td, td img { vertical-align: top; }
+
+/* set sub, sup without affecting line-height */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  padding: 18px; 
+  white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; 
+}
+
+/* 7: Hacks */
+::-moz-selection{ background: #B5D5FF; text-shadow: none; }
+::selection { background:#B5D5FF; text-shadow: none; }
+
+/* always force a scrollbar in non-IE: */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/* @end */
+
+/* @group HELPERS */
+
+/* Image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+.hidden { display: none; }
+
+/* Hide for both screenreaders and browsers */
+.reallyhidden { display: none; visibility: hidden; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0);
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+/* The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.rtl { direction: rtl;text-align: right;}
+.ltr { direction: ltr;text-align: left; }
+
+.begin  {float: left; }
+.end {float: right;}
+
+/* @end */
+
+/* @group RTL */
+.rtl ul, .rtl ol { margin-left: 0; margin-right: 2em; }
+.rtl nav ul, .rtl nav li { margin: 0; }
+.ie6 .rtl legend, .ie7 .rtl legend { margin-left: 0; margin-right: -7px; }
+.rtl input[type="radio"], .rtl input[type="checkbox"] { margin-left: 2px; margin-right: 0; }
+.rtl .ir { text-align: right; direction: rtl; }
+.rtl .begin  {float: right; }
+.rtl .end {float: left;}
+/* @end */
+
+/* @group MEDIA-QUERIES */
+
+@media all and (orientation:portrait) {
+  /* style adjustments for portrait mode goes here */
+}
+
+@media all and (orientation:landscape) {
+  /* style adjustments for landscape mode goes here */
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome) */
+@media screen and (max-device-width: 480px) {
+  /* uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+/* @end */
+
+/* @group PRINT */
+@media print {
+* { 
+  background: transparent !important; 
+  color: black !important; /* black prints faster */
+  text-shadow: none !important; 
+  filter:none !important;
+  -ms-filter: none !important; 
+}
+body { width:100% !important;margin:0 !important;padding:0 !important;} 
+a, a:visited { color: #444 !important; text-decoration: underline; }
+a[href]:after { content: " (" attr(href) ")"; }
+abbr[title]:after,acronym:after { content: " (" attr(title) ")"; }
+/* don't show links for images, or javascript/internal links */
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+thead { display: table-header-group; } 
+tr, img { page-break-inside: avoid; }
+@page { margin: 0.5cm; }
+p, h2, h3 { orphans: 3; widows: 3; }
+h2,h3,h4,h5,h6{ page-break-after: avoid; }
+img { max-width:100% !important; }
+}
+/* @end */
