@@ -66,25 +66,24 @@ html, body
     </div>
   </div>
 
-<script type="text/javascript" src='https://raw.githubusercontent.com/juvee/virastar/master/lib/virastar.js' ></script>
+<script src='https://raw.githubusercontent.com/juvee/virastar/master/lib/virastar.js' ></script>
 <script type="text/javascript">
 
+window.onload=function(){
 
+	virastar=new Virastar();
+	var input=document.getElementById('textarea');
+	var output=document.getElementById('plain');
 
-virastar=new Virastar();
-var input=document.getElementById('textarea');
-var output=document.getElementById('plain');
+	function viraiesh(){
+	    output.innerHTML=virastar.cleanup(input.value).replace(/\n/g,"</br>")
 
-function viraiesh(){
-    output.innerHTML=virastar.cleanup(input.value).replace(/\n/g,"</br>")
-
+	}
+	viraiesh();
+	document.getElementById('submit').onclick=viraiesh;
+	input.onchange=viraiesh;
+	input.onkeyup = viraiesh;
 }
-viraiesh();
-document.getElementById('submit').onclick=viraiesh;
-input.onchange=viraiesh;
-input.onkeyup = viraiesh;
-input.onkeydown = viraiesh;
-
 </script>
 
 </body>
