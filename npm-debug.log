@@ -1,0 +1,64 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/hamed/bin/iojs',
+1 verbose cli   '/home/hamed/node_modules/npm/bin/npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   './' ]
+2 info using npm@2.8.4
+3 info using node@v1.8.1
+4 verbose publish [ './' ]
+5 silly cache add args [ './', null ]
+6 verbose cache add spec ./
+7 silly cache add parsed spec { raw: './',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: './',
+7 silly cache add   spec: '/media/hamed/HardDisk/Documents/node_libs/virastar',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/hamed/.npm/virastar/0.0.2/package.tgz not in flight; packing
+9 verbose tar pack [ '/home/hamed/.npm/virastar/0.0.2/package.tgz',
+9 verbose tar pack   '/media/hamed/HardDisk/Documents/node_libs/virastar' ]
+10 verbose tarball /home/hamed/.npm/virastar/0.0.2/package.tgz
+11 verbose folder /media/hamed/HardDisk/Documents/node_libs/virastar
+12 info prepublish virastar@0.0.2
+13 verbose addLocalTarball adding from inside cache /home/hamed/.npm/virastar/0.0.2/package.tgz
+14 silly cache afterAdd virastar@0.0.2
+15 verbose afterAdd /home/hamed/.npm/virastar/0.0.2/package/package.json not in flight; writing
+16 verbose afterAdd /home/hamed/.npm/virastar/0.0.2/package/package.json written
+17 silly publish { name: 'virastar',
+17 silly publish   version: '0.0.2',
+17 silly publish   description: 'cleanning up Persian text!',
+17 silly publish   author: { name: 'juvee' },
+17 silly publish   bin: { 'module-name': './bin/virastar' },
+17 silly publish   main: 'lib/virastar.js',
+17 silly publish   keywords: [ 'persian', 'text' ],
+17 silly publish   dependencies: {},
+17 silly publish   private: true,
+17 silly publish   readme: '\n#Virastar (ویراستار)\n\nVirastar is a Persian text cleaner.it\'s a js port [aziz/virastar](https://github.com/aziz/virastar) github repository \n\nsee live [demo](http://juvee.github.io/virastar/)\n\n\n## Install\n\n``` bash\nnpm install virastar\n```\n\n## Usage\n\n```js\nvar Virastar = require(\'virastar\');\nvar virastar=new Virastar();\n\nvirastar.cleanup("فارسي را كمی درست تر می نويسيم")\n// Outputs: "فارسی را کمی درست‌تر می‌نویسیم"\n```\n#### Browser\n\n```html\n<script src="lib/virastar.js"></script>\n<script>\n\tvar virastar=new Virastar();\n\talert(virastar.cleanup("فارسي را كمی درست تر می نويسيم"));\n</script>\n```\n\n\n## Virastar([text] [,options])\n\n### text\n\nType: `string`\n\nString of Persian source to be cleaned.\n\n### options\n\nType: `object`\n\n\n```js\nVirastar("سلام 123" ,{"fix_english_numbers":false});\n// Outputs:"سلام 123"\n```\n\n## Options and Specifications\nvirastar comes with a list of options to control its behavior\n\n_all options are enabled by default._\n\n* `fix_dashes`\nreplace double dash to ndash and triple dash to mdash\n\n* `fix_three_dots`\nreplace three dots with ellipsis\n\n* `fix_english_quotes`\nreplace English quotes, commas and semicolons with their Persian equivalent\n\n* `fix_hamzeh`\nconvert ه ی to هٔ\n\n* `cleanup_zwnj`\nremove unnecessary zwnj chars that are succeeded/preceded by a space\n\n* `fix_arabic_numbers`\nreplace Arabic numbers with their Persian equivalent\n\n* `fix_english_numbers`\nreplace English numbers with their Persian equivalent\nand should not replace English numbers in English phrases\n\n* `fix_misc_non_persian_chars`\nreplace Arabic kaf and Yeh with its Persian equivalent\n\n* `fix_perfix_spacing`\nput zwnj between word and prefix (mi* nemi*)\n* `fix_suffix_spacing`\nput zwnj between word and suffix (*tar *tarin *ha *haye)\n\n* `fix_spacing_for_braces_and_quotes`\nfix spacing for () [] {}  “” «» (one space outside, no space inside)\nand correct :;,.?! spacing (one space after and no space before)\n\n* `cleanup_spacing`\nreplace more than one space with just a single one\n\n* `cleanup_begin_and_end`\nremove spaces, tabs, and new lines from the beginning and enf of file\n\n\n#### aggressive editing\n* `aggresive`\nenable/disable aggressive editing\n\n* `cleanup_extra_marks`\nreplace more than one ! or ? mark with just one\n\n* `cleanup_kashidas`\nremove all kashidas\n\n#### extras\n\n* `preserve_URIs`\npreserve all URI links in the text\n\n\n\n\n\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '344d873c4bf1b249b648f3997d2d915f607cbbdc',
+17 silly publish   _id: 'virastar@0.0.2',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: '5477afae472b8881bb7adf858e45ecca98a34ec2',
+17 silly publish   _from: '.' }
+18 verbose stack Error: This package has been marked as private
+18 verbose stack Remove the 'private' field from the package.json to publish it.
+18 verbose stack     at publish_ (/home/hamed/node_modules/npm/lib/publish.js:108:5)
+18 verbose stack     at Array.<anonymous> (/home/hamed/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+18 verbose stack     at LOOP (/home/hamed/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+18 verbose stack     at LOOP (/home/hamed/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+18 verbose stack     at chain (/home/hamed/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+18 verbose stack     at /home/hamed/node_modules/npm/lib/publish.js:74:5
+18 verbose stack     at RES (/home/hamed/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+18 verbose stack     at f (/home/hamed/node_modules/npm/node_modules/once/once.js:17:25)
+18 verbose stack     at /home/hamed/node_modules/npm/lib/cache.js:350:14
+18 verbose stack     at /home/hamed/node_modules/npm/node_modules/write-file-atomic/index.js:29:15
+19 verbose cwd /media/hamed/HardDisk/Documents/node_libs/virastar
+20 error Linux 3.19.0-15-generic
+21 error argv "/home/hamed/bin/iojs" "/home/hamed/node_modules/npm/bin/npm-cli.js" "publish" "./"
+22 error node v1.8.1
+23 error npm  v2.8.4
+24 error This package has been marked as private
+24 error Remove the 'private' field from the package.json to publish it.
+25 error If you need help, you may report this error at:
+25 error     <https://github.com/npm/npm/issues>
+26 verbose exit [ 1, true ]
