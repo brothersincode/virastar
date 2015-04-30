@@ -1,83 +1,115 @@
------
+
 #Virastar (ویراستار)
-نوشته‌های فارسی شما را ویرایش می‌کند
 
------
-Virastar (in Persian:ویراستار)
+Virastar is a Persian text cleaner
+it's a js port [aziz/virastar](https://github.com/aziz/virastar) github repository 
 
-
-## Specifications
-
-###Virastar
-* should add persian_cleanup method to String class
-* should replace Arabic kaf with its Persian equivalent
-* should replace Arabic Yeh with its Persian equivalent
-* should replace Arabic numbers with their Persian equivalent
-* should replace English numbers with their Persian equivalent
-* should replace English comma and semicolon with their Persian equivalent
-* should correct :;,.?! spacing (one space after and no space before)
-* should replace English quotes with their Persian equivalent
-* should replace three dots with ellipsis
-* should convert ه ی to هٔ
-* should replace double dash to ndash and triple dash to mdash
-* should replace more than one space with just a single one
-* should remove unnecessary zwnj chars that are succeeded/preceded by a space
-* should fix spacing for () [] {}  “” «» (one space outside, no space inside)
-* should replace English percent sign to its Persian equivalent
-* should replace more that one line breaks with just one
-* should not replace line breaks
-* should put zwnj between word and prefix/suffix (ha haye* tar* tarin mi* nemi*)
-* should not replace English numbers in English phrases
-* should not destroy urls in the text
-
-#### aggressive editing
-  * should replace more than one ! or ? mark with just one
-  * should remove all kashidas
-
------
 ## Install
-    gem install virastar
+
+``` bash
+npm install virastar
+```
 
 ## Usage
-    "فارسي را كمی درست تر می نويسيم".persian_cleanup   # => "فارسی را کمی درست‌تر می‌نویسیم"
 
-virastar comes with a list of flags to control its behavior, all flags are turned on by default but you can
-turn them off by passing an options hash to the `persian_cleanup` method
+```js
+var Virastar = require('virastar');
+var virastar=new Virastar();
 
-    "سلام 123".persian_cleanup(:fix_english_numbers => false) # => "سلام 123"
+virastar.cleanup("فارسي را كمی درست تر می نويسيم")
+// Outputs: "فارسی را کمی درست‌تر می‌نویسیم"
+```
+#### Browser
 
-here is the list of all flags:
+```html
+<script src="lib/virastar.js"></script>
+<script>
+	var virastar=new Virastar();
+	alert(virastar.cleanup("فارسي را كمی درست تر می نويسيم"));
+</script>
+```
+
+
+## Virastar([text] [,options])
+
+### text
+
+Type: `string`
+
+String of Persian source to be cleaned.
+
+### options
+
+Type: `object`
+
+
+```js
+Virastar("سلام 123" ,{"fix_english_numbers":false});
+// Outputs:"سلام 123"
+```
+
+## Options and Specifications
+virastar comes with a list of options to control its behavior
+
+_all options are enabled by default._
 
 * `fix_dashes`
+replace double dash to ndash and triple dash to mdash
+
 * `fix_three_dots`
+replace three dots with ellipsis
+
 * `fix_english_quotes`
+replace English quotes, commas and semicolons with their Persian equivalent
+
 * `fix_hamzeh`
+convert ه ی to هٔ
+
 * `cleanup_zwnj`
-* `fix_spacing_for_braces_and_quotes`
+remove unnecessary zwnj chars that are succeeded/preceded by a space
+
 * `fix_arabic_numbers`
+replace Arabic numbers with their Persian equivalent
+
 * `fix_english_numbers`
+replace English numbers with their Persian equivalent
+and should not replace English numbers in English phrases
+
 * `fix_misc_non_persian_chars`
+replace Arabic kaf and Yeh with its Persian equivalent
+
 * `fix_perfix_spacing`
+put zwnj between word and prefix (mi* nemi*)
 * `fix_suffix_spacing`
-* `aggresive`
-* `cleanup_kashidas`
-* `cleanup_extra_marks`
+put zwnj between word and suffix (*tar *tarin *ha *haye)
+
+* `fix_spacing_for_braces_and_quotes`
+fix spacing for () [] {}  “” «» (one space outside, no space inside)
+and correct :;,.?! spacing (one space after and no space before)
+
 * `cleanup_spacing`
+replace more than one space with just a single one
+
 * `cleanup_begin_and_end`
+remove spaces, tabs, and new lines from the beginning and enf of file
 
-## Acknowledgment
-Virastar is highly inspired by [Virasbaz](http://virasbaz.persianlanguage.ir).
 
-## Note on Patches/Pull Requests
+#### aggressive editing
+* `aggresive`
+enable/disable aggressive editing
 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+* `cleanup_extra_marks`
+replace more than one ! or ? mark with just one
 
-## Copyright
+* `cleanup_kashidas`
+remove all kashidas
 
-Copyright (c) 2011 Allen A. Bargi. See LICENSE for details.
+#### extras
+
+* `preserve_URIs`
+preserve all URI links in the text
+
+
+
+
+
