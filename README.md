@@ -1,8 +1,10 @@
 
 #Virastar (ویراستار)
 
-Virastar is a Persian text cleaner
-it's a js port [aziz/virastar](https://github.com/aziz/virastar) github repository 
+Virastar is a Persian text cleaner.it's a js port [aziz/virastar](https://github.com/aziz/virastar) github repository 
+
+see live [demo](http://juvee.github.io/virastar/)
+
 
 ## Install
 
