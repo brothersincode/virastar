@@ -1,7 +1,7 @@
 
 #Virastar (ویراستار)
 
-Virastar is a Persian text cleaner.it's a js port [aziz/virastar](https://github.com/aziz/virastar) github repository 
+Virastar is a Persian text cleaner.it's a js port of [aziz/virastar](https://github.com/aziz/virastar) github repository
 
 see live [demo](http://juvee.github.io/virastar/)
 
@@ -61,6 +61,9 @@ replace double dash to ndash and triple dash to mdash
 * `fix_three_dots`
 replace three dots with ellipsis
 
+* `fix_english_quotes_pairs`
+replace English quotes pairs (“”) with their Persian equivalent («»)
+
 * `fix_english_quotes`
 replace English quotes, commas and semicolons with their Persian equivalent
 
@@ -110,8 +113,3 @@ remove all kashidas
 
 * `preserve_URIs`
 preserve all URI links in the text
-
-
-
-
-
