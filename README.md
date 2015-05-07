@@ -83,6 +83,9 @@ and should not replace English numbers in English phrases
 * `fix_misc_non_persian_chars`
 replace Arabic kaf and Yeh with its Persian equivalent
 
+* `fix_question_mark`
+replace question marks with its Persian equivalent
+
 * `fix_perfix_spacing`
 put zwnj between word and prefix (mi* nemi*)
 * `fix_suffix_spacing`
