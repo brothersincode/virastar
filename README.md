@@ -114,5 +114,8 @@ remove all kashidas
 
 #### extras
 
+* `preserve_HTML`
+preserve all HTML tags
+
 * `preserve_URIs`
 preserve all URI links in the text
