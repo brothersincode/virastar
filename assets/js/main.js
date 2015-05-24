@@ -16,8 +16,8 @@ window.onload=function(){
 
 
 	ZeroClipboard.config( {
-		// swfPath: "https://rawgit.com/juvee/virastar/gh-pages/assets/packages/zeroclipboard/ZeroClipboard.swf"
-		swfPath: "https://rawgit.com/zeroclipboard/zeroclipboard/master/dist/ZeroClipboard.swf"
+		trustedDomains: ["*"],
+		swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf"
 	} );
 
 	var ZClient = new ZeroClipboard( document.getElementById("copy_button") );
@@ -35,7 +35,7 @@ window.onload=function(){
 		ZClient.on( "aftercopy", function( event ) {
 			// `this` === `client`
 			// `event.target` === the element that was clicked
-			event.target.style.display = "none";
+			// event.target.style.display = "none";
 			console.log("Copied text to clipboard: " + event.data["text/plain"] );
 		} );
 	} );
