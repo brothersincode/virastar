@@ -1,55 +1,71 @@
 body {
   height:100%;
   width: 100%;
-  font-family:"geeza pro","arial";
 }
 
 header {
   background-color: #444;
   color:#f6f6f6;
   height:35px;
-  font-family:"geeza pro","tahoma";
+  f1ont-family:"geeza pro","tahoma";
 }
 
-header h1 {font-size: 18px;font-weight: bold;line-height: 35px;padding:0 10px;font-family:"geeza pro","arial";}
-#submit {position: absolute;top:8px;left:50%;}
+
+header h1 {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 35px;
+	padding:0 10px;
+	font-family: inherit;
+}
+
+#submit {
+	position: absolute;
+	top:5px;
+	left:50%;
+	font-family: inherit;
+	font-size:0.78em;
+}
+
 #textarea {
-  /*position: absolute;*/
-  top:35px;
-  bottom:0;
   right:0;
   border:0;
-  padding:10px;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 22px;
-  overflow: auto;
   overflow-x: hidden;
-  font-weight: bold;
-  font-family: "geeza pro","arial";
-
-
 }
 
 #result {
   position: absolute;
-  top:35px;
-  bottom:0;
   left:0;
-  padding:10px;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 22px;
   background:#FFFFC1;
   border-right:1px solid #ccc;
-  overflow: auto;
 }
 
-del {text-decoration: none; background-color: #fcc;white-space: pre;display: none;}
-del.visible_del {display: inline;white-space: pre;}
+#result, #textarea {
+	top:35px;
+	bottom:0;
+	padding:10px;
+	display: block;
+	overflow: auto;
+	font-size: 1.2em;
+	line-height: 1.7em;
+	font-weight: normal;
+	font-family: inherit;
+}
+
+del {
+	text-decoration: none;
+	background-color: #fcc;
+	white-space: pre;
+	display: none;
+}
+
+del.visible_del {
+	display: inline;
+	white-space: pre;
+}
+
 #plain,#html {}
+
 ins {background-color: #77EE76;}
 
 #options {
@@ -67,7 +83,9 @@ ins {background-color: #77EE76;}
   left:10px;
 }
 
-#links a {
+#links a,
+#links b1utton
+ {
   padding:3px 15px;
   background-color: #555;
   -moz-border-radius:    20px;
@@ -75,9 +93,14 @@ ins {background-color: #77EE76;}
   border-radius:         20px;
   margin:0 5px 0 0;
   color:#f6f6f6;
+border:none;
+line-height:1.2em;
 }
 
-#links a:hover {text-decoration: none;background-color: #888;}
+#links a:hover,
+#links b1utton:hover {
+	text-decoration: none;background-color: #888;
+}
 
 #about, #bug {
   position: absolute;
