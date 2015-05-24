@@ -24,22 +24,17 @@ window.onload=function(){
 
 	var ZClient = new ZeroClipboard( document.getElementById("copy_button") );
 
-	// ZClient.on( "copy", function (event) {
-	//   var clipboard = event.clipboardData;
-	//   clipboard.setData( "text/plain", "Copy me!" );
-	//   clipboard.setData( "text/html", "<b>Copy me!</b>" );
-	//   clipboard.setData( "application/rtf", "{\\rtf1\\ansi\n{\\b Copy me!}}" );
-	// });
-
 	ZClient.on( "ready", function( readyEvent ) {
 		console.log( "ZeroClipboard SWF is ready!" );
 
+		ZClient.on('copy', function(event) {
+		    var text = document.getElementById('plain').value;
+		    var windowsText = text.replace(/\n/g, '\r\n');
+		    event.clipboardData.setData('text/plain', windowsText);
+		});
+
 		ZClient.on( "aftercopy", function( event ) {
-			// `this` === `client`
-			// `event.target` === the element that was clicked
-			// event.target.style.display = "none";
 			console.log("Copied text to clipboard: " + event.data["text/plain"] );
 		} );
 	} );
-
 }
