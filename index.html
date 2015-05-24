@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,39 +10,43 @@
 
   <title>ویراستار</title>
 
-
-  <link href="base.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="assets/css/base.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css" rel="stylesheet" type="text/css" />
 
   <style>
-  html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-html, body
-{
-    height: 100%;
-}
-
+	html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+	  box-sizing: inherit;
+	}
+	html, body
+	{
+	    height: 100%;
+		font-family: 'Droid Arabic Naskh', serif;
+	}
   </style>
-  <link href="app.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <link href="assets/css/app.css" media="screen" rel="stylesheet" type="text/css" />
 
 </head>
-
 <body dir="rtl">
-  <header>
-    <h1>ویراستار</h1>
-    <div id="options">
-    </div>
-    <div id="links">
-      <a class="about" href="https://github.com/juvee/virastar/">درباره</a>
-    </div>
-  </header>
 
-  <div id="editor" style="width:50%; height:100%;">
+	<header>
+		<h1>ویراستار</h1>
 
-      <textarea name="text" id="textarea" style="height:100%; width:100%;">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
+		<div id="options">
+		</div>
+
+		<div id="links">
+			<button href="#" id="copy_button" data-clipboard-target="plain" title="Click to copy me.">Copy to Clipboard</button>
+			<a href="https://github.com/juvee/virastar/">درباره</a>
+		</div>
+	</header>
+
+	<div id="editor" style="width:50%; height:100%;">
+
+		<textarea name="text" id="textarea" style="height:100%; width:100%;">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
 
 ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
 1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
@@ -61,30 +62,14 @@ html, body
   </div>
 
   <div id="result" style="width:50%;">
+
     <div id="plain">
         بارگزاری...
     </div>
   </div>
 
-<script src='https://rawgit.com/juvee/virastar/master/lib/virastar.js' ></script>
-<script type="text/javascript">
-
-window.onload=function(){
-
-	virastar=new Virastar();
-	var input=document.getElementById('textarea');
-	var output=document.getElementById('plain');
-
-	function viraiesh(){
-	    output.innerHTML=virastar.cleanup(input.value).replace(/\n/g,"</br>")
-
-	}
-	viraiesh();
-	document.getElementById('submit').onclick=viraiesh;
-	input.onchange=viraiesh;
-	input.onkeyup = viraiesh;
-}
-</script>
-
+<script type="text/javascript" src="https://rawgit.com/juvee/virastar/master/lib/virastar.js"></script>
+<script type="text/javascript" src="assets/packages/zeroclipboard/ZeroClipboard.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
