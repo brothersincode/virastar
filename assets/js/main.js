@@ -16,8 +16,10 @@ window.onload=function(){
 
 
 	ZeroClipboard.config( {
-		trustedDomains: ["*"],
-		swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf"
+		trustedDomains: [
+			"juvee.github.io"
+		],
+		swfPath: "http://rawgit.com/zeroclipboard/zeroclipboard/master/dist/ZeroClipboard.swf"
 	} );
 
 	var ZClient = new ZeroClipboard( document.getElementById("copy_button") );
