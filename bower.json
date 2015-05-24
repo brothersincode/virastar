@@ -1,0 +1,13 @@
+{
+  "name": "juvee.github.io/virastar",
+  "private": true,
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "zeroclipboard": "~2.2.0"
+  },
+  "install": {
+    "path": "assets/packages"
+  }
+}
