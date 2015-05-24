@@ -28,7 +28,7 @@ window.onload=function(){
 		console.log( "ZeroClipboard SWF is ready!" );
 
 		ZClient.on('copy', function(event) {
-		    var text = document.getElementById('plain').value;
+		    var text = document.getElementById('plain').textContent;
 		    var windowsText = text.replace(/\n/g, '\r\n');
 		    event.clipboardData.setData('text/plain', windowsText);
 		});
