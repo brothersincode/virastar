@@ -48,6 +48,9 @@ Virastar comes with a list of options to control its behavior
 
 _all options are enabled by default._
 
+* `normalize_eol`
+	- replace Windows end of lines with Unix EOL (`\n`)
+
 * `fix_dashes`
 	- replace double dash to ndash and triple dash to mdash
 
