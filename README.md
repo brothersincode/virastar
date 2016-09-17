@@ -111,7 +111,7 @@ _all options are enabled by default._
 
 
 * `cleanup_begin_and_end`
-	- remove spaces, tabs, and new lines from the beginning and enf of file
+	- remove spaces, tabs, and new lines from the beginning and end of text
 
 #### aggressive editing
 * `aggresive`
