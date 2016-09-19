@@ -88,9 +88,11 @@ _all options are enabled by default._
 	- should not replace English numbers in English phrases
 
 
+* `skip_markdown_ordered_lists_numbers_conversion`
+	- skip converting English numbers of ordered lists in markdown
+
 * `fix_misc_non_persian_chars`
 	- replace Arabic kaf and Yeh with its Persian equivalent
-
 
 * `fix_question_mark`
 	- replace question marks with its Persian equivalent
