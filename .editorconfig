@@ -1,3 +1,5 @@
+# editorconfig.org
+
 root = true
 
 [*]
@@ -7,16 +9,12 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
 
-[{.jshintrc,*.json,*.yml}]
+[{.jshintrc,.bowerrc,*.json,*.yml}]
 indent_style = space
 indent_size = 2
 
-[*.txt]
+[{*.txt,*.css}]
 end_of_line = crlf
 
 [*.md]
 trim_trailing_whitespace = false
-
-[{package,bower}.json]
-indent_style = space
-indent_size = 2
