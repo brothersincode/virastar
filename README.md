@@ -70,6 +70,8 @@ _all options are enabled by default._
 * `fix_hamzeh`
 	- convert `ه ی` to `هٔ`
 
+* `cleanup_rlm`
+	- converting Right-to-left marks followed by Persian characters to zero-width non-joiners (ZWNJ)
 
 * `cleanup_zwnj`
 	- remove more than one zwnj chars  
