@@ -1,21 +1,27 @@
-#Virastar (ویراستار)
+# Virastar (ویراستار)
 Virastar is a Persian text cleaner.
 
 A javascript port of [aziz/virastar](https://github.com/aziz/virastar)
 
 see live [demo](http://juvee.github.io/virastar/)
 
-## Install
+[![Build Status](https://img.shields.io/travis/juvee/virastar/master.svg?style=flat-square)](https://travis-ci.org/juvee/virastar)
+[![Dependency Status](https://img.shields.io/david/juvee/virastar.svg?style=flat-square)](https://david-dm.org/juvee/virastar)
+[![NPM version](https://img.shields.io/npm/v/virastar.svg?style=flat-square)](https://www.npmjs.com/package/virastar)
+[![GitHub issues](https://img.shields.io/github/issues/juvee/virastar.svg?style=flat-square)](https://github.com/juvee/virastar/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/juvee/virastar/master/LICENSE)
+
+### Install
 ``` bash
 npm install virastar
 ```
 
-## Usage
+### Usage
 ```js
 var Virastar = require('virastar');
-var virastar=new Virastar();
+var virastar = new Virastar();
 
-virastar.cleanup("فارسي را كمی درست تر می نويسيم")
+virastar.cleanup("فارسي را كمی درست تر می نويسيم");
 // Outputs: "فارسی را کمی درست‌تر می‌نویسیم"
 ```
 
@@ -23,19 +29,19 @@ virastar.cleanup("فارسي را كمی درست تر می نويسيم")
 ```html
 <script src="lib/virastar.js"></script>
 <script>
-	var virastar=new Virastar();
-	alert(virastar.cleanup("فارسي را كمی درست تر می نويسيم"));
+  var virastar = new Virastar();
+  alert(virastar.cleanup("فارسي را كمی درست تر می نويسيم"));
 </script>
 ```
 
-## Virastar([text] [,options])
+#### Virastar([text] [,options])
 
-### text
+##### text
 Type: `string`
 
 String of Persian source to be cleaned.
 
-### options
+##### options
 Type: `object`
 
 ```js
@@ -43,13 +49,14 @@ Virastar("سلام 123" ,{"fix_english_numbers":false});
 // Outputs:"سلام 123"
 ```
 
-## Options and Specifications
-Virastar comes with a list of options to control its behavior
+### Options and Specifications
+Virastar comes with a list of options to control its behavior.
 
 _all options are enabled by default._
 
 * `normalize_eol`
 	- replace Windows end of lines with Unix EOL (`\n`)
+
 
 * `fix_dashes`
 	- replace double dash to ndash and triple dash to mdash
@@ -70,8 +77,10 @@ _all options are enabled by default._
 * `fix_hamzeh`
 	- convert `ه ی` to `هٔ`
 
+
 * `cleanup_rlm`
 	- converting Right-to-left marks followed by Persian characters to zero-width non-joiners (ZWNJ)
+
 
 * `cleanup_zwnj`
 	- remove more than one zwnj chars  
@@ -93,17 +102,22 @@ _all options are enabled by default._
 * `skip_markdown_ordered_lists_numbers_conversion`
 	- skip converting English numbers of ordered lists in markdown
 
+
 * `fix_misc_non_persian_chars`
 	- replace Arabic kaf and Yeh with its Persian equivalent
+
 
 * `fix_question_mark`
 	- replace question marks with its Persian equivalent
 
+
 * `fix_perfix_spacing`
 	- put zwnj between word and prefix (`mi*` `nemi*`)
 
+
 * `fix_suffix_spacing`
 	- put zwnj between word and suffix (`*tar` `*tarin` `*ha` `*haye`)
+
 
 * `fix_spacing_for_braces_and_quotes`
 	- fix spacing for `()` `[]` `{}`  `“”` `«»` (one space outside, no space inside)
@@ -133,5 +147,14 @@ _all options are enabled by default._
 * `preserve_HTML`
 	- preserve all HTML tags
 
+
 * `preserve_URIs`
 	- preserve all URI links in the text
+
+### License
+MIT
+
+Also original ruby version (MIT):
+```
+Copyright (c) 2011 Allen A. Bargi <http://github.com/aziz>
+```
