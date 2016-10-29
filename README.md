@@ -11,12 +11,12 @@ see live [demo](http://juvee.github.io/virastar/)
 [![GitHub issues](https://img.shields.io/github/issues/juvee/virastar.svg?style=flat-square)](https://github.com/juvee/virastar/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/juvee/virastar/master/LICENSE)
 
-### Install
+## Install
 ``` bash
 npm install virastar
 ```
 
-### Usage
+## Usage
 ```js
 var Virastar = require('virastar');
 var virastar = new Virastar();
@@ -25,7 +25,7 @@ virastar.cleanup("فارسي را كمی درست تر می نويسيم");
 // Outputs: "فارسی را کمی درست‌تر می‌نویسیم"
 ```
 
-#### Browser
+### Browser
 ```html
 <script src="lib/virastar.js"></script>
 <script>
@@ -49,7 +49,7 @@ Virastar("سلام 123" ,{"fix_english_numbers":false});
 // Outputs:"سلام 123"
 ```
 
-### Options and Specifications
+## Options and Specifications
 Virastar comes with a list of options to control its behavior.
 
 _all options are enabled by default._
@@ -151,10 +151,7 @@ _all options are enabled by default._
 * `preserve_URIs`
 	- preserve all URI links in the text
 
-### License
-MIT
 
-Also original ruby version (MIT):
-```
-Copyright (c) 2011 Allen A. Bargi <http://github.com/aziz>
-```
+## License
+
+This software is licensed under the MIT License. [View the license](LICENSE).
