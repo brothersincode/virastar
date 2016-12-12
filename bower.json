@@ -1,0 +1,21 @@
+{
+  "name": "virastar",
+  "description": "cleanning up Persian text!",
+  "keywords": [
+    "persian",
+    "text"
+  ],
+  "homepage": "https://github.com/juvee/virastar",
+  "authors": {
+    "name": "juvee"
+  },
+  "license": "MIT",
+  "main": "lib/virastar.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
