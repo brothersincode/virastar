@@ -139,6 +139,8 @@ _all options are enabled by default._
 * `cleanup_extra_marks`
 	- replace more than one `!` or `?` mark with just one
 
+* `kashidas_as_parenthetic`
+	- replace kashidas to ndash in parenthetic
 
 * `cleanup_kashidas`
 	- remove all kashidas
