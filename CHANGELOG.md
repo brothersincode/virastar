@@ -1,3 +1,9 @@
+## 0.12.0
+### Added
+- new option: `preserve_brackets`
+- new option: `preserve_braces`
+
+
 ## 0.11.0
 ### Added
 - new option: kashidas_as_parenthetic.

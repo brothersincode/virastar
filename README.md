@@ -154,6 +154,13 @@ _all options are enabled by default._
 	- preserve all URI links in the text
 
 
+* `preserve_brackets`
+	- preserve strings inside square brackets (`[]`)
+
+
+* `preserve_braces`
+	- preserve strings inside curly braces (`{}`)
+
 ## License
 
 This software is licensed under the MIT License. [View the license](LICENSE).
