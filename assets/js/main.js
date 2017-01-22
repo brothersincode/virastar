@@ -1,6 +1,10 @@
 window.onload = function() {
 
-	virastar = new Virastar({skip_markdown_ordered_lists_numbers_conversion: false});
+	virastar = new Virastar({
+		skip_markdown_ordered_lists_numbers_conversion: false,
+		preserve_brackets: false,
+		preserve_braces: false
+	});
 
 	var input = document.getElementById('textarea');
 	var output = document.getElementById('plain');
