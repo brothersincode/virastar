@@ -1,7 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body {
+  height: 100%;
+}
+
 body {
-  height:100%;
-  width: 100%;
   font-family:"geeza pro","arial";
+  height: 100%;
+  width: 100%;
 }
 
 header {
@@ -28,8 +38,6 @@ header h1 {font-size: 18px;font-weight: bold;line-height: 35px;padding:0 10px;fo
   overflow-x: hidden;
   font-weight: bold;
   font-family: "geeza pro","arial";
-
-
 }
 
 #result {

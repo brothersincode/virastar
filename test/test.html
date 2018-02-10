@@ -8,106 +8,59 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ویراستار متون تایپ‌شده فارسی">
-  <meta name="author" content="juvee">
 
   <title>ویراستار</title>
 
-
   <link href="base.css" media="screen" rel="stylesheet" type="text/css" />
-
-  <style>
-  html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-html, body
-{
-    height: 100%;
-}
-
-  </style>
   <link href="app.css" media="screen" rel="stylesheet" type="text/css" />
 
-</head>
+</head><body dir="rtl">
 
-<body dir="rtl">
-  <header>
-    <h1>ویراستار</h1>
-    <div id="options">
-    </div>
-    <div id="links">
-      <a class="about" href="#">درباره</a>
-    </div>
-  </header>
+<header>
+	<h1>ویراستار</h1>
+	<div id="options"></div>
+	<div id="links"></div>
+</header>
 
-  <div id="editor" style="width:50%; height:100%;">
-
-      <textarea name="text" id="textarea" style="height:100%; width:100%;">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
-  ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
-  1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
-  2. نویسه های انگليسي رايج در تايپ فارسي را به معادل صحيح فارسي آن تبدیل می کند, مثلا تبدیل کامای انگلیسی به ویرگول (,), يا نقطه ویرگول به جای semicolon (;) و یا استفاده از "گيومه های فارسي"
-  3. اعداد عربي و انگليسي و علائم رياضی را به معادل فارسی آن ها تبديل مي کند.    مثلا  :  12%  456
-  4. سه نقطه را به نويسه صحيح آن که تنها يك نويسه است تبديل کرده و فاصله گذاري آن را اصلاح مي کند ...
-  5. در ترکيباتي مانند ''خانه ي پدری'' که  با "ه" تمام می&zwnj;شوند نشانه "ی" كسره ی اضافه را به "هٔ" تبديل می كند.
-  6. دو علامت منهاي پي در پي را به خط کشيده کوتاه (--) و سه علامت منهاي پي در پي را به خط کشیده بلند (---) تبديل مي كند .
-  7. فاصله گذاری را تصحيح مي کند . بين هر کلمه تنها یک فاصله و بین پیشوندها و پسوندهاي مانند "مي","تر"و"ترین"  يک نيم فاصله قرار مي دهد.  بین ویرگول یا نقطه و کلمه قبل آن فاصله را حذف می کند.
-  8. فاصله گذاری را برای متون بین "  گیومه  " , {    آکولاد   }  , [   کروشه  ]  و ( پرانتز    ) تنظيم مي کند .
-  9. علامت تعحب و سوال اضافی را حذف مي کند؟؟؟!!!!!!!</textarea>
-      <input type="submit" value="ویرایش کن!" name="commit" id="submit" />
-  </div>
-
-  <div id="result" style="width:50%;">
-    <div id="plain">
-        loading!!!!
-    </div>
-  </div>
-
-<div id="about" class="hidden">
-  <div class="box">
-    <div class="content ltr">
-      <a href="#" class="close">×</a>
-
-      <h1>Virastar &mdash; v.0.0.6</h1>
-      <p>
-        <br>
-        <strong>Virastar webapp</strong> is an open source software (licensed under
-        <a href="https://github.com/aziz/virastar/blob/master/LICENSE">MIT license</a>) written in Ruby (using Rails).
-        It is using the open source gem, called <a href="https://github.com/aziz/virastar">virastar</a>.
-        <br><br>
-        You can find the source on <a href="https://github.com/aziz/virastar">github</a>.
-        <br>
-      </p>
-
-    </div>
-  </div>
+<div id="editor" style="width:50%; height:100%;">
+	<input type="submit" value="ویرایش کن!" name="commit" id="submit" />
+	<textarea name="text" id="textarea" style="height:100%; width:100%;">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
+ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
+1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
+2. نویسه های انگليسي رايج در تايپ فارسي را به معادل صحيح فارسي آن تبدیل می کند, مثلا تبدیل کامای انگلیسی به ویرگول (,), يا نقطه ویرگول به جای semicolon (;) و یا استفاده از "گيومه های فارسي"
+3. اعداد عربي و انگليسي و علائم رياضی را به معادل فارسی آن ها تبديل مي کند.    مثلا  :  12%  456
+4. سه نقطه را به نويسه صحيح آن که تنها يك نويسه است تبديل کرده و فاصله گذاري آن را اصلاح مي کند ...
+5. در ترکيباتي مانند ''خانه ي پدری'' که  با "ه" تمام می&zwnj;شوند نشانه "ی" كسره ی اضافه را به "هٔ" تبديل می كند.
+6. دو علامت منهاي پي در پي را به خط کشيده کوتاه (--) و سه علامت منهاي پي در پي را به خط کشیده بلند (---) تبديل مي كند .
+7. فاصله گذاری را تصحيح مي کند . بين هر کلمه تنها یک فاصله و بین پیشوندها و پسوندهاي مانند "مي","تر"و"ترین"  يک نيم فاصله قرار مي دهد.  بین ویرگول یا نقطه و کلمه قبل آن فاصله را حذف می کند.
+8. فاصله گذاری را برای متون بین "  گیومه  " , {    آکولاد   }  , [   کروشه  ]  و ( پرانتز    ) تنظيم مي کند .
+9. علامت تعحب و سوال اضافی را حذف مي کند؟؟؟!!!!!!!</textarea>
 </div>
 
+<div id="result" style="width:50%;">
+	<div id="plain">بارگذاری&hellip;</div>
+</div>
 
-
-
-<script type="text/javascript" src='../lib/virastar.js' ></script>
+<script type="text/javascript" src="../lib/virastar.min.js"></script>
 <script type="text/javascript">
 
+	var input = document.getElementById('textarea');
+	var output = document.getElementById('plain');
 
+	var virastar = new Virastar({
+		skip_markdown_ordered_lists_numbers_conversion: false
+	});
 
-virastar=new Virastar();
-var input=document.getElementById('textarea');
-var output=document.getElementById('plain');
+	function viraiesh () {
+		output.innerHTML = virastar.cleanup(input.value).replace(/\n/g, '</br>')
+	}
 
-function viraiesh(){
-    output.innerHTML=virastar.cleanup(input.value).replace(/\n/g,"</br>")
+	viraiesh();
 
-}
-viraiesh();
-document.getElementById('submit').onclick=viraiesh;
-input.onchange=viraiesh;
-input.onkeyup = viraiesh;
-input.onkeydown = viraiesh;
-
+	document.getElementById('submit').onclick = viraiesh;
+	input.onchange = viraiesh;
+	input.onkeyup = viraiesh;
+	input.onkeydown = viraiesh;
 </script>
-
 </body>
 </html>
