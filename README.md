@@ -8,8 +8,10 @@ see live [demo](http://juvee.github.io/virastar/)
 [![Build Status](https://img.shields.io/travis/juvee/virastar/master.svg?style=flat-square)](https://travis-ci.org/juvee/virastar)
 [![Dependency Status](https://img.shields.io/david/juvee/virastar.svg?style=flat-square)](https://david-dm.org/juvee/virastar)
 [![NPM version](https://img.shields.io/npm/v/virastar.svg?style=flat-square)](https://www.npmjs.com/package/virastar)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3+-blue.svg?style=flat-square)](https://raw.githubusercontent.com/juvee/virastar/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/juvee/virastar.svg?style=flat-square)](https://github.com/juvee/virastar/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/juvee/virastar/master/LICENSE)
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 ## Install
 ``` bash
