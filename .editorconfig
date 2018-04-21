@@ -9,11 +9,11 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
 
-[{.jshintrc,.bowerrc,*.json,*.yml}]
+[{.jshintrc,.bowerrc,*.json,*.yml,*.css,*.scss,*.js}]
 indent_style = space
 indent_size = 2
 
-[{*.txt,*.css}]
+[*.txt]
 end_of_line = crlf
 
 [*.md]

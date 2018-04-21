@@ -1,0 +1,99 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Droid Arabic Naskh", serif;
+  font-size: 100%;
+}
+
+header {
+  background-color: #444;
+  color: #f6f6f6;
+  height: 35px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 35px;
+  margin: 0;
+  padding: 0 10px;
+  font-family: inherit;
+}
+
+noscript {
+  color: #d9534f;
+}
+
+header h1 noscript {
+  font-size: .55em;
+}
+
+#links {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+#result,
+#textarea {
+  top: 0;
+  bottom: 0;
+  padding: 45px 10px 10px 10px;
+  display: block;
+  overflow: auto;
+  font-size: 1.2em;
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: inherit;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+
+#textarea {
+  right: 0;
+  border: 0;
+  overflow-x: hidden;
+  display: table;
+}
+
+#result {
+  position: absolute;
+  left: 0;
+  background: #ffffc1;
+  border-right: 1px solid #ccc;
+}
+
+#links a,
+#links button {
+  padding: 1px 15px;
+  background-color: #555;
+  border-radius: 20px;
+  margin: 0 5px 0 0;
+  color: #f6f6f6;
+  border: none;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+#links a:hover,
+#links button:hover {
+  text-decoration: none;
+  background-color: #888;
+}
