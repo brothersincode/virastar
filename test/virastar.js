@@ -15,7 +15,7 @@ describe('Virastar.js', function () {
     it('should skip non-written tests', function () {});
 
     it('should replace kashidas to ndash in parenthetic', function () {
-      assert.equal(
+      assert.strictEqual(
         virastar.cleanup('ـ که در واقع پدرخوانده‌ام بود ولی من او را جای پدرم می‌دانستم ـ'),
         '– که در واقع پدرخوانده‌ام بود ولی من او را جای پدرم می‌دانستم –'
       );
