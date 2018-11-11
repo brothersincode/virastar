@@ -10,13 +10,13 @@ window.onload = function () {
   var input = document.getElementById('textarea');
   var output = document.getElementById('plain');
 
-  function viraiesh () {
+  function doVirastar () {
     output.innerHTML = virastar.cleanup(input.value).replace(/\n/g, '</br>');
   }
 
-  input.onchange = viraiesh;
-  input.onkeyup = viraiesh;
-  viraiesh();
+  input.onchange = doVirastar;
+  input.onkeyup = doVirastar;
+  doVirastar();
 
   var clipboard = new ClipboardJS('.copy');
 
