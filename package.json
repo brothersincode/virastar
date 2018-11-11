@@ -10,5 +10,18 @@
     "persian",
     "text"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "semistandard": "^13.0.1",
+    "stylelint": "^9.8.0"
+  },
+  "semistandard": {
+    "ignore": [
+      "/dist",
+      "*.min.js"
+    ],
+    "globals": [
+      "define"
+    ]
+  }
 }
