@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 11/12/2018, 4:22:39 AM
+# 11/12/2018, 4:59:48 AM
 
 index.html
 style.css
@@ -10,3 +10,6 @@ https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css
 
 https://cdn.jsdelivr.net/gh/juvee/virastar/lib/virastar.min.js
 https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.1/dist/clipboard.min.js
+
+NETWORK:
+*
