@@ -1,3 +1,8 @@
+### 0.14.0
+- Added: convert back quot/apos entities
+- Added: new option: `decode_htmlentities`
+- Fixed: test suite
+
 ### 0.13.0
 - Added: [coding standard](https://github.com/Flet/semistandard)
 - Added: passing options directly into cleanup method
