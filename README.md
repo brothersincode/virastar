@@ -53,10 +53,14 @@ Virastar("سلام 123" ,{"fix_english_numbers":false});
 ## Options and Specifications
 Virastar comes with a list of options to control its behavior.
 
-_all options are enabled by default._
+_all options are **enabled** by default._
 
 * `normalize_eol`
 	- replace Windows end of lines with Unix EOL (`\n`)
+
+
+* `decode_htmlentities`
+	- converts all HTML characterSets into original characters
 
 
 * `fix_dashes`
