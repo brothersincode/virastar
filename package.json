@@ -17,7 +17,7 @@
   "devDependencies": {
     "mocha": "^5.2.0",
     "semistandard": "^13.0.1",
-    "stylelint": "^9.8.0"
+    "stylelint": "^9.9.0"
   },
   "semistandard": {
     "ignore": [
