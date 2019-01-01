@@ -20,5 +20,10 @@ describe('Virastar.js', function () {
         '– که در واقع پدرخوانده‌ام بود ولی من او را جای پدرم می‌دانستم –'
       );
     });
+
+    it('should converts back html named character references', function () {
+      assert.strictEqual(virastar.cleanup('&quot;گيومه های فارسي&quot;'), '«گیومه‌های فارسی»');
+      assert.strictEqual(virastar.cleanup('&apos;گيومه های فارسي&apos;'), '«گیومه‌های فارسی»');
+    });
   });
 });
