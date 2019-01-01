@@ -12,7 +12,7 @@ describe('Virastar.js', function () {
 
   describe('#cleanup()', function () {
     // some missing tests
-    it('should skip non-written tests', function () {});
+    // it('should skip non-written tests', function () {});
 
     it('should replace kashidas to ndash in parenthetic', function () {
       assert.strictEqual(

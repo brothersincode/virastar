@@ -5,13 +5,17 @@
   "author": {
     "name": "juvee"
   },
-  "main": "lib/virastar.js",
   "keywords": [
     "persian",
     "text"
   ],
+  "main": "lib/virastar.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {},
   "devDependencies": {
+    "mocha": "^5.2.0",
     "semistandard": "^13.0.1",
     "stylelint": "^9.8.0"
   },
