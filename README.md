@@ -117,11 +117,16 @@ _all options are **enabled** by default._
 
 
 * `fix_perfix_spacing`
-	- put zwnj between word and prefix (`mi*` `nemi*`)
+	- put zwnj between word and prefix:
+		- `mi*`, `nemi*`, `bi*`
 
 
 * `fix_suffix_spacing`
-	- put zwnj between word and suffix (`*tar` `*tarin` `*ha` `*haye`)
+	- put zwnj between word and suffix:
+		- `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`
+		- `*ha`, `*haye`
+		- `*tar`, `*tari`, `*tarin`
+		- `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`
 
 
 * `fix_spacing_for_braces_and_quotes`
