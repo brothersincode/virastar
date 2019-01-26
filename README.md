@@ -88,11 +88,11 @@ _all options are **enabled** by default._
 
 
 * `cleanup_zwnj`
-	- remove more than one zwnj chars  
-	- remove unnecessary zwnj chars that are succeeded/preceded by a space  
-	- clean zwnj chars after Persian characters that don't conncet to the next letter  
-	- clean zwnj chars before English characters  
-	- clean zwnj chars after and before punctuation  
+	- remove more than one zwnj chars
+	- remove unnecessary zwnj chars that are succeeded/preceded by a space
+	- clean zwnj chars after Persian characters that don't conncet to the next letter
+	- clean zwnj chars before English characters
+	- clean zwnj chars after and before punctuation
 
 
 * `fix_arabic_numbers`
