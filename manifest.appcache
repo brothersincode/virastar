@@ -23,7 +23,7 @@ site.webmanifest
 https://cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.css
 https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css
 
-https://cdn.jsdelivr.net/gh/juvee/virastar@latest/lib/virastar.min.js
+https://cdn.jsdelivr.net/gh/juvee/virastar@v0.15.0/lib/virastar.min.js
 https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.4/dist/clipboard.min.js
 
 NETWORK:
