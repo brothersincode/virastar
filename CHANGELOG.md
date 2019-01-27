@@ -1,3 +1,9 @@
+### 0.15.0
+- Added: support prefix: `bi*`, props @zoghal
+- Added: support suffix: `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`, props @zoghal
+- Added: support suffix: `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`, props @zoghal
+- Fixed: check for space befor suffix: `*tar`, `*tari`, `*tarin`, props @zoghal
+
 ### 0.14.0
 - Added: convert back quot/apos entities
 - Added: new option: `decode_htmlentities`
