@@ -98,6 +98,20 @@ describe('Virastar.js', function () {
       );
     });
 
+    it('should not put space after dots in numbers', function () {
+      assert.strictEqual(virastar.cleanup(
+        'پوسته دوهزارونوزده، حداقل به نسخه وردپرس 4.7 نیاز دارد. شما نسخه %s را اجرا می کنید. لطفاً وردپرس خود را ارتقا دهید و دوباره سعی کنید.', {}),
+      'پوسته دوهزارونوزده، حداقل به نسخه وردپرس ۴.۷ نیاز دارد. شما نسخه %s را اجرا می‌کنید. لطفاً وردپرس خود را ارتقا دهید و دوباره سعی کنید.'
+      );
+    });
+
+    it('should not replace sprintf directives', function () {
+      assert.strictEqual(virastar.cleanup(
+        'این افزونه به php نسخه "%1$s" نياز دارد. شما از نسخه (%2$s) استفاده می کنید. لطفاً پس از ارتقا دوباره تلاش کنید.', {}),
+      'این افزونه به php نسخه «%1$s» نیاز دارد. شما از نسخه (%2$s) استفاده می‌کنید. لطفاً پس از ارتقا دوباره تلاش کنید.'
+      );
+    });
+
     it('should converts back html named character references', function () {
       assert.strictEqual(virastar.cleanup('&quot;گيومه های فارسي&quot;'), '«گیومه‌های فارسی»');
       assert.strictEqual(virastar.cleanup('&apos;گيومه های فارسي&apos;'), '«گیومه‌های فارسی»');
