@@ -1,7 +1,7 @@
 {
   "name": "virastar",
   "version": "0.15.0",
-  "description": "cleanning up Persian text!",
+  "description": "Cleaning-up Persian Texts!",
   "author": {
     "name": "juvee"
   },
@@ -15,7 +15,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.2",
     "semistandard": "^13.0.1",
     "stylelint": "^9.10.1"
   },
