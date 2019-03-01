@@ -1,3 +1,11 @@
+### 0.15.1
+- Added: should not replace sprintf directives
+- Added: extra method for swaping incorrect quotes
+- Fixed: word tokenizer accounts for wraping chars
+- Fixed: no space after dots in numbers
+- Fixed: no space in time parts in English
+- Fixed: mismatch options for Arabic/English numbers
+
 ### 0.15.0
 - Added: support prefix: `bi*`, props @zoghal
 - Added: support suffix: `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`, props @zoghal
