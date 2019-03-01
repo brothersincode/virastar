@@ -1,6 +1,6 @@
 {
   "name": "virastar",
-  "description": "cleanning up Persian text!",
+  "description": "Cleaning-up Persian Texts!",
   "keywords": [
     "persian",
     "text"
@@ -14,8 +14,6 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "test"
   ]
 }
