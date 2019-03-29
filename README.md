@@ -3,13 +3,13 @@ Virastar is a Persian text cleaner.
 
 A javascript port of [aziz/virastar](https://github.com/aziz/virastar)
 
-see live [demo](https://juvee.github.io/virastar/)
+see live [demo](https://brothersincode.github.io/virastar/)
 
-[![Build Status](https://img.shields.io/travis/juvee/virastar/master.svg?style=flat-square)](https://travis-ci.org/juvee/virastar)
-[![Dependency Status](https://img.shields.io/david/juvee/virastar.svg?style=flat-square)](https://david-dm.org/juvee/virastar)
+[![Build Status](https://img.shields.io/travis/brothersincode/virastar/master.svg?style=flat-square)](https://travis-ci.org/brothersincode/virastar)
+[![Dependency Status](https://img.shields.io/david/brothersincode/virastar.svg?style=flat-square)](https://david-dm.org/brothersincode/virastar)
 [![NPM version](https://img.shields.io/npm/v/virastar.svg?style=flat-square)](https://www.npmjs.com/package/virastar)
-[![GitHub issues](https://img.shields.io/github/issues/juvee/virastar.svg?style=flat-square)](https://github.com/juvee/virastar/issues)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/juvee/virastar/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/brothersincode/virastar.svg?style=flat-square)](https://github.com/brothersincode/virastar/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/brothersincode/virastar/master/LICENSE)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 ## Install
