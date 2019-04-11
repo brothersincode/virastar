@@ -8,6 +8,10 @@ html {
   box-sizing: inherit;
 }
 
+:focus {
+  outline: none;
+}
+
 html,
 body {
   height: 100%;
@@ -20,6 +24,10 @@ body {
 
 html.no-js .noscript {
   display: block;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .noscript {
@@ -64,7 +72,7 @@ header h1 {
 #links {
   position: absolute;
   top: 8px;
-  left: 10px;
+  left: 35px;
 }
 
 #result,
@@ -87,7 +95,8 @@ header h1 {
   right: 0;
   border: 0;
   overflow-x: hidden;
-  display: table;
+  resize: none;
+  /* display: table; */
 }
 
 #result {
@@ -101,8 +110,8 @@ header h1 {
 #links button {
   padding: 1px 15px;
   background-color: #555;
-  border-radius: 20px;
-  margin: 0 5px 0 0;
+  border-radius: 2px;
+  margin: 0 2px 0 0;
   color: #f6f6f6;
   border: none;
   text-decoration: none;
@@ -114,4 +123,124 @@ header h1 {
 #links button:hover {
   text-decoration: none;
   background-color: #888;
+}
+
+.settings {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: #303030;
+  color: #f3f3f3;
+  text-align: left;
+  font-size: 0.75em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  direction: ltr;
+}
+
+.settings h3 {
+  margin: 10px 0 10px 5px;
+}
+
+.settings ul {
+  color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.settings-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="settings-trigger"] {
+  position: fixed;
+  left: 2px;
+  top: 1px;
+  z-index: 2;
+
+  height: 34px;
+  width: 34px;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M18 16V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h13c.55 0 1-.45 1-1zM8 11h1c.55 0 1 .45 1 1s-.45 1-1 1H8v1.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V13H6c-.55 0-1-.45-1-1s.45-1 1-1h1V5.5c0-.28.22-.5.5-.5s.5.22.5.5V11zm5-2h-1c-.55 0-1-.45-1-1s.45-1 1-1h1V5.5c0-.28.22-.5.5-.5s.5.22.5.5V7h1c.55 0 1 .45 1 1s-.45 1-1 1h-1v5.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V9z"/></g></svg>');
+  background-size: contain;
+  filter: invert(1);
+}
+
+.settings-trigger + label, .wrapper {
+  transition: left 0.2s;
+}
+
+.settings-trigger:checked + label {
+  /* left: calc( 35% + 5px ); */
+  left: 325px;
+}
+
+.settings-trigger:checked ~ .wrapper {
+  /* left: 35%; */
+  left: 320px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.settings input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+.settings input[type=checkbox] {
+  display: none;
+}
+
+.settings input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 3px;
+  margin-right: 5px;
+  vertical-align: middle;
+  color: transparent;
+  transition: .2s;
+}
+
+.settings input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+.settings input[type=checkbox]:checked + label:before {
+  background-color: #ffffc1;
+  border-color: #ffffc1;
+  color: #000;
+}
+
+.settings input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #303030;
+}
+
+.settings input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
 }
