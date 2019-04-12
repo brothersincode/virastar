@@ -1,3 +1,9 @@
+### 0.16.0
+- Added: support more misc non Persian chars, props @ebraminio/persiantools
+- Added: new option: `fix_punctuations`
+- Fixed: better prototype structure
+- Fixed: cleanup zwnj as standalone method
+
 ### 0.15.1
 - Added: should not replace sprintf directives
 - Added: extra method for swaping incorrect quotes

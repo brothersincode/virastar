@@ -109,8 +109,13 @@ _all options are **enabled** by default._
 
 
 * `fix_misc_non_persian_chars`
-	- replace Arabic kaf and Yeh with its Persian equivalent
+	- replace Arabic kaf with its Persian equivalent
+	- replace Arabic/Urdu/Pushtu/Uyghur Yeh with its Persian equivalent
+	- replace Kurdish He with its Persian equivalent
 
+
+* `fix_punctuations`
+	- replace `%`, `,`, `;` with its Persian equivalent
 
 * `fix_question_mark`
 	- replace question marks with its Persian equivalent
