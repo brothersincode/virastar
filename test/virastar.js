@@ -2,6 +2,7 @@
 
 var assert = require('assert');
 var Virastar = require('../lib/virastar.js');
+var sprintf = require('sprintf-js').sprintf;
 
 describe('Virastar.js', function () {
   var virastar;
@@ -116,5 +117,186 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('&quot;گيومه های فارسي&quot;'), '«گیومه‌های فارسی»');
       assert.strictEqual(virastar.cleanup('&apos;گيومه های فارسي&apos;'), '«گیومه‌های فارسی»');
     });
+
+    // @REF: https://github.com/aziz/virastar/blob/master/spec/virastar_spec.rb
+
+    it('should replace Arabic kaf with its Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('ك'), 'ک');
+      assert.strictEqual(virastar.cleanup('كمك'), 'کمک');
+    });
+
+    it('should replace Arabic Yeh with its Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('ي'), 'ی');
+      assert.strictEqual(virastar.cleanup('بيني'), 'بینی');
+    });
+
+    it('should replace Arabic numbers with their Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('٠١٢٣٤٥٦٧٨٩'), '۰۱۲۳۴۵۶۷۸۹');
+    });
+
+    it('should replace English numbers with their Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('0123456789'), '۰۱۲۳۴۵۶۷۸۹');
+    });
+
+    it('should replace English comma and semicolon with their Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup(';,'), '؛ ،');
+    });
+
+    it('should correct :;,.?! spacing (one space after and no space before)', function () {
+      assert.strictEqual(virastar.cleanup('گفت : سلام'), 'گفت: سلام');
+    });
+
+    it('should replace English quotes with their Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('\'\'تست\'\''), '«تست»');
+      assert.strictEqual(virastar.cleanup('\'تست\''), '«تست»');
+      assert.strictEqual(virastar.cleanup('`تست`'), '«تست»');
+      assert.strictEqual(virastar.cleanup('``تست``'), '«تست»');
+      assert.strictEqual(virastar.cleanup('"گفت: سلام"'), '«گفت: سلام»');
+      assert.strictEqual(virastar.cleanup('"این" یا "آن"'), '«این» یا «آن»'); // not greedy
+    });
+
+    it('should replace three dots with ellipsis', function () {
+      assert.strictEqual(virastar.cleanup('...'), '…');
+      assert.strictEqual(virastar.cleanup('....'), '…');
+      assert.strictEqual(virastar.cleanup('.........'), '…');
+      assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
+    });
+
+    it('should convert ه ی to هٔ', function () {
+      assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
+      assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
+      assert.strictEqual(virastar.cleanup('خانه ي ما'), 'خانهٔ ما');
+    });
+
+    it('should replace double dash to ndash and triple dash to mdash', function () {
+      assert.strictEqual(virastar.cleanup('--'), '–');
+      assert.strictEqual(virastar.cleanup('---'), '—');
+    });
+
+    it('should replace more than one space with just a single one', function () {
+      assert.strictEqual(virastar.cleanup('  سلام   جهان ،  من ویراستار هستم!'), 'سلام جهان، من ویراستار هستم!');
+    });
+
+    it('should fix spacing for () [] {}  “” «» (one space outside, no space inside)', function () {
+      const templates = [
+        [
+          'this is%s a test%s',
+          'this is %sa test%s'
+        ],
+        [
+          'this is %s a test  %s',
+          'this is %sa test%s'
+        ],
+        [
+          'this is  %s  a test %s  yeah!',
+          'this is %sa test%s yeah!'
+        ],
+        [
+          'this is   %sa test %s  yeah!',
+          'this is %sa test%s yeah!'
+        ]
+      ];
+
+      // matched brackets
+      const matched = [
+        ['(', ')'],
+        ['[', ']'],
+        ['{', '}'],
+        // ['“', '”'],
+        ['«', '»']
+      ];
+
+      for (var pair in matched) {
+        for (var str in templates) {
+          assert.strictEqual(virastar.cleanup(
+            sprintf(templates[str][0], matched[pair][0], matched[pair][1])),
+          sprintf(templates[str][1], matched[pair][0], matched[pair][1]));
+        }
+      }
+
+      // mismatched brackets
+      const mismatched = [ ['(', ']'], ['[', ')'], ['{', '”'], ['(', '}'], ['«', ']'] ];
+      const templates2 = [
+        'mismatched brackets%s don\'t apply%s',
+        'mismatched brackets %s don\'t apply %s',
+        'mismatched brackets %s don\'t apply %s yeah!',
+        'mismatched brackets %sdon\'t apply %s yeah!'
+      ];
+
+      for (var pair2 in mismatched) {
+        for (var str2 in templates2) {
+          const template = sprintf(templates2[str2], mismatched[pair2][0], mismatched[pair2][1]);
+          assert.strictEqual(virastar.cleanup(template), template);
+        }
+      }
+    });
+
+    it('should replace English percent sign to its Persian equivalent', function () {
+      assert.strictEqual(virastar.cleanup('%'), '٪');
+    });
+
+    it('should replace more that one line breaks with just one', function () {
+      assert.strictEqual(virastar.cleanup('this is \n \n \n     \n a test'), 'this is \n\n\n\na test');
+      assert.strictEqual(virastar.cleanup('this is\n\n\n\na test'), 'this is\n\n\n\na test');
+      assert.strictEqual(virastar.cleanup('this is \n\n\n    a test'), 'this is \n\n\na test');
+    });
+
+    it('should not replace line breaks and should remove spaces after line break', function () {
+      assert.strictEqual(virastar.cleanup('this is \n  a test'), 'this is \na test');
+    });
+
+    it('should put zwnj between word and prefix/suffix (ha haye* tar* tarin mi* nemi*)', function () {
+      assert.strictEqual(virastar.cleanup('ما می توانیم'), 'ما می‌توانیم');
+      assert.strictEqual(virastar.cleanup('ما نمی توانیم'), 'ما نمی‌توانیم');
+      assert.strictEqual(virastar.cleanup('این بهترین کتاب ها است'), 'این بهترین کتاب‌ها است');
+      assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمند‌ترین زبان‌های دنیا');
+    });
+
+    // it('should not replace English numbers in English phrases', function () {
+    //   assert.strictEqual(virastar.cleanup(
+    //     'عزیز ATM74 در IBM-96 085 B 95BCS'),
+    //     'عزیز ATM74 در IBM-96 ۰۸۵ B 95BCS');
+    // });
+
+    it('should not create spacing for something like (,)', function () {
+      assert.strictEqual(virastar.cleanup('this is (,) comma'), 'this is (،) comma');
+    });
+
+    it('should not puts space after time colon separator', function () {
+      assert.strictEqual(virastar.cleanup('12:34'), '۱۲:۳۴');
+    });
+
+    it('should not destroy URLs', function () {
+      assert.strictEqual(virastar.cleanup('https://virastar.brothersincode.ir'), 'https://virastar.brothersincode.ir');
+      assert.strictEqual(virastar.cleanup('https://virastar.brothersincode.ir\nhttp://twitter.com'), 'https://virastar.brothersincode.ir\nhttp://twitter.com');
+      assert.strictEqual(virastar.cleanup('---'), '—');
+    });
+
+    it('should not replace line breaks when the line ends with quotes', function () {
+      assert.strictEqual(virastar.cleanup('salam "khoobi" \n chetori'), 'salam «khoobi» \nchetori');
+    });
+
+    it('should not put space after quotes, {}, () or [] if there\'s ,.; just after that', function () {
+      assert.strictEqual(virastar.cleanup(
+        '«این», {این}, (این), [این] or {این}. بعضی وقت ها (این).'),
+      '«این»، {این}، (این)، [این] or {این}. بعضی وقت‌ها (این).');
+    });
+
+    it('should be able to convert numbers with dashes', function () {
+      assert.strictEqual(virastar.cleanup('1- salam'), '۱- salam');
+    });
+
+    it('aggressive editing', function () {
+      assert.strictEqual(virastar.cleanup('salam!!!'), 'salam!');
+      assert.strictEqual(virastar.cleanup('چطور؟؟؟'), 'چطور؟');
+    });
+
+    it('should remove all kashida', function () {
+      assert.strictEqual(virastar.cleanup('سلامـــت'), 'سلامت');
+    });
+
+    // it('should correct wrong connections like in میشود or میدهد', function () {
+    //   assert.strictEqual(virastar.cleanup(''), '');
+    // });
   });
 });
