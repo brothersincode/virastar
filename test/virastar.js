@@ -1,12 +1,11 @@
-/* global describe, it */
-
-var assert = require('assert');
-var Virastar = require('../lib/virastar.js');
-var sprintf = require('sprintf-js').sprintf;
+const assert = require('assert');
+const Virastar = require('../lib/virastar.js');
+const sprintf = require('sprintf-js').sprintf;
 
 describe('Virastar.js', function () {
-  var virastar;
-  var options = {
+  let virastar;
+
+  const options = {
     skip_markdown_ordered_lists_numbers_conversion: false,
     preserve_brackets: false,
     preserve_braces: false
@@ -304,5 +303,21 @@ describe('Virastar.js', function () {
     // it('should correct wrong connections like in میشود or میدهد', function () {
     //   assert.strictEqual(virastar.cleanup(''), '');
     // });
+  });
+
+  describe('#cleanup(): Additional', function () {
+    it('should throw error if type is not string', function () {
+      assert.throws(() => virastar.cleanup(function () {}), TypeError, 'Expected a String');
+      assert.throws(() => virastar.cleanup(new Error()), TypeError, 'Expected a String');
+      assert.throws(() => virastar.cleanup(112), TypeError, 'Expected a String');
+    });
+
+    it('should preserve all HTML tags', function () {
+      assert.strictEqual(virastar.cleanup('<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>'), '<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>');
+    });
+
+    it('should fix heh plus standalone hamza', function () {
+      assert.strictEqual(virastar.cleanup('از غم به هر بهانهء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!');
+    });
   });
 });

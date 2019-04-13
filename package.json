@@ -28,7 +28,9 @@
       "*.min.js"
     ],
     "globals": [
-      "define"
+      "define",
+      "describe",
+      "it"
     ]
   }
 }
