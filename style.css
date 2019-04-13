@@ -26,6 +26,11 @@ html.no-js .noscript {
   display: block;
 }
 
+html.no-js .wrapper,
+html.no-js .settings-trigger + label {
+  display: none;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -192,7 +197,8 @@ label[for="settings-trigger"] {
   filter: invert(1);
 }
 
-.settings-trigger + label, .wrapper {
+.wrapper,
+.settings-trigger + label {
   transition: left 0.2s;
 }
 
