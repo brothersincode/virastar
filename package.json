@@ -17,10 +17,10 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
-    "mocha": "^6.1.2",
+    "mocha": "^6.1.3",
     "semistandard": "^13.0.1",
     "sprintf-js": "^1.1.2",
-    "stylelint": "^9.10.1"
+    "stylelint": "^10.0.0"
   },
   "semistandard": {
     "ignore": [
