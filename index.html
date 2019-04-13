@@ -51,7 +51,7 @@
 		</div>
 	</header>
 <div class="input">
-	<textarea id="input">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
+	<textarea id="input" class="syncscroll" name="editor">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
 
 ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
 1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
@@ -68,12 +68,13 @@
 </textarea>
 </div>
 <div class="output">
-	<textarea id="output" readonly>بارگزاری&hellip;</textarea>
+	<textarea id="output" class="syncscroll" name="editor" readonly>بارگزاری&hellip;</textarea>
 </div>
 	</div>
 	<script type="text/javascript">var html=document.querySelector("html");html.classList.remove("no-js");</script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/brothersincode/virastar@v0.16.0/lib/virastar.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.4/dist/clipboard.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="syncscroll.js"></script>
 </body>
 </html>
