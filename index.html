@@ -43,14 +43,15 @@
 		</div>
 
 		<div id="links">
-			<a href="#" class="copy" data-clipboard-action="copy" data-clipboard-target="#plain" title="برای کپی متن در کیلیپ‌بورد کلیک کنید!">کپی</a>
+			<a href="#" class="copy no-mobile" data-clipboard-action="copy" data-clipboard-target="#output" title="برای کپی متن خروجی در کیلیپ‌بورد کلیک کنید!">کپی متن</a>
+			<a href="#" class="no-mobile" id="download" title="برای دریافت متن خروجی به صورت پرونده کلیک کنید!">دریافت متن</a>
 			<a href="https://github.com/brothersincode/virastar/" target="_blank">گیت‌هاب</a>
-			<a href="https://github.com/brothersincode/virastar/issues" target="_blank">گزارش خطا</a>
-			<a href="https://minimalist.brothersincode.ir/" target="_blank">مینیمالیست</a>
+			<a href="https://github.com/brothersincode/virastar/issues" class="no-mobile" target="_blank">گزارش خطا</a>
+			<a href="https://minimalist.brothersincode.ir/" class="no-mobile" target="_blank" title="مینیمالیست">ویرایشگر مارک‌داون</a>
 		</div>
 	</header>
-
-	<textarea name="text" id="textarea">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
+<div class="input">
+	<textarea id="input">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
 
 ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
 1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
@@ -65,11 +66,10 @@
 
 برای اطلاعات بیشتر، صفحه ویراستار در گیت‌هاب را ببینید.
 </textarea>
-	<div id="result">
-		<div id="plain">
-			بارگزاری&hellip;
-		</div>
-	</div>
+</div>
+<div class="output">
+	<textarea id="output" readonly>بارگزاری&hellip;</textarea>
+</div>
 	</div>
 	<script type="text/javascript">var html=document.querySelector("html");html.classList.remove("no-js");</script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/brothersincode/virastar@v0.16.0/lib/virastar.js"></script>
