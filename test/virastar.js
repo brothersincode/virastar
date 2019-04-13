@@ -235,10 +235,16 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('%'), '٪');
     });
 
-    it('should replace more that one line breaks with just one', function () {
-      assert.strictEqual(virastar.cleanup('this is \n \n \n     \n a test'), 'this is \n\n\n\na test');
-      assert.strictEqual(virastar.cleanup('this is\n\n\n\na test'), 'this is\n\n\n\na test');
-      assert.strictEqual(virastar.cleanup('this is \n\n\n    a test'), 'this is \n\n\na test');
+    it('should remove spaces before and after line breaks', function () {
+      assert.strictEqual(virastar.cleanup('this is \n \n \n     \n a test'), 'this is \n\na test');
+      assert.strictEqual(virastar.cleanup('this is\n\n\n\na test'), 'this is\n\na test');
+      assert.strictEqual(virastar.cleanup('this is \n\n\n    a test'), 'this is \n\na test');
+    });
+
+    it('should remove more that two line breaks', function () {
+      assert.strictEqual(virastar.cleanup('this is \n \n \n     \n a test'), 'this is \n\na test');
+      assert.strictEqual(virastar.cleanup('this is\n\n\n\na test'), 'this is\n\na test');
+      assert.strictEqual(virastar.cleanup('this is \n\n\n    a test'), 'this is \n\na test');
     });
 
     it('should not replace line breaks and should remove spaces after line break', function () {
