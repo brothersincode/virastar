@@ -173,6 +173,7 @@
     }
   };
 
-  // window.onload = function () { app.init(); };
-  app.init();
+  window.onload = function () {
+    app.init();
+  };
 })();
