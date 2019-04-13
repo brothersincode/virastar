@@ -113,6 +113,7 @@
       this.doVirastar(input, options);
       this.setStorage(options, 'options');
       this.setStorage(input, 'text');
+      syncscroll.reset();
     },
 
     doDownload: function () {
@@ -143,6 +144,7 @@
 
       this.initVirastar();
       this.initClipboard();
+      syncscroll.reset();
     },
 
     initVirastar: function () {

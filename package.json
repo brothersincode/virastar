@@ -22,7 +22,8 @@
   "semistandard": {
     "globals": [
       "Virastar",
-      "ClipboardJS"
+      "ClipboardJS",
+      "syncscroll"
     ]
   }
 }
