@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# 4/12/2019, 4:49:24 AM
+# 4/14/2019, 2:05:32 AM
 
 index.html
 style.css
 script.js
+syncscroll.js
 
 android-chrome-192x192.png
 android-chrome-512x512.png
