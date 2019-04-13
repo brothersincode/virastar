@@ -72,14 +72,14 @@ header h1 {
 #links {
   position: absolute;
   top: 8px;
-  left: 35px;
+  left: 40px;
 }
 
-#result,
-#textarea {
+.input,
+.output {
   top: 0;
   bottom: 0;
-  padding: 45px 10px 10px 10px;
+  padding-top: 35px;
   display: block;
   overflow: auto;
   font-size: 1.2em;
@@ -89,26 +89,34 @@ header h1 {
   position: absolute;
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 
-#textarea {
+.input {
   right: 0;
-  border: 0;
-  overflow-x: hidden;
-  resize: none;
-  /* display: table; */
+  background: #fefefe;
 }
 
-#result {
-  position: absolute;
+.output {
   left: 0;
   background: #ffffc1;
-  border-right: 1px solid #ccc;
+}
+
+#input,
+#output {
+  width: 100%;
+  min-height: 100%;
+  padding: 15px;
+  border: none;
+  resize: none;
+  overflow-y: scroll;
+  line-height: 1.6;
+  background: transparent;
 }
 
 #links a,
 #links button {
-  padding: 1px 15px;
+  padding: 1px 8px;
   background-color: #555;
   border-radius: 2px;
   margin: 0 2px 0 0;
@@ -140,6 +148,7 @@ header h1 {
   font-size: 0.75em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   direction: ltr;
+  overflow-y: scroll;
 }
 
 .settings h3 {
@@ -243,4 +252,10 @@ label[for="settings-trigger"] {
   transform: scale(1);
   background-color: #bfb;
   border-color: #bfb;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .no-mobile {
+    display: none;
+  }
 }
