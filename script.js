@@ -6,8 +6,9 @@
     settings: undefined,
     storage: typeof (Storage) !== 'undefined',
 
-    input: document.getElementById('textarea'),
-    output: document.getElementById('plain'),
+    input: document.getElementById('input'),
+    output: document.getElementById('output'),
+    download: document.getElementById('download'),
 
     // demo default options
     options: {
@@ -36,8 +37,19 @@
       });
     },
 
+    // @REF: http://codepen.io/geminorum/pen/Ndzdqw
+    downloadText: function (filename, text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    },
+
     renderSettings: function (defaults) {
-      var options = this.getStorage(this.options);
+      var options = this.getStorage(this.options, 'options');
       var ul = document.getElementById('options');
 
       for (var option in defaults) {
@@ -66,18 +78,18 @@
       this.settings = document.querySelectorAll('.option');
     },
 
-    getStorage: function (options) {
+    getStorage: function (def, key) {
       if (!this.storage) {
-        return options;
+        return def;
       }
 
-      var stored = window.localStorage.getItem('options');
-      return stored ? JSON.parse(stored) : options;
+      var stored = window.localStorage.getItem(key);
+      return stored ? JSON.parse(stored) : def;
     },
 
-    setStorage: function (options) {
+    setStorage: function (data, key) {
       if (this.storage) {
-        window.localStorage.setItem('options', JSON.stringify(options));
+        window.localStorage.setItem(key, JSON.stringify(data));
       }
     },
 
@@ -91,8 +103,22 @@
       return options;
     },
 
-    doVirastar: function (options) {
-      this.output.innerHTML = virastar.cleanup(this.input.value, options).replace(/\n/g, '</br>');
+    doVirastar: function (input, options) {
+      this.output.innerHTML = virastar.cleanup(input, options);
+    },
+
+    doChange: function () {
+      var input = this.input.value;
+      var options = this.getOptions();
+      this.doVirastar(input, options);
+      this.setStorage(options, 'options');
+      this.setStorage(input, 'text');
+    },
+
+    doDownload: function () {
+      var input = this.input.value;
+      var options = this.getOptions();
+      this.downloadText('virastar.txt', virastar.cleanup(input, options));
     },
 
     init: function () {
@@ -103,19 +129,33 @@
 
       this.settings.forEach(function (option) {
         option.addEventListener('change', function () {
-          var options = that.getOptions();
-          console.log(options);
-          that.doVirastar(options);
-          that.setStorage(options);
+          that.doChange();
         });
       });
 
       this.input.addEventListener('keyup', this.debounce(function () {
-        that.doVirastar(that.getOptions());
+        that.doChange();
       }, 1000));
 
-      this.doVirastar(that.getOptions());
+      this.download.addEventListener('click', function () {
+        that.doDownload();
+      });
+
+      this.initVirastar();
       this.initClipboard();
+    },
+
+    initVirastar: function () {
+      var initial = this.input.value;
+      var input = this.getStorage(initial, 'text');
+      var options = this.getOptions();
+
+      if (input.trim()) {
+        this.input.value = input;
+        this.doVirastar(input, options);
+      } else {
+        this.doVirastar(initial, options);
+      }
     },
 
     initClipboard: function () {
