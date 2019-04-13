@@ -81,6 +81,7 @@ _all options are **enabled** by default._
 
 * `fix_hamzeh`
 	- convert `ه ی` to `هٔ`
+	- convert `ه ء` to `هٔ`
 
 
 * `cleanup_rlm`
@@ -93,6 +94,7 @@ _all options are **enabled** by default._
 	- clean zwnj chars after Persian characters that don't conncet to the next letter
 	- clean zwnj chars before English characters
 	- clean zwnj chars after and before punctuation
+	- clean zwnj chars before diacritic characters
 
 
 * `fix_arabic_numbers`
@@ -141,6 +143,11 @@ _all options are **enabled** by default._
 
 * `cleanup_spacing`
 	- replace more than one space with just a single one
+	- clean spaces before diacritic characters
+
+
+* `cleanup_line_breaks`
+	- remove more than two contiguous line breaks
 
 
 * `cleanup_begin_and_end`
@@ -167,6 +174,14 @@ _all options are **enabled** by default._
 	- preserve all HTML tags
 
 
+* `preserve_comments`
+	- preserve all HTML comments
+
+
+* `preserve_entities`
+	- preserve all HTML entities
+
+
 * `preserve_URIs`
 	- preserve all URI links in the text
 
@@ -177,6 +192,10 @@ _all options are **enabled** by default._
 
 * `preserve_braces`
 	- preserve strings inside curly braces (`{}`)
+
+
+* `preserve_nbsps`
+	- preserve all no-break spaces
 
 ## License
 

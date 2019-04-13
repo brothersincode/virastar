@@ -1,3 +1,17 @@
+### 0.17.0
+- Added: initial check for type of the input
+- Added: new option `cleanup_line_breaks` to remove more than two contiguous line breaks
+- Added: new option `preserve_entities` to preserve html non decoded entities
+- Added: new option `preserve_comments` to preserve html comments
+- Added: new option `preserve_nbsps` to preserve no-break spaces
+- Fixed: also fix heh plus standalone hamza
+- Fixed: clean spaces before diacritic characters
+- Fixed: clean ZWNJs before diacritic characters
+- Fixed: putting back chars after suffix white spaces
+- Fixed: better pattern for preserving html tags
+- Fixed: decode all decimal, hex and some selected entities
+- Fixed: decode html entity as standalone method
+
 ### 0.16.0
 - Added: support more misc non Persian chars, props @ebraminio/persiantools
 - Added: new option: `fix_punctuations`
