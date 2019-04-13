@@ -61,7 +61,7 @@ header {
   color: #f6f6f6;
   height: 35px;
   width: 100%;
-  position: fixed;
+  position: relative;
   z-index: 1000;
 }
 
