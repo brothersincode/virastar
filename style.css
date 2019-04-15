@@ -121,14 +121,14 @@ header h1 {
 
 #links a,
 #links button {
-  padding: 1px 8px;
+  padding: 1px 6px 0;
   background-color: #555;
   border-radius: 2px;
   margin: 0 2px 0 0;
   color: #f6f6f6;
   border: none;
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 0.65em;
   font-weight: 400;
 }
 
@@ -231,10 +231,10 @@ label[for="settings-trigger"] {
   display: inline-block;
   width: 1em;
   height: 1em;
-  padding-left: 0.2em;
   padding-bottom: 3px;
   margin-right: 5px;
-  vertical-align: middle;
+  vertical-align: bottom;
+  line-height: 0.75;
   color: transparent;
   transition: .2s;
 }
