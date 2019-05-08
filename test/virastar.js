@@ -298,6 +298,7 @@ describe('Virastar.js', function () {
 
     it('should remove all kashida', function () {
       assert.strictEqual(virastar.cleanup('سلامـــت'), 'سلامت');
+      assert.strictEqual(virastar.cleanup('لــعل سـلـسـبیــل'), 'لعل سلسبیل');
     });
 
     // it('should correct wrong connections like in میشود or میدهد', function () {
@@ -319,5 +320,10 @@ describe('Virastar.js', function () {
     it('should fix heh plus standalone hamza', function () {
       assert.strictEqual(virastar.cleanup('از غم به هر بهانهء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!');
     });
+
+    it('should convert all soft hyphens into zwnj', function () {
+      assert.strictEqual(virastar.cleanup('عادت به تنهایی... این دیگر از آن حرف­هاست! '), 'عادت به تنهایی… این دیگر از آن حرف‌هاست!');
+    });
+
   });
 });
