@@ -119,6 +119,7 @@ _all options are **enabled** by default._
 * `fix_punctuations`
 	- replace `%`, `,`, `;` with its Persian equivalent
 
+
 * `fix_question_mark`
 	- replace question marks with its Persian equivalent
 
@@ -147,7 +148,7 @@ _all options are **enabled** by default._
 
 
 * `cleanup_line_breaks`
-	- remove more than two contiguous line breaks
+	- remove more than **two** contiguous line breaks
 
 
 * `cleanup_begin_and_end`
