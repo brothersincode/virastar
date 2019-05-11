@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 4/15/2019, 11:28:01 PM
+# 5/11/2019, 9:09:34 PM
 
 index.html
 style.css
@@ -24,7 +24,7 @@ site.webmanifest
 https://cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.css
 https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css
 
-https://cdn.jsdelivr.net/gh/juvee/virastar@v0.17.0/lib/virastar.min.js
+https://cdn.jsdelivr.net/gh/juvee/virastar@v0.18.0/lib/virastar.min.js
 https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.4/dist/clipboard.min.js
 
 NETWORK:
