@@ -71,6 +71,10 @@ _all options are **enabled** by default._
 	- replace three dots with ellipsis
 
 
+* `normalize_ellipsis`
+	- replace more than one ellipsis with one
+
+
 * `fix_english_quotes_pairs`
 	- replace English quotes pairs (`“”`) with their Persian equivalent (`«»`)
 
