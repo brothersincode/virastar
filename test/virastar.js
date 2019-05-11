@@ -274,7 +274,6 @@ describe('Virastar.js', function () {
     it('should not destroy URLs', function () {
       assert.strictEqual(virastar.cleanup('https://virastar.brothersincode.ir'), 'https://virastar.brothersincode.ir');
       assert.strictEqual(virastar.cleanup('https://virastar.brothersincode.ir\nhttp://twitter.com'), 'https://virastar.brothersincode.ir\nhttp://twitter.com');
-      assert.strictEqual(virastar.cleanup('---'), '—');
     });
 
     it('should not replace line breaks when the line ends with quotes', function () {
@@ -325,5 +324,8 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('عادت به تنهایی... این دیگر از آن حرف­هاست! '), 'عادت به تنهایی… این دیگر از آن حرف‌هاست!');
     });
 
+    it('should normalize ellipsis', function () {
+      assert.strictEqual(virastar.cleanup('...…...'), '…');
+    });
   });
 });
