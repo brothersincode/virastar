@@ -1,3 +1,10 @@
+### 0.18.0
+- Added: new option `normalize_ellipsis` to replace more than one ellipsis with one
+- Added: convert all soft hyphens into zwnj, on `cleanup_zwnj`
+- Added: remove direction marks from begin and end of text, on `cleanup_begin_and_end`
+- Added: extra method for flipping punctuations
+- Fixed: fix three dots as standalone method
+
 ### 0.17.0
 - Added: initial check for type of the input
 - Added: new option `cleanup_line_breaks` to remove more than two contiguous line breaks
