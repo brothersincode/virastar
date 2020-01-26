@@ -208,7 +208,7 @@ describe('Virastar.js', function () {
       for (var pair in matched) {
         for (var str in templates) {
           assert.strictEqual(virastar.cleanup(
-            sprintf(templates[str][0], matched[pair][0], matched[pair][1])),
+            sprintf(templates[str][0], matched[pair][0], matched[pair][1]), {preserve_brackets: false, preserve_braces: false}),
           sprintf(templates[str][1], matched[pair][0], matched[pair][1]));
         }
       }
@@ -282,7 +282,7 @@ describe('Virastar.js', function () {
 
     it('should not put space after quotes, {}, () or [] if there\'s ,.; just after that', function () {
       assert.strictEqual(virastar.cleanup(
-        '«این», {این}, (این), [این] or {این}. بعضی وقت ها (این).'),
+        '«این», {این}, (این), [این] or {این}. بعضی وقت ها (این).', {preserve_brackets: false, preserve_braces: false}),
       '«این»، {این}، (این)، [این] or {این}. بعضی وقت‌ها (این).');
     });
 
@@ -317,7 +317,9 @@ describe('Virastar.js', function () {
     });
 
     it('should fix heh plus standalone hamza', function () {
-      assert.strictEqual(virastar.cleanup('از غم به هر بهانهء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!');
+      assert.strictEqual(virastar.cleanup('از غم به هر بهانهء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!'); // without space
+      assert.strictEqual(virastar.cleanup('از غم به هر بهانه ء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!'); // with space
+    });
 
     it('should fix heh plus hamza into ye', function () {
       assert.strictEqual(virastar.cleanup('خانه‌ٔ پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
