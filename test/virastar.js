@@ -318,6 +318,12 @@ describe('Virastar.js', function () {
 
     it('should fix heh plus standalone hamza', function () {
       assert.strictEqual(virastar.cleanup('از غم به هر بهانهء ممكن عبور كن !'), 'از غم به هر بهانهٔ ممکن عبور کن!');
+
+    it('should fix heh plus hamza into ye', function () {
+      assert.strictEqual(virastar.cleanup('خانه‌ٔ پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه ء پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه ي پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه‌ی پدری', {fix_hamzeh: false}), 'خانه‌ی پدری'); // no change
     });
 
     it('should convert all soft hyphens into zwnj', function () {
