@@ -2,14 +2,33 @@ const assert = require('assert');
 const Virastar = require('../lib/virastar.js');
 const sprintf = require('sprintf-js').sprintf;
 
+// demo default options
+const options = {
+  // skip_markdown_ordered_lists_numbers_conversion: false,
+  // preserve_brackets: false,
+  // preserve_braces: false
+};
+
+const optionsText = {
+  preserve_HTML: false,
+  preserve_URIs: false
+  // preserve_brackets: false,
+  // preserve_braces: false
+};
+
+const optionsMarkdown = {
+  fix_dashes: false,
+  cleanup_spacing: false,
+  cleanup_begin_and_end: false,
+  // skip_markdown_ordered_lists_numbers_conversion: false
+};
+
+const optionsHTML = {
+  cleanup_spacing: false,
+};
+
 describe('Virastar.js', function () {
   let virastar;
-
-  const options = {
-    skip_markdown_ordered_lists_numbers_conversion: false,
-    preserve_brackets: false,
-    preserve_braces: false
-  };
 
   it('should create new instance', function () {
     virastar = new Virastar();
@@ -208,7 +227,7 @@ describe('Virastar.js', function () {
       for (var pair in matched) {
         for (var str in templates) {
           assert.strictEqual(virastar.cleanup(
-            sprintf(templates[str][0], matched[pair][0], matched[pair][1]), {preserve_brackets: false, preserve_braces: false}),
+            sprintf(templates[str][0], matched[pair][0], matched[pair][1])),
           sprintf(templates[str][1], matched[pair][0], matched[pair][1]));
         }
       }
@@ -282,7 +301,7 @@ describe('Virastar.js', function () {
 
     it('should not put space after quotes, {}, () or [] if there\'s ,.; just after that', function () {
       assert.strictEqual(virastar.cleanup(
-        '«این», {این}, (این), [این] or {این}. بعضی وقت ها (این).', {preserve_brackets: false, preserve_braces: false}),
+        '«این», {این}, (این), [این] or {این}. بعضی وقت ها (این).'),
       '«این»، {این}، (این)، [این] or {این}. بعضی وقت‌ها (این).');
     });
 
