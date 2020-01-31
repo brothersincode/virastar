@@ -17,7 +17,7 @@
   "dependencies": {},
   "devDependencies": {
     "semistandard": "^14.2.0",
-    "stylelint": "^12.0.0"
+    "stylelint": "^13.0.0"
   },
   "semistandard": {
     "globals": [
@@ -25,5 +25,11 @@
       "ClipboardJS",
       "syncscroll"
     ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "quote-props": "off",
+      "no-prototype-builtins": "off"
+    }
   }
 }
