@@ -354,5 +354,24 @@ describe('Virastar.js', function () {
     it('should normalize ellipsis', function () {
       assert.strictEqual(virastar.cleanup('...…...'), '…');
     });
+
+    it('should normalize question/exclamation marks', function () {
+      assert.strictEqual(virastar.cleanup('عادت به تنهایی... این دیگر از آن حرف­هاست!!!?'), 'عادت به تنهایی… این دیگر از آن حرف‌هاست؟!');
+      assert.strictEqual(virastar.cleanup('متن فارسی؟!'), 'متن فارسی؟!');
+      assert.strictEqual(virastar.cleanup('متن فارسی!؟'), 'متن فارسی؟!');
+      assert.strictEqual(virastar.cleanup('متن فارسی?!'), 'متن فارسی؟!');
+      assert.strictEqual(virastar.cleanup('متن فارسی!?'), 'متن فارسی؟!');
+      assert.strictEqual(virastar.cleanup('؟!'), '؟!');
+      assert.strictEqual(virastar.cleanup('!؟'), '؟!');
+      assert.strictEqual(virastar.cleanup('?!'), '؟!');
+      assert.strictEqual(virastar.cleanup('!?'), '؟!');
+      assert.strictEqual(virastar.cleanup('کتاب????!!!!'), 'کتاب؟!');
+      assert.strictEqual(virastar.cleanup('کتاب!!!!?????'), 'کتاب؟!');
+      assert.strictEqual(virastar.cleanup('کتاب؟؟؟!!!!'), 'کتاب؟!');
+      assert.strictEqual(virastar.cleanup('کتاب!!!!!!!!!؟؟؟؟؟؟؟؟'), 'کتاب؟!');
+      assert.strictEqual(virastar.cleanup('کتاب!!!!!!'), 'کتاب!');
+      assert.strictEqual(virastar.cleanup('کتاب؟؟؟؟'), 'کتاب؟');
+      assert.strictEqual(virastar.cleanup('کتاب?????'), 'کتاب؟');
+    });
   });
 });
