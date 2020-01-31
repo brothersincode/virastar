@@ -13,9 +13,9 @@
 
     // demo default options
     options: {
-      skip_markdown_ordered_lists_numbers_conversion: false,
-      preserve_brackets: false,
-      preserve_braces: false
+      // skip_markdown_ordered_lists_numbers_conversion: false,
+      // preserve_brackets: false,
+      // preserve_braces: false
     },
 
     // @REF: https://remysharp.com/2010/07/21/throttling-function-calls
@@ -62,7 +62,7 @@
         var name = this.toProperCase(option.replace(new RegExp(/_/, 'g'), ' '));
 
         checkbox.type = 'checkbox';
-        checkbox.checked = options.hasOwnProperty(option) ? options[option] : !this.options.hasOwnProperty(option);
+        checkbox.checked = options.hasOwnProperty(option) ? options[option] : defaults[option];
         checkbox.name = 'opt[]';
         checkbox.value = option;
         checkbox.id = option;
