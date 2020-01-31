@@ -160,6 +160,19 @@ header h1 {
   margin: 10px 0 10px 5px;
 }
 
+.settings h3 span {
+  font-size: smaller;
+  font-weight: 400;
+}
+
+.settings h3 span a {
+  color: #d9534f;
+}
+
+.settings h3 span a:hover {
+  color: red;
+}
+
 .settings ul {
   color: #f6f6f6;
   margin: 0;

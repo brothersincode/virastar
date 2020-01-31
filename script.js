@@ -9,6 +9,7 @@
     input: document.getElementById('input'),
     output: document.getElementById('output'),
     download: document.getElementById('download'),
+    reset: document.getElementById('settings-reset'),
 
     // demo default options
     options: {
@@ -51,6 +52,7 @@
     renderSettings: function (defaults) {
       var options = this.getStorage(this.options, 'options');
       var ul = document.getElementById('options');
+      ul.innerHTML = ''; // list must be empty!
 
       for (var option in defaults) {
         var row = document.createElement('li');
@@ -93,6 +95,12 @@
       }
     },
 
+    removeStorage: function(key) {
+      if (this.storage) {
+        window.localStorage.removeItem(key);
+      }
+    },
+
     getOptions: function () {
       var options = {};
 
@@ -126,14 +134,6 @@
       var that = this;
       virastar = new Virastar(this.options);
 
-      this.renderSettings(virastar.defaults);
-
-      this.settings.forEach(function (option) {
-        option.addEventListener('change', function () {
-          that.doChange();
-        });
-      });
-
       this.input.addEventListener('keyup', this.debounce(function () {
         that.doChange();
       }, 1000));
@@ -142,9 +142,27 @@
         that.doDownload();
       });
 
+      this.reset.addEventListener('click', function () {
+        that.removeStorage('options');
+        that.initSettings();
+        that.doChange();
+      });
+
+      this.initSettings();
       this.initVirastar();
       this.initClipboard();
       syncscroll.reset();
+    },
+
+    initSettings: function () {
+      var that = this;
+      this.renderSettings(virastar.defaults);
+
+      this.settings.forEach(function (option) {
+        option.addEventListener('change', function () {
+          that.doChange();
+        });
+      });
     },
 
     initVirastar: function () {
