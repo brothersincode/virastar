@@ -276,11 +276,11 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمند‌ترین زبان‌های دنیا');
     });
 
-    // it('should not replace English numbers in English phrases', function () {
-    //   assert.strictEqual(virastar.cleanup(
-    //     'عزیز ATM74 در IBM-96 085 B 95BCS'),
-    //     'عزیز ATM74 در IBM-96 ۰۸۵ B 95BCS');
-    // });
+    it('should not replace English numbers in English phrases', function () {
+      assert.strictEqual(virastar.cleanup(
+        'عزیز ATM74 در IBM-96 085 B 95BCS'),
+      'عزیز ATM74 در IBM-96 ۰۸۵ B 95BCS');
+    });
 
     it('should not create spacing for something like (,)', function () {
       assert.strictEqual(virastar.cleanup('this is (,) comma'), 'this is (،) comma');
