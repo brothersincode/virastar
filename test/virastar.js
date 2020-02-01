@@ -120,7 +120,7 @@ describe('Virastar.js', function () {
     it('should not put space after dots in numbers', function () {
       assert.strictEqual(virastar.cleanup(
         'پوسته دوهزارونوزده، حداقل به نسخه وردپرس 4.7 نیاز دارد. شما نسخه %s را اجرا می کنید. لطفاً وردپرس خود را ارتقا دهید و دوباره سعی کنید.', {}),
-      'پوسته دوهزارونوزده، حداقل به نسخه وردپرس ۴.۷ نیاز دارد. شما نسخه %s را اجرا می‌کنید. لطفاً وردپرس خود را ارتقا دهید و دوباره سعی کنید.'
+      'پوسته دوهزارونوزده، حداقل به نسخه وردپرس ۴٫۷ نیاز دارد. شما نسخه %s را اجرا می‌کنید. لطفاً وردپرس خود را ارتقا دهید و دوباره سعی کنید.'
       );
     });
 
@@ -250,7 +250,7 @@ describe('Virastar.js', function () {
     });
 
     it('should replace English percent sign to its Persian equivalent', function () {
-      assert.strictEqual(virastar.cleanup('%'), '٪');
+      assert.strictEqual(virastar.cleanup('96%'), '۹۶٪');
     });
 
     it('should remove spaces before and after line breaks', function () {
@@ -372,6 +372,14 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('کتاب!!!!!!'), 'کتاب!');
       assert.strictEqual(virastar.cleanup('کتاب؟؟؟؟'), 'کتاب؟');
       assert.strictEqual(virastar.cleanup('کتاب?????'), 'کتاب؟');
+    });
+
+    it('extra: fixSuffixSpacing', function () {
+      assert.strictEqual(virastar.cleanup('"و من هم به خاطر جلب اعتماد او پذیرفته ام"'), '«و من هم به خاطر جلب اعتماد او پذیرفته‌ام»'); // within quotes
+      assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام.'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام.'); // followed by dot
+      assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام!'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام!'); // followed by exclamation
+      assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام؟'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام؟'); // followed by question
+      assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام'); // as last word (with the help of padding)
     });
   });
 });
