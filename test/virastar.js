@@ -381,5 +381,11 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام؟'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام؟'); // followed by question
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام'); // as last word (with the help of padding)
     });
+
+    it('extra: fixSuffixMisc()', function () {
+      assert.strictEqual(virastar.cleanup('خانه‌يی بر روی آب'), 'خانه‌ای بر روی آب');
+      assert.strictEqual(virastar.cleanup('خانه‌ئی بر روی آب'), 'خانه‌ای بر روی آب');
+      assert.strictEqual(virastar.cleanup('خانه‌یی بر روی آب'), 'خانه‌ای بر روی آب');
+    });
   });
 });
