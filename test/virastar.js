@@ -19,12 +19,12 @@ const optionsText = {
 const optionsMarkdown = {
   fix_dashes: false,
   cleanup_spacing: false,
-  cleanup_begin_and_end: false,
+  cleanup_begin_and_end: false
   // skip_markdown_ordered_lists_numbers_conversion: false
 };
 
 const optionsHTML = {
-  cleanup_spacing: false,
+  cleanup_spacing: false
 };
 
 describe('Virastar.js', function () {
@@ -233,7 +233,7 @@ describe('Virastar.js', function () {
       }
 
       // mismatched brackets
-      const mismatched = [ ['(', ']'], ['[', ')'], ['{', '”'], ['(', '}'], ['«', ']'] ];
+      const mismatched = [['(', ']'], ['[', ')'], ['{', '”'], ['(', '}'], ['«', ']']];
       const templates2 = [
         'mismatched brackets%s don\'t apply%s',
         'mismatched brackets %s don\'t apply %s',
@@ -341,10 +341,10 @@ describe('Virastar.js', function () {
     });
 
     it('should fix heh plus hamza into ye', function () {
-      assert.strictEqual(virastar.cleanup('خانه‌ٔ پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
-      assert.strictEqual(virastar.cleanup('خانه ء پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
-      assert.strictEqual(virastar.cleanup('خانه ي پدری', {fix_hamzeh: false}), 'خانه‌ی پدری');
-      assert.strictEqual(virastar.cleanup('خانه‌ی پدری', {fix_hamzeh: false}), 'خانه‌ی پدری'); // no change
+      assert.strictEqual(virastar.cleanup('خانه‌ٔ پدری', { fix_hamzeh: false }), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه ء پدری', { fix_hamzeh: false }), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه ي پدری', { fix_hamzeh: false }), 'خانه‌ی پدری');
+      assert.strictEqual(virastar.cleanup('خانه‌ی پدری', { fix_hamzeh: false }), 'خانه‌ی پدری'); // no change
     });
 
     it('should convert all soft hyphens into zwnj', function () {
@@ -374,7 +374,7 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('کتاب?????'), 'کتاب؟');
     });
 
-    it('extra: fixSuffixSpacing', function () {
+    it('extra: fixSuffixSpacing()', function () {
       assert.strictEqual(virastar.cleanup('"و من هم به خاطر جلب اعتماد او پذیرفته ام"'), '«و من هم به خاطر جلب اعتماد او پذیرفته‌ام»'); // within quotes
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام.'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام.'); // followed by dot
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام!'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام!'); // followed by exclamation
