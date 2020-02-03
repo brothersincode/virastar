@@ -32,11 +32,5 @@
       "describe",
       "it"
     ]
-  },
-  "eslintConfig": {
-    "rules": {
-      "quote-props": "off",
-      "no-prototype-builtins": "off"
-    }
   }
 }
