@@ -115,24 +115,25 @@ header h1 span a:hover {
 
 .input {
   right: 0;
-  background: #fefefe;
+  background: #f6f6f6;
 }
 
 .output {
   left: 0;
-  background: #ffffc1;
+  background: #fff;
 }
 
 #input,
 #output {
   width: 100%;
   min-height: 100%;
-  padding: 15px;
+  padding: 10px 15px 0 15px;
   border: none;
   resize: none;
   overflow-y: scroll;
-  line-height: 1.6;
   background: transparent;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 #links a,
@@ -240,6 +241,14 @@ label[for="settings-trigger"] {
   /* left: 35%; */
   left: 320px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.settings label {
+  color: #fff;
+}
+
+.settings label:hover {
+  color: #ffffc1;
 }
 
 .settings input[type=checkbox] + label {
