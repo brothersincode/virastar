@@ -2,6 +2,7 @@
 Virastar is a Persian text cleaner.
 
 A javascript port of [aziz/virastar](https://github.com/aziz/virastar)
+with a lot of help from [ebraminio/persiantools](https://github.com/ebraminio/persiantools)
 
 see live [demo](https://virastar.brothersincode.ir)
 
