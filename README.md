@@ -13,7 +13,7 @@ see live [demo](https://virastar.brothersincode.ir)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 ## Install
-``` bash
+```bash
 npm install virastar
 ```
 
@@ -22,8 +22,7 @@ npm install virastar
 var Virastar = require('virastar');
 var virastar = new Virastar();
 
-virastar.cleanup("فارسي را كمی درست تر می نويسيم");
-// Outputs: "فارسی را کمی درست‌تر می‌نویسیم"
+virastar.cleanup("فارسي را كمی درست تر می نويسيم"); // Outputs: "فارسی را کمی درست‌تر می‌نویسیم"
 ```
 
 ### Browser
@@ -46,94 +45,90 @@ String of Persian source to be cleaned.
 Type: `object`
 
 ```js
-Virastar("سلام 123" ,{"fix_english_numbers":false});
-// Outputs:"سلام 123"
+Virastar("سلام 123" ,{"fix_english_numbers":false}); // Outputs: "سلام 123"
 ```
 
 ## Options and Specifications
 Virastar comes with a list of options to control its behavior.
 
-_all options are **enabled** by default._
-
-* `normalize_eol`
+* `normalize_eol`, (_default_: `true`)
 	- replace Windows end of lines with Unix EOL (`\n`)
 
 
-* `decode_htmlentities`
+* `decode_htmlentities`, (_default_: `true`)
 	- converts all HTML characterSets into original characters
 
 
-* `fix_dashes`
+* `fix_dashes`, (_default_: `true`)
 	- replace double dash to ndash and triple dash to mdash
 
 
-* `fix_three_dots`
+* `fix_three_dots`, (_default_: `true`)
 	- replace three dots with ellipsis
 
 
-* `normalize_ellipsis`
+* `normalize_ellipsis`, (_default_: `true`)
 	- replace more than one ellipsis with one
 
 
-* `fix_english_quotes_pairs`
+* `fix_english_quotes_pairs`, (_default_: `true`)
 	- replace English quotes pairs (`“”`) with their Persian equivalent (`«»`)
 
 
-* `fix_english_quotes`
+* `fix_english_quotes`, (_default_: `true`)
 	- replace English quotes, commas and semicolons with their Persian equivalent
 
 
-* `fix_hamzeh`
+* `fix_hamzeh`, (_default_: `true`)
 	- convert `ه ی` to `هٔ`
 	- convert `ه ء` to `هٔ`
 
 
-* `cleanup_rlm`
+* `cleanup_rlm`, (_default_: `true`)
 	- converting Right-to-left marks followed by Persian characters to zero-width non-joiners (ZWNJ)
 
 
-* `cleanup_zwnj`
-	- remove more than one zwnj chars
-	- remove unnecessary zwnj chars that are succeeded/preceded by a space
-	- clean zwnj chars after Persian characters that don't conncet to the next letter
-	- clean zwnj chars before English characters
-	- clean zwnj chars after and before punctuation
-	- clean zwnj chars before diacritic characters
+* `cleanup_zwnj`, (_default_: `true`)
+	- converts all soft hyphens (`&shy;`) into zwnj
+	- removes more than one zwnj
+	- cleans zwnj after characters that don't conncet to the next letter
+	- cleans zwnj before diacritic characters
+	- cleans zwnj before english characters
+	- cleans zwnj before and after punctuations
+	- removes unnecessary zwnj succeeded/preceded by spaces
+	- removes unnecessary zwnj on start/end of each line
 
 
-* `fix_arabic_numbers`
+
+* `fix_arabic_numbers`, (_default_: `true`)
 	- replace Arabic numbers with their Persian equivalent
 
 
-* `fix_english_numbers`
+* `fix_english_numbers`, (_default_: `true`)
 	- replace English numbers with their Persian equivalent
 	- should not replace English numbers in English phrases
 
 
-* `skip_markdown_ordered_lists_numbers_conversion`
-	- skip converting English numbers of ordered lists in markdown
-
-
-* `fix_misc_non_persian_chars`
+* `fix_misc_non_persian_chars`, (_default_: `true`)
 	- replace Arabic kaf with its Persian equivalent
 	- replace Arabic/Urdu/Pushtu/Uyghur Yeh with its Persian equivalent
 	- replace Kurdish He with its Persian equivalent
 
 
-* `fix_punctuations`
+* `fix_punctuations`, (_default_: `true`)
 	- replace `%`, `,`, `;` with its Persian equivalent
 
 
-* `fix_question_mark`
+* `fix_question_mark`, (_default_: `true`)
 	- replace question marks with its Persian equivalent
 
 
-* `fix_perfix_spacing`
+* `fix_perfix_spacing`, (_default_: `true`)
 	- put zwnj between word and prefix:
 		- `mi*`, `nemi*`, `bi*`
 
 
-* `fix_suffix_spacing`
+* `fix_suffix_spacing`, (_default_: `true`)
 	- put zwnj between word and suffix:
 		- `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`
 		- `*ha`, `*haye`
@@ -141,65 +136,85 @@ _all options are **enabled** by default._
 		- `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`
 
 
-* `fix_spacing_for_braces_and_quotes`
-	- fix spacing for `()` `[]` `{}`  `“”` `«»` (one space outside, no space inside)
-	- correct `:;,.?!` spacing (one space after and no space before)
+* `fix_spacing_for_braces_and_quotes`, (_default_: `true`)
+	- removes inside spaces and more than one outside for `()`, `[]`, `{}`, `“”` and `«»`
 
 
-* `cleanup_spacing`
+* `fix_spacing_for_punctuations`, (_default_: `true`)
+	- one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and `؟`
+	- removes space after colon that separates time parts
+	- removes space after dots in numbers
+	- removes space between question and exclamation marks
+	- removes space between same marks
+
+
+* `cleanup_spacing`, (_default_: `true`)
 	- replace more than one space with just a single one
 	- clean spaces before diacritic characters
 
 
-* `cleanup_line_breaks`
+* `cleanup_line_breaks`, (_default_: `true`)
 	- remove more than **two** contiguous line breaks
 
 
-* `cleanup_begin_and_end`
+* `cleanup_begin_and_end`, (_default_: `true`)
 	- remove spaces, tabs, and new lines from the beginning and end of text
 
+#### markdown
+* `markdown_normalize_braces`, (_default_: `true`)
+	- removes spaces between `[]` and `()` (`[text] (link)` into `[text](link)`)
+	- removes spaces inside double `()`, `[]`, `{}` (`[[ text ]]` into `[[text]]`)
+	- removes spaces between double `()`, `[]`, `{}` (`[[text] ]` into `[[text]]`)
+
+* `markdown_normalize_lists`, (_default_: `true`)
+	- removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`
+
+* `skip_markdown_ordered_lists_numbers_conversion`, (_default_: `false`)
+	- skip converting English numbers of ordered lists in markdown
+
 #### aggressive editing
-* `aggresive`
-	- enable/disable aggressive editing
+* `cleanup_extra_marks`, (_default_: `true`)
+	- replace more than one of `!`, `?` or `؟` marks with just one
+	- re-order consecutive marks: `?!` into `!?`
 
 
-* `cleanup_extra_marks`
-	- replace more than one `!` or `?` mark with just one
-
-
-* `kashidas_as_parenthetic`
+* `kashidas_as_parenthetic`, (_default_: `true`)
 	- replace kashidas to ndash in parenthetic
 
 
-* `cleanup_kashidas`
+* `cleanup_kashidas`, (_default_: `true`)
 	- remove all kashidas
 
 #### extras
-* `preserve_HTML`
+* `preserve_frontmatter`, (_default_: `true`)
+	- preserve frontmatter data
+
+
+* `preserve_HTML`, (_default_: `true`)
 	- preserve all HTML tags
 
 
-* `preserve_comments`
+* `preserve_comments`, (_default_: `true`)
 	- preserve all HTML comments
 
 
-* `preserve_entities`
+* `preserve_entities`, (_default_: `true`)
 	- preserve all HTML entities
 
 
-* `preserve_URIs`
+* `preserve_URIs`, (_default_: `true`)
 	- preserve all URI links in the text
 
 
-* `preserve_brackets`
+* `preserve_brackets`, (_default_: `false`)
 	- preserve strings inside square brackets (`[]`)
 
 
-* `preserve_braces`
+* `preserve_braces`, (_default_: `false`)
 	- preserve strings inside curly braces (`{}`)
 
 
-* `preserve_nbsps`
+* `preserve_nbsps`, (_default_: `true`)
 	- preserve all no-break spaces
 
 ## License
