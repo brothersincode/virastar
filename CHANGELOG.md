@@ -1,3 +1,30 @@
+### 0.19.0
+- Added: (undocumented) fix heh + ye, alternative to `fix_hamzeh`
+- Added: cleaning whitespace/zwnj between new-lines on `cleanup_spacing`
+- Added: new option `fix_numeral_symbols` to replace percent signs and decimal separators, props @ebraminio/persiantools
+- Added: new option `fix_persian_glyphs` to replace glyph chars, props @ebraminio/persiantools
+- Added: new option `fix_suffix_misc` to fix hamza with double yeh, props @ebraminio/persiantools
+- Added: new option `markdown_normalize_braces`
+- Added: new option `markdown_normalize_lists`
+- Added: new option `preserve_frontmatter` to preserve frontmatter data
+- Added: padding the end of string while cleanup
+- Added: re-ordering extra marks: `?!` into `!?`
+- Added: removing space between same marks
+- Added: removing unnecessary zwnj on start/end of each line, props @ebraminio/persiantools
+- Added: replacing more than one english question mark with just one
+- Added: skip cleanup if text is empty or whitespace
+- Added: storing markdown links separetly to help space cleanup working
+- Changed: deprecated `aggresive` option
+- Changed: moved cleaning whitespaces before newlines to `cleanup_begin_and_end`
+- Changed: new option `fix_spacing_for_punctuations` extracted from `fix_spacing_for_braces_and_quotes`
+- Changed: simpler pattern for preserving URIs
+- Changed: some options disabled by default: `preserve_braces`, `preserve_brackets`, `skip_markdown_ordered_lists_numbers_conversion`
+- Fixed: account for punctuations, braces and quots after suffixes
+- Fixed: account for zwnj after yeh on fixing hamzeh
+- Fixed: copy options object before parsing
+- Fixed: putting back correct whitespace on cleaning zwnjs
+- Fixed: unescaped char on space after dots in numbers
+
 ### 0.18.0
 - Added: new option `normalize_ellipsis` to replace more than one ellipsis with one
 - Added: convert all soft hyphens into zwnj, on `cleanup_zwnj`
