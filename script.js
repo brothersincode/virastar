@@ -142,7 +142,8 @@
         that.doDownload();
       });
 
-      this.reset.addEventListener('click', function () {
+      this.reset.addEventListener('click', function (event) {
+        event.preventDefault();
         that.removeStorage('options');
         that.initSettings();
         that.doChange();
