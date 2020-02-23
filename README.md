@@ -100,7 +100,6 @@ Virastar comes with a list of options to control its behavior.
 	- removes unnecessary zwnj on start/end of each line
 
 
-
 * `fix_arabic_numbers`, (_default_: `true`)
 	- replace Arabic numbers with their Persian equivalent
 
@@ -109,6 +108,10 @@ Virastar comes with a list of options to control its behavior.
 	- replace English numbers with their Persian equivalent
 	- should not replace English numbers in English phrases
 
+* `fix_numeral_symbols`, (_default_: `true`)
+	- replaces english percent signs (U+066A)
+	- replaces dots between numbers into decimal separator (U+066B)
+	- replaces commas between numbers into thousands separator (U+066C)
 
 * `fix_misc_non_persian_chars`, (_default_: `true`)
 	- replace Arabic kaf with its Persian equivalent
@@ -131,8 +134,8 @@ Virastar comes with a list of options to control its behavior.
 
 * `fix_suffix_spacing`, (_default_: `true`)
 	- put zwnj between word and suffix:
-		- `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`
 		- `*ha`, `*haye`
+		- `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`, `*man`, `*tan`, `*shan`
 		- `*tar`, `*tari`, `*tarin`
 		- `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`
 
@@ -145,9 +148,13 @@ Virastar comes with a list of options to control its behavior.
 	- one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and `؟`
 	- removes space after colon that separates time parts
 	- removes space after dots in numbers
+	- removes space before some common domain tlds
 	- removes space between question and exclamation marks
 	- removes space between same marks
 
+* `fix_diacritics`, (_default_: `true`)
+	- cleans zwnj before diacritic characters
+	- cleans spaces before diacritic characters
 
 * `cleanup_spacing`, (_default_: `true`)
 	- replace more than one space with just a single one
