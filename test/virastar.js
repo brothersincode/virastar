@@ -395,5 +395,17 @@ describe('Virastar.js', function () {
     it('extra: fixDiacritics():‌ cleans more than one diacritic characters', function () {
       assert.strictEqual(virastar.cleanup('لطفاًً'), 'لطفاً');
     });
+
+    it('extra: fixNumeralSymbols(): replaces english percent signs', function () {
+      assert.strictEqual(virastar.cleanup('۹۶%'), '۹۶٪');
+    });
+
+    it('extra: fixNumeralSymbols(): replaces dots between numbers into decimal separator', function () {
+      assert.strictEqual(virastar.cleanup('۱۲.۵۶'), '۱۲٫۵۶');
+    });
+
+    it('extra: fixNumeralSymbols(): replaces commas between numbers into thousands separator', function () {
+      assert.strictEqual(virastar.cleanup('۱۲,۵۴۳'), '۱۲٬۵۴۳');
+    });
   });
 });
