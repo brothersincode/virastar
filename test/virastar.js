@@ -380,6 +380,10 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام!'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام!'); // followed by exclamation
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام؟'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام؟'); // followed by question
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام'); // as last word (with the help of padding)
+
+      assert.strictEqual(virastar.cleanup('و به چلو ماهی و باسلوق و مترادف کرده ایم، محض خالی نبودن عریضه دیوان حافظ را هم تنگش زده ایم. سوءتفاهم نشود.'), 'و به چلو ماهی و باسلوق و مترادف کرده‌ایم، محض خالی نبودن عریضه دیوان حافظ را هم تنگش زده‌ایم. سوءتفاهم نشود.');
+      assert.strictEqual(virastar.cleanup('عرضم این است که ما در بیداری نیز خود را فریب می دهیم و به شکم چرانی مان صبغه فرهیختگی می زنیم.'), 'عرضم این است که ما در بیداری نیز خود را فریب می‌دهیم و به شکم چرانی‌مان صبغه فرهیختگی می‌زنیم.');
+      assert.strictEqual(virastar.cleanup('به خواب های تان دقت کنید.'), 'به خواب‌های‌تان دقت کنید.');
     });
 
     it('extra: fixSuffixMisc()', function () {
