@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2/7/2020, 12:33:54 PM
+# 2/23/2020, 12:49:59 PM
 
 index.html
 style.css
@@ -26,7 +26,7 @@ https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css
 https://fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Bold.woff2
 https://fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Regular.woff2
 
-https://cdn.jsdelivr.net/gh/brothersincode/virastar@v0.19.0/lib/virastar.js
+https://cdn.jsdelivr.net/gh/brothersincode/virastar@v0.19.1/lib/virastar.js
 https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.4/dist/clipboard.min.js
 
 NETWORK:
