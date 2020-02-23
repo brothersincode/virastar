@@ -20,7 +20,7 @@
     "mocha": "^7.0.1",
     "semistandard": "^14.2.0",
     "sprintf-js": "^1.1.2",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.2.0"
   },
   "semistandard": {
     "ignore": [
