@@ -13,11 +13,13 @@
     "demo"
   ],
   "main": "script.js",
-  "scripts": {},
+  "scripts": {
+    "serve": "http-server -c-1"
+  },
   "dependencies": {},
   "devDependencies": {
     "semistandard": "^14.2.0",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.2.0"
   },
   "semistandard": {
     "globals": [
