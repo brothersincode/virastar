@@ -391,5 +391,9 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('خانه‌ئی بر روی آب'), 'خانه‌ای بر روی آب');
       assert.strictEqual(virastar.cleanup('خانه‌یی بر روی آب'), 'خانه‌ای بر روی آب');
     });
+
+    it('extra: fixDiacritics():‌ cleans more than one diacritic characters', function () {
+      assert.strictEqual(virastar.cleanup('لطفاًً'), 'لطفاً');
+    });
   });
 });
