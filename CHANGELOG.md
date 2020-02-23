@@ -1,3 +1,16 @@
+### 0.19.1
+- Added: cleaning more than one of diacritic chars on `fix_diacritics`, props @languagetool-org
+- Added: extra method for converting persian numbers back
+- Added: fix another arabic kaf char on `fix_misc_non_persian_chars`
+- Added: removes space before common domain tlds on `fix_spacing_for_punctuations`
+- Added: replace comma between numbers to thousands separators on `fix_numeral_symbols`
+- Added: support for man tan shan suffixes
+- Changed: begin/end space cleanup after preservers
+- Changed: extract diacritics fixes as new option: `fix_diacritics`
+- Changed: yet another pattern for preserving URIs, ([ref](https://stackoverflow.com/a/6927878/))
+- Fixed: fix ha haye before other suffixes
+- Fixed: support for more punctuation types after suffixes
+
 ### 0.19.0
 - Added: (undocumented) fix heh + ye, alternative to `fix_hamzeh`
 - Added: cleaning whitespace/zwnj between new-lines on `cleanup_spacing`
