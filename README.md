@@ -87,6 +87,10 @@ Virastar comes with a list of options to control its behavior.
 	- replaces `هٓ` or single-character `ۀ` with the standard `هٔ`
 
 
+* `fix_hamzeh_arabic`, (_default_: `false`)
+	- converts arabic hamzeh `ة` to `هٔ`
+
+
 * `cleanup_rlm`, (_default_: `true`)
 	- converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)
 

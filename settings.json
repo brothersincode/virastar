@@ -67,6 +67,14 @@
       "default": true
     },
     {
+      "key": "fix_hamzeh_arabic",
+      "label": "Fix Hamzeh Arabic",
+      "description": [
+        "converts arabic hamzeh ة to هٔ"
+      ],
+      "default": false
+    },
+    {
       "key": "cleanup_rlm",
       "label": "Cleanup RLM",
       "description": [

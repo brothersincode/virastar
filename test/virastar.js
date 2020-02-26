@@ -411,5 +411,10 @@ describe('Virastar.js', function () {
     it('extra: cleanupKashidas(): converts kashida between numbers to ndash', function () {
       assert.strictEqual(virastar.cleanup('۱۱ـ۲۳'), '۱۱–۲۳');
     });
+
+    it('extra: fixHamzehArabic(): converts arabic hamza', function () {
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله',{fix_hamzeh_arabic: true}), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله',{fix_hamzeh_arabic: true,fix_hamzeh: false}), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
+    });
   });
 });
