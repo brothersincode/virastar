@@ -1,4 +1,4 @@
-(function () {
+(function (w) {
   var virastar;
   var clipboard;
   var app = {
@@ -85,19 +85,19 @@
         return def;
       }
 
-      var stored = window.localStorage.getItem(key);
+      var stored = w.localStorage.getItem(key);
       return stored ? JSON.parse(stored) : def;
     },
 
     setStorage: function (data, key) {
       if (this.storage) {
-        window.localStorage.setItem(key, JSON.stringify(data));
+        w.localStorage.setItem(key, JSON.stringify(data));
       }
     },
 
     removeStorage: function (key) {
       if (this.storage) {
-        window.localStorage.removeItem(key);
+        w.localStorage.removeItem(key);
       }
     },
 
@@ -192,7 +192,7 @@
     }
   };
 
-  window.onload = function () {
+  w.onload = function () {
     app.init();
   };
-})();
+})(window);
