@@ -25,13 +25,8 @@
     "globals": [
       "Virastar",
       "ClipboardJS",
-      "syncscroll"
+      "syncscroll",
+      "confirm"
     ]
-  },
-  "eslintConfig": {
-    "rules": {
-      "quote-props": "off",
-      "no-prototype-builtins": "off"
-    }
   }
 }
