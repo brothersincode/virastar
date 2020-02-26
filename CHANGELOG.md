@@ -1,5 +1,5 @@
 ### [develop]
-- Added: support for more punctuations before/after zwnjs
+- Added: support for more punctuations before/after zwnjs cleanup
 
 ### 0.19.1
 - Added: cleaning more than one of diacritic chars on `fix_diacritics`, props @languagetool-org
