@@ -412,9 +412,14 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('۱۱ـ۲۳'), '۱۱–۲۳');
     });
 
+    it('extra: kashidasAsParenthetic(): replaces kashidas to ndash in parenthetic', function () {
+      assert.strictEqual(virastar.cleanup('ما مردم افغانستان ـکه همواره به فتوحات پادشاهان خویش در هند می‌بالیمـ شاید حالا که دو دهه رنج تهاجم بیگانگان را چشیده‌ایم‌، بتوانیم درد و رنج مردم هند را در دوران لشکرکشی‌های اجدادمان دریابیم‌.'),
+        'ما مردم افغانستان –که همواره به فتوحات پادشاهان خویش در هند می‌بالیم– شاید حالا که دو دهه رنج تهاجم بیگانگان را چشیده‌ایم، بتوانیم درد و رنج مردم هند را در دوران لشکرکشی‌های اجدادمان دریابیم.');
+    });
+
     it('extra: fixHamzehArabic(): converts arabic hamza', function () {
-      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله',{fix_hamzeh_arabic: true}), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
-      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله',{fix_hamzeh_arabic: true,fix_hamzeh: false}), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true }), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true, fix_hamzeh: false }), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
     });
   });
 });
