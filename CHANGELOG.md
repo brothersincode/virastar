@@ -1,3 +1,6 @@
+### [develop]
+- Added: support for more punctuations before/after zwnjs
+
 ### 0.19.1
 - Added: cleaning more than one of diacritic chars on `fix_diacritics`, props @languagetool-org
 - Added: extra method for converting persian numbers back

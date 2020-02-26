@@ -95,9 +95,7 @@ Virastar comes with a list of options to control its behavior.
 	- converts all soft hyphens (`&shy;`) into zwnj
 	- removes more than one zwnj
 	- cleans zwnj after characters that don't conncet to the next
-	- cleans zwnj before english characters
-	- cleans zwnj before and after punctuations
-	- removes unnecessary zwnj succeeded/preceded by spaces
+	- cleans zwnj before and after english words, spaces and punctuations
 	- removes unnecessary zwnj on start/end of each line
 
 
