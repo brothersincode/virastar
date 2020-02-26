@@ -40,7 +40,7 @@ virastar.cleanup("فارسي را كمی درست تر می نويسيم"); // O
 ##### text
 Type: `string`
 
-String of Persian source to be cleaned.
+string of persian source to be cleaned.
 
 ##### options
 Type: `object`
@@ -53,47 +53,48 @@ Virastar("سلام 123" ,{"fix_english_numbers":false}); // Outputs: "سلام 1
 Virastar comes with a list of options to control its behavior.
 
 * `normalize_eol`, (_default_: `true`)
-	- replace Windows end of lines with Unix EOL (`\n`)
+	- replaces windows end of lines with unix eol (`\n`)
 
 
 * `decode_htmlentities`, (_default_: `true`)
-	- converts all HTML characterSets into original characters
+	- converts numeral and selected html character-sets into original characters
 
 
 * `fix_dashes`, (_default_: `true`)
-	- replace double dash to ndash and triple dash to mdash
+	- replaces triple dash to mdash
+	- replaces double dash to ndash
 
 
 * `fix_three_dots`, (_default_: `true`)
-	- replace three dots with ellipsis
+	- replaces three dots with ellipsis character
 
 
 * `normalize_ellipsis`, (_default_: `true`)
-	- replace more than one ellipsis with one
+	- replaces more than one ellipsis with one
 
 
 * `fix_english_quotes_pairs`, (_default_: `true`)
-	- replace English quotes pairs (`“”`) with their Persian equivalent (`«»`)
+	- replaces english quote pairs (`“”`) with their persian equivalent (`«»`)
 
 
 * `fix_english_quotes`, (_default_: `true`)
-	- replace English quotes, commas and semicolons with their Persian equivalent
+	- replaces english quote marks with their persian equivalent
 
 
 * `fix_hamzeh`, (_default_: `true`)
-	- convert `ه ی` to `هٔ`
-	- convert `ه ء` to `هٔ`
+	- replaces `ه` followed by (space|ZWNJ|lrm) follow by `ی` with `هٔ`
+	- replaces `ه` followed by (space|ZWNJ|lrm|nothing) follow by `ء` with `هٔ`
+	- replaces `هٓ` or single-character `ۀ` with the standard `هٔ`
 
 
 * `cleanup_rlm`, (_default_: `true`)
-	- converting Right-to-left marks followed by Persian characters to zero-width non-joiners (ZWNJ)
+	- converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)
 
 
 * `cleanup_zwnj`, (_default_: `true`)
 	- converts all soft hyphens (`&shy;`) into zwnj
 	- removes more than one zwnj
-	- cleans zwnj after characters that don't conncet to the next letter
-	- cleans zwnj before diacritic characters
+	- cleans zwnj after characters that don't conncet to the next
 	- cleans zwnj before english characters
 	- cleans zwnj before and after punctuations
 	- removes unnecessary zwnj succeeded/preceded by spaces
@@ -101,44 +102,47 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `fix_arabic_numbers`, (_default_: `true`)
-	- replace Arabic numbers with their Persian equivalent
+	- replaces arabic numbers with their persian equivalent
 
 
 * `fix_english_numbers`, (_default_: `true`)
-	- replace English numbers with their Persian equivalent
-	- should not replace English numbers in English phrases
+	- replaces english numbers with their persian equivalent
+
 
 * `fix_numeral_symbols`, (_default_: `true`)
 	- replaces english percent signs (U+066A)
 	- replaces dots between numbers into decimal separator (U+066B)
 	- replaces commas between numbers into thousands separator (U+066C)
 
+
 * `fix_misc_non_persian_chars`, (_default_: `true`)
-	- replace Arabic kaf with its Persian equivalent
-	- replace Arabic/Urdu/Pushtu/Uyghur Yeh with its Persian equivalent
-	- replace Kurdish He with its Persian equivalent
+	- replaces arabic normal/swash kaf with its persian equivalent
+	- replaces arabic/urdu/pushtu/uyghur yeh with its persian equivalent
+	- replaces kurdish he with its persian equivalent
 
 
 * `fix_punctuations`, (_default_: `true`)
-	- replace `%`, `,`, `;` with its Persian equivalent
+	- replaces `,`, `;` with its persian equivalent
 
 
 * `fix_question_mark`, (_default_: `true`)
-	- replace question marks with its Persian equivalent
+	- replaces question marks with its persian equivalent
 
 
 * `fix_perfix_spacing`, (_default_: `true`)
-	- put zwnj between word and prefix:
+	- puts zwnj between the word and the prefix:
 		- `mi*`, `nemi*`, `bi*`
 
 
 * `fix_suffix_spacing`, (_default_: `true`)
-	- put zwnj between word and suffix:
+	- puts zwnj between the word and the suffix:
 		- `*ha`, `*haye`
 		- `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`, `*man`, `*tan`, `*shan`
 		- `*tar`, `*tari`, `*tarin`
 		- `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`
 
+* `fix_suffix_misc`, (_default_: `true`)
+	- replaces `ه` followed by `ئ` or `ی`, and then by `ی`, with `ه‌ای`
 
 * `fix_spacing_for_braces_and_quotes`, (_default_: `true`)
 	- removes inside spaces and more than one outside for `()`, `[]`, `{}`, `“”` and `«»`
@@ -152,21 +156,27 @@ Virastar comes with a list of options to control its behavior.
 	- removes space between question and exclamation marks
 	- removes space between same marks
 
+
 * `fix_diacritics`, (_default_: `true`)
 	- cleans zwnj before diacritic characters
+	- cleans more than one diacritic characters
 	- cleans spaces before diacritic characters
 
+* `fix_persian_glyphs`, (_default_: `true`)
+	- converts incorrect persian glyphs to standard characters
+
 * `cleanup_spacing`, (_default_: `true`)
-	- replace more than one space with just a single one
-	- clean spaces before diacritic characters
+	- replaces more than one space with just a single one
+	- cleans whitespace/zwnj between new-lines
 
 
 * `cleanup_line_breaks`, (_default_: `true`)
-	- remove more than **two** contiguous line breaks
+	- cleans more than **two** contiguous line breaks
 
 
 * `cleanup_begin_and_end`, (_default_: `true`)
-	- remove spaces, tabs, and new lines from the beginning and end of text
+	- cleans white-spaces beginning the new-lines
+	- removes spaces, tabs, zwnj, direction marks and new lines from the beginning and end of text
 
 #### markdown
 * `markdown_normalize_braces`, (_default_: `true`)
@@ -178,52 +188,53 @@ Virastar comes with a list of options to control its behavior.
 	- removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`
 
 * `skip_markdown_ordered_lists_numbers_conversion`, (_default_: `false`)
-	- skip converting English numbers of ordered lists in markdown
+	- skips converting english numbers of ordered lists in markdown
 
 #### aggressive editing
 * `cleanup_extra_marks`, (_default_: `true`)
-	- replace more than one of `!`, `?` or `؟` marks with just one
-	- re-order consecutive marks: `?!` into `!?`
+	- replaces more than one exclamation mark with just one
+	- replaces more than one english or persian question mark with just one
+	- re-orders consecutive marks: `?!` into `!?`
 
 
 * `kashidas_as_parenthetic`, (_default_: `true`)
-	- replace kashidas to ndash in parenthetic
+	- replaces kashidas to ndash in parenthetic
 
 
 * `cleanup_kashidas`, (_default_: `true`)
-	- remove all kashidas
+	- removes all kashidas between non-whitespace characters
 
 #### extras
 * `preserve_frontmatter`, (_default_: `true`)
-	- preserve frontmatter data
+	- preserves frontmatter data in the text
 
 
 * `preserve_HTML`, (_default_: `true`)
-	- preserve all HTML tags
+	- preserves all html tags in the text
 
 
 * `preserve_comments`, (_default_: `true`)
-	- preserve all HTML comments
+	- preserves all html comments in the text
 
 
 * `preserve_entities`, (_default_: `true`)
-	- preserve all HTML entities
+	- preserves all html entities in the text
 
 
 * `preserve_URIs`, (_default_: `true`)
-	- preserve all URI links in the text
+	- preserves all uri strings in the text
 
 
 * `preserve_brackets`, (_default_: `false`)
-	- preserve strings inside square brackets (`[]`)
+	- preserves strings inside square brackets (`[]`)
 
 
 * `preserve_braces`, (_default_: `false`)
-	- preserve strings inside curly braces (`{}`)
+	- preserves strings inside curly braces (`{}`)
 
 
 * `preserve_nbsps`, (_default_: `true`)
-	- preserve all no-break spaces
+	- preserves all no-break space entities in the text
 
 ## License
 

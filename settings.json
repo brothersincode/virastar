@@ -1,0 +1,349 @@
+{
+  "options": [{
+      "key": "normalize_eol",
+      "label": "Normalize eol",
+      "description": [
+        "replaces windows end of lines with unix eol (`\n`)"
+      ],
+      "default": true
+    },
+    {
+      "key": "decode_htmlentities",
+      "label": "Decode HTML Entities",
+      "description": [
+        "converts numeral and selected html character-sets into original characters"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_dashes",
+      "label": "Fix Dashes",
+      "description": [
+        "replaces triple dash to mdash",
+        "replaces double dash to ndash"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_three_dots",
+      "label": "Fix three dots",
+      "description": [
+        "replaces three dots with ellipsis character"
+      ],
+      "default": true
+    },
+    {
+      "key": "normalize_ellipsis",
+      "label": "Normalize Ellipsis",
+      "description": [
+        "replaces more than one ellipsis with one"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_english_quotes_pairs",
+      "label": "Fix English Quotes Pairs",
+      "description": [
+        "replaces english quote pairs with their persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_english_quotes",
+      "label": "Fix English Quotes",
+      "description": [
+        "replaces english quote marks with their persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_hamzeh",
+      "label": "Fix Hamzeh",
+      "description": [
+        "replaces ه followed by (space|ZWNJ|lrm) follow by ی with هٔ",
+        "replaces ه followed by (space|ZWNJ|lrm|nothing) follow by ء with هٔ",
+        "replaces هٓ or single-character ۀ with the standard هٔ"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_rlm",
+      "label": "Cleanup RLM",
+      "description": [
+        "converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_zwnj",
+      "label": "Cleanup ZWNJ",
+      "description": [
+        "converts all soft hyphens (&shy;) into zwnj",
+        "removes more than one zwnj",
+        "cleans zwnj after characters that don't conncet to the next",
+        "cleans zwnj before english characters",
+        "cleans zwnj before and after punctuations",
+        "removes unnecessary zwnj succeeded/preceded by spaces",
+        "removes unnecessary zwnj on start/end of each line"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_spacing_for_braces_and_quotes",
+      "label": "Fix Spacing for Braces and Quotes",
+      "description": [
+        "removes inside spaces and more than one outside for `()`, `[]`, `{}`, `“”` and `«»`"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_arabic_numbers",
+      "label": "Fix Arabic Numbers",
+      "description": [
+        "replaces arabic numbers with their persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_english_numbers",
+      "label": "Fix English Numbers",
+      "description": [
+        "replaces english numbers with their persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_misc_non_persian_chars",
+      "label": "Fix Misc Non-Persian Chars",
+      "description": [
+        "replaces arabic normal/swash kaf with its persian equivalent",
+        "replaces arabic/urdu/pushtu/uyghur yeh with its persian equivalent",
+        "replaces kurdish he with its persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_punctuations",
+      "label": "Fix Punctuations",
+      "description": [
+        "replaces `,`, `;` with its persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_question_mark",
+      "label": "Fix Question Marks",
+      "description": [
+        "replaces question marks with its persian equivalent"
+      ],
+      "default": true
+    },
+    {
+      "key": "skip_markdown_ordered_lists_numbers_conversion",
+      "label": "Skip Markdown Ordered Lists Numbers Conversion",
+      "description": [
+        "skips converting english numbers of ordered lists in markdown"
+      ],
+      "default": false
+    },
+    {
+      "key": "fix_perfix_spacing",
+      "label": "Fix Perfix Spacing",
+      "description": [
+        "puts zwnj between the word and the prefix: `mi*`, `nemi*`, `bi*`"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_suffix_spacing",
+      "label": "Fix Suffix Spacing",
+      "description": [
+        "put zwnj between word and suffix: `*am`, `*at`, `*ash`, `*ei`, `*eid`, `*eem`, `*and`, `*man`, `*tan`, `*shan`, `*ha`, `*haye`, `*tar`, `*tari`, `*tarin`, `*hayee`, `*hayam`, `*hayat`, `*hayash`, `*hayetan`, `*hayeman`, `*hayeshan`"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_suffix_misc",
+      "label": "Fix Suffix Misc",
+      "description": [
+        "replaces `ه` followed by `ئ` or `ی`, and then by `ی`, with `ه‌ای`"
+      ],
+      "default": true
+    },
+    {
+      "key": "kashidas_as_parenthetic",
+      "label": "Kashidas as Parenthetic",
+      "description": [
+        "replaces kashidas to ndash in parenthetic"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_kashidas",
+      "label": "Cleanup Kashidas",
+      "description": [
+        "removes all kashidas between non-whitespace characters"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_extra_marks",
+      "label": "Cleanup Extra Marks",
+      "description": [
+        "replaces more than one exclamation mark with just one",
+        "replaces more than one english or persian question mark with just one",
+        "re-orders consecutive marks: `?!` into `!?`"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_spacing",
+      "label": "Cleanup Spacing",
+      "description": [
+        "replaces more than one space with just a single one",
+        "cleans whitespace/zwnj between new-lines"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_line_breaks",
+      "label": "Cleanup Line Breaks",
+      "description": [
+        "cleans more than *two* contiguous line breaks"
+      ],
+      "default": true
+    },
+    {
+      "key": "cleanup_begin_and_end",
+      "label": "Cleanup Begin and End",
+      "description": [
+        "cleans white-spaces beginning the new-lines",
+        "removes spaces, tabs, zwnj, direction marks and new lines from the beginning and end of text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_HTML",
+      "label": "Preserve HTML",
+      "description": [
+        "preserves all html tags in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_comments",
+      "label": "Preserve Comments",
+      "description": [
+        "preserves all html comments in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_entities",
+      "label": "Preserve Entities",
+      "description": [
+        "preserves all html entities in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_frontmatter",
+      "label": "Preserve Frontmatter",
+      "description": [
+        "preserves frontmatter data in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_URIs",
+      "label": "Preserve URIs",
+      "description": [
+        "preserves all uri strings in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_nbsps",
+      "label": "Preserve NBSPs",
+      "description": [
+        "preserves all no-break space entities in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_brackets",
+      "label": "Preserve Brackets",
+      "description": [
+        "preserves strings inside square brackets (`[]`)"
+      ],
+      "default": false
+    },
+    {
+      "key": "preserve_braces",
+      "label": "Preserve Braces",
+      "description": [
+        "preserves strings inside curly braces (`{}`)"
+      ],
+      "default": false
+    },
+    {
+      "key": "fix_diacritics",
+      "label": "Fix Diacritics",
+      "description": [
+        "cleans zwnj before diacritic characters",
+        "cleans more than one diacritic characters",
+        "cleans spaces before diacritic characters"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_numeral_symbols",
+      "label": "Fix Numeral Symbols",
+      "description": [
+        "replaces english percent signs (U+066A)",
+        "replaces dots between numbers into decimal separator (U+066B)",
+        "replaces commas between numbers into thousands separator (U+066C)"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_persian_glyphs",
+      "label": "Fix Persian Glyphs",
+      "description": [
+        "converts incorrect persian glyphs to standard characters"
+      ],
+      "default": true
+    },
+    {
+      "key": "fix_spacing_for_punctuations",
+      "label": "Fix Spacing for Punctuations",
+      "description": [
+        "one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and `؟`",
+        "removes space after colon that separates time parts",
+        "removes space after dots in numbers",
+        "removes space before some common domain tlds",
+        "removes space between question and exclamation marks",
+        "removes space between same marks"
+      ],
+      "default": true
+    },
+    {
+      "key": "markdown_normalize_braces",
+      "label": "Markdown Normalize Braces",
+      "description": [
+        "removes spaces between `[]` and `()` (`[text] (link)` into `[text](link)`)",
+        "removes spaces inside double `()`, `[]`, `{}` (`[[ text ]]` into `[[text]]`)",
+        "removes spaces between double `()`, `[]`, `{}` (`[[text] ]` into `[[text]]`)"
+      ],
+      "default": true
+    },
+    {
+      "key": "markdown_normalize_lists",
+      "label": "Markdown Normalize Lists",
+      "description": [
+        "removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`"
+      ],
+      "default": true
+    }
+  ]
+}
