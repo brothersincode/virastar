@@ -194,5 +194,15 @@
 
   w.onload = function () {
     app.init();
+
+    // check if a new cache is available on page load
+    // @REF: https://www.html5rocks.com/en/tutorials/appcache/beginner/
+    w.applicationCache.addEventListener('updateready', function (e) {
+      if (w.applicationCache.status === w.applicationCache.UPDATEREADY) {
+        if (confirm('نگارش تازه‌تری از ویراستار در دسترس است. بارگیری دوباره؟')) {
+          w.location.reload();
+        }
+      }
+    }, false);
   };
 })(window);
