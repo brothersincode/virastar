@@ -180,6 +180,7 @@
       "key": "cleanup_kashidas",
       "label": "Cleanup Kashidas",
       "description": [
+        "converts kashida between numbers to ndash",
         "removes all kashidas between non-whitespace characters"
       ],
       "default": true

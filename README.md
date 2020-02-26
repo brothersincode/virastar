@@ -200,6 +200,7 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `cleanup_kashidas`, (_default_: `true`)
+	- converts kashida between numbers to ndash
 	- removes all kashidas between non-whitespace characters
 
 #### extras

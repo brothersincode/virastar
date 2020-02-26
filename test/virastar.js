@@ -407,5 +407,9 @@ describe('Virastar.js', function () {
     it('extra: fixNumeralSymbols(): replaces commas between numbers into thousands separator', function () {
       assert.strictEqual(virastar.cleanup('۱۲,۵۴۳'), '۱۲٬۵۴۳');
     });
+
+    it('extra: cleanupKashidas(): converts kashida between numbers to ndash', function () {
+      assert.strictEqual(virastar.cleanup('۱۱ـ۲۳'), '۱۱–۲۳');
+    });
   });
 });

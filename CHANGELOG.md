@@ -1,5 +1,6 @@
 ### [develop]
 - Added: support for more punctuations before/after zwnjs cleanup
+- Added: converting kashida between numbers to ndash
 
 ### 0.19.1
 - Added: cleaning more than one of diacritic chars on `fix_diacritics`, props @languagetool-org
