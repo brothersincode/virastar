@@ -62,7 +62,7 @@
         var name = this.toProperCase(option.replace(new RegExp(/_/, 'g'), ' '));
 
         checkbox.type = 'checkbox';
-        checkbox.checked = options.hasOwnProperty(option) ? options[option] : defaults[option];
+        checkbox.checked = options.hasOwnProperty(option) ? options[option] : defaults[option]; // eslint-disable-line no-prototype-builtins
         checkbox.name = 'opt[]';
         checkbox.value = option;
         checkbox.id = option;
@@ -95,7 +95,7 @@
       }
     },
 
-    removeStorage: function(key) {
+    removeStorage: function (key) {
       if (this.storage) {
         window.localStorage.removeItem(key);
       }
