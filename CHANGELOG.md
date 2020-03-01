@@ -2,6 +2,7 @@
 - Added: support for more punctuations before/after zwnjs cleanup
 - Added: converting kashida between numbers to ndash
 - Added: new option for converting arabic hamzeh
+- Changed: revert to the old and big uri pattern, [ref](https://github.com/jhermsmeier/uri.regex)
 - Fixed: also single padding on the beginning of the text
 
 ### 0.19.1
