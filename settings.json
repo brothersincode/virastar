@@ -326,7 +326,7 @@
       "key": "fix_spacing_for_punctuations",
       "label": "Fix Spacing for Punctuations",
       "description": [
-        "one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and `؟`",
+        "one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and their persian equivalents",
         "removes space after colon that separates time parts",
         "removes space after dots in numbers",
         "removes space before some common domain tlds",
