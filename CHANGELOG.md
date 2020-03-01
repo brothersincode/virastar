@@ -1,6 +1,7 @@
 ### [develop]
 - Added: converting kashida between numbers to ndash
 - Added: new option for converting arabic hamzeh
+- Added: replaces spaces after ellipsis
 - Added: support for markdown images
 - Added: support for more punctuations before/after zwnjs cleanup
 - Changed: revert to the old and big uri pattern, [ref](https://github.com/jhermsmeier/uri.regex)

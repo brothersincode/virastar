@@ -36,7 +36,8 @@
       "key": "normalize_ellipsis",
       "label": "Normalize Ellipsis",
       "description": [
-        "replaces more than one ellipsis with one"
+        "replaces more than one ellipsis with one",
+        "replaces (space|tab|zwnj) after ellipsis with one space"
       ],
       "default": true
     },

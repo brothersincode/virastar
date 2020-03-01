@@ -71,6 +71,7 @@ Virastar comes with a list of options to control its behavior.
 
 * `normalize_ellipsis`, (_default_: `true`)
 	- replaces more than one ellipsis with one
+	- replaces (space|tab|zwnj) after ellipsis with one space
 
 
 * `fix_english_quotes_pairs`, (_default_: `true`)
