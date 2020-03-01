@@ -339,6 +339,7 @@
       "label": "Markdown Normalize Braces",
       "description": [
         "removes spaces between `[]` and `()` (`[text] (link)` into `[text](link)`)",
+        "removes space between `!` and opening brace (`! [alt](src)` into `![alt](src)`)",
         "removes spaces inside double `()`, `[]`, `{}` (`[[ text ]]` into `[[text]]`)",
         "removes spaces between double `()`, `[]`, `{}` (`[[text] ]` into `[[text]]`)"
       ],

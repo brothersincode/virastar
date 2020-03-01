@@ -183,6 +183,7 @@ Virastar comes with a list of options to control its behavior.
 #### markdown
 * `markdown_normalize_braces`, (_default_: `true`)
 	- removes spaces between `[]` and `()` (`[text] (link)` into `[text](link)`)
+	- removes space between `!` and opening brace (`! [alt](src)` into `![alt](src)`)
 	- removes spaces inside double `()`, `[]`, `{}` (`[[ text ]]` into `[[text]]`)
 	- removes spaces between double `()`, `[]`, `{}` (`[[text] ]` into `[[text]]`)
 
