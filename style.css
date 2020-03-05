@@ -102,7 +102,7 @@ header h1 span a:hover {
   bottom: 0;
   padding-top: 35px;
   display: block;
-  overflow: auto;
+  overflow: hidden;
   font-size: 1.2em;
   line-height: 1.7;
   font-weight: 400;
@@ -110,7 +110,6 @@ header h1 span a:hover {
   position: absolute;
   width: 50%;
   height: 100%;
-  overflow: hidden;
 }
 
 .input {
@@ -168,7 +167,7 @@ header h1 span a:hover {
   color: #f3f3f3;
   text-align: left;
   font-size: 0.75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   direction: ltr;
   overflow-y: scroll;
 }
@@ -187,7 +186,7 @@ header h1 span a:hover {
 }
 
 .settings h3 span a:hover {
-  color: red;
+  color: #d9534f;
 }
 
 .settings ul {
@@ -251,18 +250,18 @@ label[for="settings-trigger"] {
   color: #ffffc1;
 }
 
-.settings input[type=checkbox] + label {
+.settings input[type="checkbox"] + label {
   display: block;
   margin: 0.2em;
   cursor: pointer;
   padding: 0.2em;
 }
 
-.settings input[type=checkbox] {
+.settings input[type="checkbox"] {
   display: none;
 }
 
-.settings input[type=checkbox] + label:before {
+.settings input[type="checkbox"] + label::before {
   content: "\2714";
   border: 0.1em solid #000;
   border-radius: 0.2em;
@@ -277,22 +276,22 @@ label[for="settings-trigger"] {
   transition: .2s;
 }
 
-.settings input[type=checkbox] + label:active:before {
+.settings input[type="checkbox"] + label:active::before {
   transform: scale(0);
 }
 
-.settings input[type=checkbox]:checked + label:before {
+.settings input[type="checkbox"]:checked + label::before {
   background-color: #ffffc1;
   border-color: #ffffc1;
   color: #000;
 }
 
-.settings input[type=checkbox]:disabled + label:before {
+.settings input[type="checkbox"]:disabled + label::before {
   transform: scale(1);
   border-color: #303030;
 }
 
-.settings input[type=checkbox]:checked:disabled + label:before {
+.settings input[type="checkbox"]:checked:disabled + label::before {
   transform: scale(1);
   background-color: #bfb;
   border-color: #bfb;
