@@ -1,6 +1,7 @@
 (function (w) {
   var virastar;
   var clipboard;
+  var modal;
   var app = {
 
     settings: undefined,
@@ -10,6 +11,7 @@
     output: document.getElementById('output'),
     download: document.getElementById('download'),
     reset: document.getElementById('settings-reset'),
+    modal: document.getElementById('modal-diff'),
 
     // demo default options
     options: {
@@ -130,6 +132,37 @@
       this.downloadText('virastar.txt', virastar.cleanup(input, options));
     },
 
+    renderDiff: function () {
+      // @REF: https://github.com/kpdecker/jsdiff
+      var diff = Diff.diffChars(this.input.value, this.output.value, { ignoreWhitespace: false });
+      var fragment = document.createDocumentFragment();
+      var pre = document.createElement('pre');
+      var span = null;
+      var status = '';
+
+      diff.forEach(function (part) {
+        span = document.createElement('span');
+
+        status = part.added ? '-added' : part.removed ? '-removed' : '-none';
+        span.classList.add(status);
+
+        // zwnj
+        if (part.value === '‌') {
+          span.classList.add('-zwnj');
+          part.value = '⋅';
+        } else {
+          // extra zwnj for better visibility
+          // part.value = part.value + '‌';
+        }
+
+        span.appendChild(document.createTextNode(part.value));
+        fragment.appendChild(span);
+      });
+
+      pre.appendChild(fragment);
+      modal.setContent(pre);
+    },
+
     init: function () {
       var that = this;
       virastar = new Virastar(this.options);
@@ -152,6 +185,7 @@
       this.initSettings();
       this.initVirastar();
       this.initClipboard();
+      this.initModal();
       syncscroll.reset();
     },
 
@@ -188,6 +222,27 @@
 
       clipboard.on('error', function (e) {
         console.log(e);
+      });
+    },
+
+    initModal: function () {
+      var that = this;
+
+      // @REF: https://github.com/robinparisi/tingle
+      modal = new tingle.modal({ // eslint-disable-line new-cap
+        closeLabel: 'بستن',
+        cssClass: ['custom-class-1', 'custom-class-2'],
+        beforeOpen: function () {
+          modal.setContent('بارگیری&hellip;');
+        },
+        onOpen: function () {
+          that.renderDiff();
+        }
+      });
+
+      this.modal.addEventListener('click', function (event) {
+        event.preventDefault();
+        modal.open();
       });
     }
   };

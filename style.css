@@ -298,6 +298,51 @@ label[for="settings-trigger"] {
   border-color: #bfb;
 }
 
+pre {
+  margin: 0;
+  width: 100%;
+  /* overflow-x: scroll; */
+  overflow-x: auto;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  /* white-space: pre-wrap; */
+  /* word-break: keep-all */
+}
+
+.tingle-modal-box {
+  border-radius: 2px;
+}
+
+.tingle-modal__close {
+  right: auto;
+  left: 2rem;
+}
+
+.tingle-modal-box__content {
+  padding: 1.1rem 1.3rem;
+
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.tingle-modal-box span.-added {
+  background: #eaf2c2;
+  color: #406619;
+}
+
+.tingle-modal-box span.-removed {
+  color: #b30000;
+  background: #fadad7;
+}
+
+.tingle-modal-box span.-zwnj {
+  color: #5bc0de;
+}
+
+.tingle-modal-box span.-none {
+  color: #333;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .no-mobile {
     display: none;
