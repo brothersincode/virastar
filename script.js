@@ -171,7 +171,8 @@
         that.doChange();
       }, 1000));
 
-      this.download.addEventListener('click', function () {
+      this.download.addEventListener('click', function (event) {
+        event.preventDefault();
         that.doDownload();
       });
 
