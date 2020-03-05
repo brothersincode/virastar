@@ -16,7 +16,12 @@
   "scripts": {
     "serve": "http-server -c-1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "clipboard": "^2.0.6",
+    "diff": "^4.0.2",
+    "tingle.js": "^0.15.2",
+    "virastar": "^0.19.1"
+  },
   "devDependencies": {
     "semistandard": "^14.2.0",
     "stylelint": "^13.2.0"
@@ -25,6 +30,8 @@
     "globals": [
       "Virastar",
       "ClipboardJS",
+      "Diff",
+      "tingle",
       "syncscroll",
       "confirm"
     ]
