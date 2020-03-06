@@ -38,12 +38,12 @@ describe('Virastar.js', function () {
     it('should cleanup simple sentences', function () {
       assert.strictEqual(virastar.cleanup(
         'ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .', options),
-      'ویراستار به شما کمک می‌کند تا متون فارسی زیبا‌تر و درست‌تری بنویسید.'
+      'ویراستار به شما کمک می‌کند تا متون فارسی زیباتر و درست‌تری بنویسید.'
       );
 
       assert.strictEqual(virastar.cleanup(
         'ويراستار به طور پيش فرض اين کار ها را انجام می دهد :', options),
-      'ویراستار به طور پیش فرض این کار‌ها را انجام می‌دهد:'
+      'ویراستار به طور پیش فرض این کارها را انجام می‌دهد:'
       );
     });
 
@@ -273,7 +273,7 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('ما می توانیم'), 'ما می‌توانیم');
       assert.strictEqual(virastar.cleanup('ما نمی توانیم'), 'ما نمی‌توانیم');
       assert.strictEqual(virastar.cleanup('این بهترین کتاب ها است'), 'این بهترین کتاب‌ها است');
-      assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمند‌ترین زبان‌های دنیا');
+      assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمندترین زبان‌های دنیا');
     });
 
     it('should not replace English numbers in English phrases', function () {
