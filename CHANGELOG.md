@@ -5,6 +5,7 @@
 - Added: replaces spaces after ellipsis
 - Added: support for markdown images
 - Added: support for more punctuations before/after zwnjs cleanup
+- Changed: also removes nbsp from beginning of new-lines
 - Changed: late checks for zwnjs
 - Changed: revert to the old and big uri pattern, [ref](https://github.com/jhermsmeier/uri.regex)
 - Fixed: account for punctuations after domain tlds

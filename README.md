@@ -178,7 +178,7 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `cleanup_begin_and_end`, (_default_: `true`)
-	- cleans white-spaces beginning the new-lines
+	- removes space/tab/zwnj/nbsp from the beginning of the new-lines
 	- removes spaces, tabs, zwnj, direction marks and new lines from the beginning and end of text
 
 #### markdown
