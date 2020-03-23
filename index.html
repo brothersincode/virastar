@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ویراستار</title>
+	<meta name="description" content="ویراستار به شما کمک می‌کند تا متون فارسی زیباتر و درست‌تری بنویسید.">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -32,7 +33,7 @@
 	<label for="settings-trigger" title="تنظیمات"></label>
 	<div class="wrapper">
 
-	<div class="noscript"><div>جاوااسکریپت شما غیرفعال است.<br /><br />استفاده از ویراستار بدون جاوااسکریپت امکان‌پذیر نیست.</div></div>
+	<div class="noscript"><div>جاواسکریپت شما غیرفعال است.<br /><br />استفاده از ویراستار بدون جاواسکریپت امکان‌پذیر نیست.</div></div>
 
 	<header>
 		<h1>ویراستار <span>(نگارش <a title="تغییرات آخرین نگارش" href="https://github.com/brothersincode/virastar/releases/latest">0.19.1</a>)</span></h1>
@@ -41,13 +42,14 @@
 			<a href="#" class="copy no-mobile" data-clipboard-action="copy" data-clipboard-target="#output" title="برای کپی متن خروجی در کیلیپ‌بورد کلیک کنید!">کپی متن</a>
 			<a href="#" class="no-mobile" id="modal-diff" title="">تفاوت</a>
 			<a href="#" class="no-mobile" id="download" title="برای دریافت متن خروجی به صورت پرونده کلیک کنید!">دریافت متن</a>
-			<a href="https://github.com/brothersincode/virastar/" target="_blank">گیت‌هاب</a>
-			<a href="https://github.com/brothersincode/virastar/issues" class="no-mobile" target="_blank">گزارش خطا</a>
-			<a href="https://minimalist.brothersincode.ir/" class="no-mobile" target="_blank" title="مینیمالیست">ویرایشگر مارک‌داون</a>
+			<a href="https://github.com/brothersincode/virastar/" target="_blank" rel="noopener">گیت‌هاب</a>
+			<a href="https://github.com/brothersincode/virastar/issues" class="no-mobile" target="_blank" rel="noopener">گزارش خطا</a>
+			<a href="https://minimalist.brothersincode.ir/" class="no-mobile" target="_blank" rel="noopener" title="مینیمالیست">ویرایشگر مارک‌داون</a>
 		</div>
 	</header>
 <div class="input">
-	<textarea id="input" spellcheck="true" class="syncscroll" name="editor">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
+	<label for="input" class="screen-reader-text" title="ورودی"></label>
+	<textarea id="input" spellcheck="true" class="syncscroll">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .
 
 ويراستار به طور پيش فرض اين کار ها را انجام می دهد :
 1. نویسه های عربي را به فارسی تبديل مي کند.  مثلا كاف و ياي عربي .
@@ -64,7 +66,8 @@
 </textarea>
 </div>
 <div class="output">
-	<textarea id="output" class="syncscroll" name="editor" readonly>بارگیری&hellip;</textarea>
+	<label for="output" class="screen-reader-text" title="خروجی"></label>
+	<textarea id="output" class="syncscroll" readonly>بارگیری&hellip;</textarea>
 </div>
 	</div>
 	<script type="text/javascript">var html=document.querySelector("html");html.classList.remove("no-js");</script>
