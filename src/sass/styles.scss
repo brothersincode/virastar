@@ -101,11 +101,11 @@ header h1 {
 header h1 span {
   font-size: .75em;
   font-weight: 400;
-  color: #888;
+  color: #b8b8b8;
 }
 
 header h1 span a {
-  color: #888;
+  color: #b8b8b8;
   text-decoration: none;
 }
 
@@ -364,6 +364,19 @@ pre {
 
 .tingle-modal-box span.-none {
   color: #333;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
