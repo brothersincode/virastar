@@ -1,24 +1,17 @@
 CACHE MANIFEST
-# 3/5/2020, 6:32:47 PM
+# 3/23/2020, 7:38:03 PM
 
 index.html
-style.css
-script.js
-syncscroll.js
+
+dist/bundle.css
+dist/bundle.js
 
 favicon.ico
 favicon-16x16.png
 favicon-32x32.png
 
-https://cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.css
-https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css
 https://fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Bold.woff2
 https://fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Regular.woff2
-
-https://cdn.jsdelivr.net/gh/brothersincode/virastar@v0.19.1/lib/virastar.js
-https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v2.0.6/dist/clipboard.min.js
-https://cdn.jsdelivr.net/gh/robinparisi/tingle@v0.15.2/dist/tingle.js
-https://cdn.jsdelivr.net/npm/diff@4.0.2/dist/diff.min.js
 
 NETWORK:
 *

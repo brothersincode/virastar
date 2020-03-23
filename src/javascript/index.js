@@ -1,3 +1,11 @@
+import '../sass/styles.scss';
+
+const Virastar = require('virastar');
+const ClipboardJS = require('clipboard');
+const Diff = require('diff');
+const tingle = require('tingle.js');
+const syncscroll = require('sync-scroll');
+
 (function (w) {
   var virastar;
   var clipboard;
@@ -217,9 +225,9 @@
     initClipboard: function () {
       clipboard = new ClipboardJS('.copy');
 
-      clipboard.on('success', function (e) {
-        console.log(e);
-      });
+      // clipboard.on('success', function (e) {
+      //   console.log(e);
+      // });
 
       clipboard.on('error', function (e) {
         console.log(e);
