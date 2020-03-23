@@ -324,6 +324,18 @@ describe('Virastar.js', function () {
     // });
   });
 
+  describe('#cleanup(): Equals', function () {
+    it('should preserve the certain strings', function () {
+      var equals = [
+        '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)'
+      ];
+
+      for (var equal in equals) {
+        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal] );
+      }
+    });
+  });
+
   describe('#cleanup(): Additional', function () {
     it('should throw error if type is not string', function () {
       assert.throws(() => virastar.cleanup(function () {}), TypeError, 'Expected a String');

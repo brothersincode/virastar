@@ -8,6 +8,7 @@
 - Changed: late checks for zwnjs
 - Changed: revert to the old and big uri pattern, [ref](https://github.com/jhermsmeier/uri.regex)
 - Fixed: account for punctuations after domain tlds
+- Fixed: account for space before image opening brace within links
 - Fixed: also single padding on the beginning of the text
 - Fixed: check for non-space after space and prefixes
 - Fixed: optional space after preservers
