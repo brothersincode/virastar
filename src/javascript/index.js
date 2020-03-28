@@ -168,7 +168,7 @@ const syncscroll = require('sync-scroll');
       });
 
       pre.appendChild(fragment);
-      modal.setContent(pre);
+      return pre;
     },
 
     init: function () {
@@ -240,12 +240,12 @@ const syncscroll = require('sync-scroll');
       // @REF: https://github.com/robinparisi/tingle
       modal = new tingle.modal({ // eslint-disable-line new-cap
         closeLabel: 'بستن',
-        cssClass: ['custom-class-1', 'custom-class-2'],
+        cssClass: ['wrapper-diff'],
         beforeOpen: function () {
           modal.setContent('بارگیری&hellip;');
         },
         onOpen: function () {
-          that.renderDiff();
+          modal.setContent(that.renderDiff());
         }
       });
 
