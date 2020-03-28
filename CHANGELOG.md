@@ -1,4 +1,5 @@
 ### [develop]
+- Changed: early fix persian glyphs
 
 ### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
