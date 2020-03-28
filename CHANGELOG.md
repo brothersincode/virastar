@@ -1,4 +1,7 @@
 ### [develop]
+- Fixed: check for persian chars before suffix spacings
+
+### [develop]
 - Added: cleanup zwnj before/after ellipsis
 - Added: converting kashida between numbers to ndash
 - Added: new option for converting arabic hamzeh
