@@ -17,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "serve": "http-server -c-1"
+    "serve": "npx http-server -c-1"
   },
   "dependencies": {
     "clipboard": "^2.0.6",
@@ -25,12 +25,12 @@
     "normalize.css": "^8.0.1",
     "sync-scroll": "^1.0.3",
     "tingle.js": "^0.15.2",
-    "virastar": "^0.19.1"
+    "virastar": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
@@ -44,7 +44,7 @@
     "semistandard": "^14.2.0",
     "stylelint": "^13.2.1",
     "terser-webpack-plugin": "^2.3.5",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "semistandard": {
