@@ -9,7 +9,11 @@
     "persian",
     "text"
   ],
-  "main": "lib/virastar.js",
+  "main": "./lib/virastar.js",
+  "files": [
+    "/lib",
+    "settings.json"
+  ],
   "scripts": {
     "serve": "npx http-server ./demo -c-1",
     "test": "mocha --require @babel/register"
