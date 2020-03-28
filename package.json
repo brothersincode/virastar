@@ -11,16 +11,18 @@
   ],
   "main": "lib/virastar.js",
   "scripts": {
-    "test": "mocha --require babel-register"
+    "serve": "npx http-server ./demo -c-1",
+    "test": "mocha --require @babel/register"
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
-    "mocha": "^7.0.1",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "mocha": "^7.1.1",
     "semistandard": "^14.2.0",
     "sprintf-js": "^1.1.2",
-    "stylelint": "^13.2.0"
+    "stylelint": "^13.2.1"
   },
   "semistandard": {
     "ignore": [

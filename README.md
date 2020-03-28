@@ -71,6 +71,7 @@ Virastar comes with a list of options to control its behavior.
 
 * `normalize_ellipsis`, (_default_: `true`)
 	- replaces more than one ellipsis with one
+	- replaces (space|tab|zwnj) after ellipsis with one space
 
 
 * `fix_english_quotes_pairs`, (_default_: `true`)
@@ -87,6 +88,10 @@ Virastar comes with a list of options to control its behavior.
 	- replaces `هٓ` or single-character `ۀ` with the standard `هٔ`
 
 
+* `fix_hamzeh_arabic`, (_default_: `false`)
+	- converts arabic hamzeh `ة` to `هٔ`
+
+
 * `cleanup_rlm`, (_default_: `true`)
 	- converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)
 
@@ -95,9 +100,7 @@ Virastar comes with a list of options to control its behavior.
 	- converts all soft hyphens (`&shy;`) into zwnj
 	- removes more than one zwnj
 	- cleans zwnj after characters that don't conncet to the next
-	- cleans zwnj before english characters
-	- cleans zwnj before and after punctuations
-	- removes unnecessary zwnj succeeded/preceded by spaces
+	- cleans zwnj before and after numbers, english words, spaces and punctuations
 	- removes unnecessary zwnj on start/end of each line
 
 
@@ -149,7 +152,7 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `fix_spacing_for_punctuations`, (_default_: `true`)
-	- one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and `؟`
+	- one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and their persian equivalents
 	- removes space after colon that separates time parts
 	- removes space after dots in numbers
 	- removes space before some common domain tlds
@@ -175,12 +178,13 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `cleanup_begin_and_end`, (_default_: `true`)
-	- cleans white-spaces beginning the new-lines
+	- removes space/tab/zwnj/nbsp from the beginning of the new-lines
 	- removes spaces, tabs, zwnj, direction marks and new lines from the beginning and end of text
 
 #### markdown
 * `markdown_normalize_braces`, (_default_: `true`)
 	- removes spaces between `[]` and `()` (`[text] (link)` into `[text](link)`)
+	- removes space between `!` and opening brace (`! [alt](src)` into `![alt](src)`)
 	- removes spaces inside double `()`, `[]`, `{}` (`[[ text ]]` into `[[text]]`)
 	- removes spaces between double `()`, `[]`, `{}` (`[[text] ]` into `[[text]]`)
 
@@ -202,6 +206,7 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `cleanup_kashidas`, (_default_: `true`)
+	- converts kashida between numbers to ndash
 	- removes all kashidas between non-whitespace characters
 
 #### extras

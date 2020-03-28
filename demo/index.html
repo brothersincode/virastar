@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ویراستار</title>
+
+	<link href="https://cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<div class="settings"><h3>تنظیمات <span>(<a href="#" id="settings-reset">بازنشانی</a>)</span></h3><ul id="options"></ul></div>
+	<input type="checkbox" id="settings-trigger" class="settings-trigger" />
+	<label for="settings-trigger" title="تنظیمات"></label>
+	<div class="wrapper">
+
+	<header>
+		<h1>ویراستار <span>(نگارش <a title="تغییرات آخرین نگارش" href="https://github.com/brothersincode/virastar/commits/develop">در حال توسعه</a>)</span></h1>
+
+		<div id="links">
+			<a href="https://github.com/brothersincode/virastar/" target="_blank">گیت‌هاب</a>
+			<a href="https://github.com/brothersincode/virastar/issues" class="no-mobile" target="_blank">گزارش خطا</a>
+		</div>
+	</header>
+<div class="input">
+	<textarea id="input" spellcheck="true" class="syncscroll" name="synctarget">ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .</textarea>
+</div>
+<div class="output">
+	<textarea id="output" class="syncscroll" name="synctarget" readonly>بارگیری&hellip;</textarea>
+</div>
+<div class="column-diff syncscroll" name="synctarget">
+	<div id="diff" class="wrapper-diff">تفاوت&hellip;</div>
+</div>
+	</div>
+	<script type="text/javascript">var html=document.querySelector("html");html.classList.remove("no-js");</script>
+	<script type="text/javascript" src="diff.min.js"></script>
+	<script type="text/javascript" src="syncscroll.js"></script>
+	<script type="text/javascript" src="virastar.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

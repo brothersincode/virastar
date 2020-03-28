@@ -1,3 +1,20 @@
+### [develop]
+- Added: cleanup zwnj before/after ellipsis
+- Added: converting kashida between numbers to ndash
+- Added: new option for converting arabic hamzeh
+- Added: replaces spaces after ellipsis
+- Added: support for markdown images
+- Added: support for more punctuations before/after zwnjs cleanup
+- Changed: also removes nbsp from beginning of new-lines
+- Changed: late checks for zwnjs
+- Changed: revert to the old and big uri pattern, [ref](https://github.com/jhermsmeier/uri.regex)
+- Fixed: account for punctuations after domain tlds
+- Fixed: account for space before image opening brace within links
+- Fixed: also single padding on the beginning of the text
+- Fixed: check for non-space after space and prefixes
+- Fixed: check for persian chars before suffix spacings
+- Fixed: optional space after preservers
+
 ### 0.19.1
 - Added: cleaning more than one of diacritic chars on `fix_diacritics`, props @languagetool-org
 - Added: extra method for converting persian numbers back

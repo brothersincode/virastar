@@ -38,12 +38,12 @@ describe('Virastar.js', function () {
     it('should cleanup simple sentences', function () {
       assert.strictEqual(virastar.cleanup(
         'ويراستار به شما كمك مي كند تا متون فارسي زيبا تر و درست تري بنويسيد .', options),
-      'ویراستار به شما کمک می‌کند تا متون فارسی زیبا‌تر و درست‌تری بنویسید.'
+      'ویراستار به شما کمک می‌کند تا متون فارسی زیباتر و درست‌تری بنویسید.'
       );
 
       assert.strictEqual(virastar.cleanup(
         'ويراستار به طور پيش فرض اين کار ها را انجام می دهد :', options),
-      'ویراستار به طور پیش فرض این کار‌ها را انجام می‌دهد:'
+      'ویراستار به طور پیش فرض این کارها را انجام می‌دهد:'
       );
     });
 
@@ -273,7 +273,7 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('ما می توانیم'), 'ما می‌توانیم');
       assert.strictEqual(virastar.cleanup('ما نمی توانیم'), 'ما نمی‌توانیم');
       assert.strictEqual(virastar.cleanup('این بهترین کتاب ها است'), 'این بهترین کتاب‌ها است');
-      assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمند‌ترین زبان‌های دنیا');
+      assert.strictEqual(virastar.cleanup('بزرگ تری و قدرتمند ترین زبان های دنیا'), 'بزرگ‌تری و قدرتمندترین زبان‌های دنیا');
     });
 
     it('should not replace English numbers in English phrases', function () {
@@ -322,6 +322,18 @@ describe('Virastar.js', function () {
     // it('should correct wrong connections like in میشود or میدهد', function () {
     //   assert.strictEqual(virastar.cleanup(''), '');
     // });
+  });
+
+  describe('#cleanup(): Equals', function () {
+    it('should preserve the certain strings', function () {
+      var equals = [
+        '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)'
+      ];
+
+      for (var equal in equals) {
+        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal] );
+      }
+    });
   });
 
   describe('#cleanup(): Additional', function () {
@@ -406,6 +418,21 @@ describe('Virastar.js', function () {
 
     it('extra: fixNumeralSymbols(): replaces commas between numbers into thousands separator', function () {
       assert.strictEqual(virastar.cleanup('۱۲,۵۴۳'), '۱۲٬۵۴۳');
+    });
+
+    it('extra: cleanupKashidas(): converts kashida between numbers to ndash', function () {
+      assert.strictEqual(virastar.cleanup('۱۱ـ۲۳'), '۱۱–۲۳');
+    });
+
+    it('extra: kashidasAsParenthetic(): replaces kashidas to ndash in parenthetic', function () {
+      assert.strictEqual(virastar.cleanup('ـکه همواره به فتوحات پادشاهان خویش در هند می‌بالیمـ'), '–که همواره به فتوحات پادشاهان خویش در هند می‌بالیم–');
+      assert.strictEqual(virastar.cleanup('ما مردم افغانستان ـکه همواره به فتوحات پادشاهان خویش در هند می‌بالیمـ شاید حالا که دو دهه رنج تهاجم بیگانگان را چشیده‌ایم‌، بتوانیم درد و رنج مردم هند را در دوران لشکرکشی‌های اجدادمان دریابیم‌.'),
+        'ما مردم افغانستان –که همواره به فتوحات پادشاهان خویش در هند می‌بالیم– شاید حالا که دو دهه رنج تهاجم بیگانگان را چشیده‌ایم، بتوانیم درد و رنج مردم هند را در دوران لشکرکشی‌های اجدادمان دریابیم.');
+    });
+
+    it('extra: fixHamzehArabic(): converts arabic hamza', function () {
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true }), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
+      assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true, fix_hamzeh: false }), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
     });
   });
 });
