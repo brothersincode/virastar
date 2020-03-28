@@ -1,7 +1,4 @@
 ### [develop]
-- Fixed: check for persian chars before suffix spacings
-
-### [develop]
 - Added: cleanup zwnj before/after ellipsis
 - Added: converting kashida between numbers to ndash
 - Added: new option for converting arabic hamzeh
@@ -15,6 +12,7 @@
 - Fixed: account for space before image opening brace within links
 - Fixed: also single padding on the beginning of the text
 - Fixed: check for non-space after space and prefixes
+- Fixed: check for persian chars before suffix spacings
 - Fixed: optional space after preservers
 
 ### 0.19.1
