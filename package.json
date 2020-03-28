@@ -11,6 +11,7 @@
   ],
   "main": "lib/virastar.js",
   "scripts": {
+    "serve": "npx http-server ./demo -c-1",
     "test": "mocha --require @babel/register"
   },
   "dependencies": {},
