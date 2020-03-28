@@ -1,4 +1,4 @@
-### [develop]
+### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
 - Added: converting kashida between numbers to ndash
 - Added: new option for converting arabic hamzeh
