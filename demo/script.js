@@ -1,7 +1,8 @@
-/* global Virastar, Diff, syncscroll */
+/* global Virastar, ClipboardJS, Diff, syncscroll */
 
 (function (w) {
   var virastar;
+  var clipboard;
   var app = {
 
     settings: undefined,
@@ -189,6 +190,18 @@
       } else {
         this.doVirastar(initial, options);
       }
+    },
+
+    initClipboard: function () {
+      clipboard = new ClipboardJS('.copy');
+
+      clipboard.on('success', function (e) {
+        console.log(e);
+      });
+
+      clipboard.on('error', function (e) {
+        console.log(e);
+      });
     }
   };
 
