@@ -165,6 +165,7 @@
 
       this.initSettings();
       this.initVirastar();
+      this.initClipboard();
       syncscroll.reset();
     },
 
