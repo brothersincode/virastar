@@ -66,6 +66,7 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `fix_three_dots`, (_default_: `true`)
+	- removes spaces between dots 
 	- replaces three dots with ellipsis character
 
 

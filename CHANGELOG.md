@@ -1,4 +1,5 @@
 ### [develop]
+- Added: removes spaces between dots on `fix_three_dots`
 - Changed: early fix persian glyphs
 - Fixed: lazy seek before dashes on frontmatter preserving
 - Fixed: combined preserving markdown links

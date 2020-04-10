@@ -173,13 +173,6 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('"این" یا "آن"'), '«این» یا «آن»'); // not greedy
     });
 
-    it('should replace three dots with ellipsis', function () {
-      assert.strictEqual(virastar.cleanup('...'), '…');
-      assert.strictEqual(virastar.cleanup('....'), '…');
-      assert.strictEqual(virastar.cleanup('.........'), '…');
-      assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
-    });
-
     it('should convert ه ی to هٔ', function () {
       assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
       assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
@@ -433,6 +426,13 @@ describe('Virastar.js', function () {
     it('extra: fixHamzehArabic(): converts arabic hamza', function () {
       assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true }), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
       assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true, fix_hamzeh: false }), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
+    });
+
+    it('extra: fixThreeDots(): removes space between dots/replaces three dots with ellipsis character', function () {
+      assert.strictEqual(virastar.cleanup('...'), '…');
+      assert.strictEqual(virastar.cleanup('......'), '…');
+      assert.strictEqual(virastar.cleanup('. . . .   ...   ..... . . . .'), '…');
+      assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
     });
   });
 });

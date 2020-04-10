@@ -28,6 +28,7 @@
       "key": "fix_three_dots",
       "label": "Fix three dots",
       "description": [
+        "removes spaces between dots",
         "replaces three dots with ellipsis character"
       ],
       "default": true
