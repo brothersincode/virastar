@@ -2,6 +2,7 @@
 - Changed: early fix persian glyphs
 - Fixed: lazy seek before dashes on frontmatter preserving
 - Fixed: combined preserving markdown links
+- Fixed: avoid new-lines as whitespaces
 
 ### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
