@@ -207,6 +207,7 @@
       "key": "cleanup_extra_marks",
       "label": "Cleanup Extra Marks",
       "description": [
+        "removes space between different/same marks",
         "replaces more than one exclamation mark with just one",
         "replaces more than one english or persian question mark with just one",
         "re-orders consecutive marks: `?!` into `!?`"
@@ -339,8 +340,7 @@
         "removes space after colon that separates time parts",
         "removes space after dots in numbers",
         "removes space before some common domain tlds",
-        "removes space between question and exclamation marks",
-        "removes space between same marks"
+        "removes space between different/same marks"
       ],
       "default": true
     },
