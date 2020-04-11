@@ -157,7 +157,8 @@ Virastar comes with a list of options to control its behavior.
 
 
 * `fix_spacing_for_punctuations`, (_default_: `true`)
-	- one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and their persian equivalents
+	- removes space before punctuations
+	- removes more than one space after punctuations, except followed by new-lines
 	- removes space after colon that separates time parts
 	- removes space after dots in numbers
 	- removes space before some common domain tlds
