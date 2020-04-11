@@ -75,6 +75,10 @@ Virastar comes with a list of options to control its behavior.
 	- replaces (space|tab|zwnj) after ellipsis with one space
 
 
+* `normalize_dates`, (_default_: `true`)
+	- re-orders date parts with slash as delimiter
+
+
 * `fix_english_quotes_pairs`, (_default_: `true`)
 	- replaces english quote pairs (`“”`) with their persian equivalent (`«»`)
 

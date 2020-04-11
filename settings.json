@@ -43,6 +43,14 @@
       "default": true
     },
     {
+      "key": "normalize_dates",
+      "label": "Normalize Dates",
+      "description": [
+        "re-orders date parts with slash as delimiter"
+      ],
+      "default": true
+    },
+    {
       "key": "fix_english_quotes_pairs",
       "label": "Fix English Quotes Pairs",
       "description": [

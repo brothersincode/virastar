@@ -434,5 +434,10 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('. . . .   ...   ..... . . . .'), '…');
       assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
     });
+
+    it('extra: normalizeDates(): reorders date parts with slash as delimiter', function () {
+      assert.strictEqual(virastar.cleanup('23/10/1355'), '۱۳۵۵/۱۰/۲۳');
+      assert.strictEqual(virastar.cleanup('3/1/1355'), '۱۳۵۵/۱/۳');
+    });
   });
 });

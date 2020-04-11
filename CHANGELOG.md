@@ -1,5 +1,6 @@
 ### [develop]
 - Added: removes spaces between dots on `fix_three_dots`
+- Added: new option `normalize_dates` to re-order date parts with slash as delimiter
 - Changed: early fix persian glyphs
 - Fixed: lazy seek before dashes on frontmatter preserving
 - Fixed: combined preserving markdown links
