@@ -318,13 +318,17 @@ describe('Virastar.js', function () {
   });
 
   describe('#cleanup(): Equals', function () {
-    it('should preserve the certain strings', function () {
+    it('should preserve certain strings', function () {
       var equals = [
+        '![alt name](https://example.com/media/image.jpg)',
+        '[![alt name](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
+        '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
+        '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg) [![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)'
       ];
 
       for (var equal in equals) {
-        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal] );
+        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal]);
       }
     });
   });
