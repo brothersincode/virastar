@@ -6,6 +6,7 @@
 - Fixed: combined preserving markdown links
 - Fixed: avoid new-lines as whitespaces
 - Fixed: combined pattern for removing kashidas
+- Fixed: prevent removing spaces after punctuations on the end of lines
 
 ### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
