@@ -333,6 +333,15 @@
       "default": true
     },
     {
+      "key": "fix_misc_spacing",
+      "label": "Fix Misc Spacing",
+      "description": [
+        "removes space before parentheses on misc cases",
+        "removes space before braces containing numbers"
+      ],
+      "default": true
+    },
+    {
       "key": "fix_spacing_for_punctuations",
       "label": "Fix Spacing for Punctuations",
       "description": [

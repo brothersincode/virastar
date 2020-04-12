@@ -178,6 +178,11 @@ _default_: `true`
 _default_: `true`
 - converts incorrect persian glyphs to standard characters
 
+#### `fix_misc_spacing`
+_default_: `true`
+- removes space before parentheses on misc cases
+- removes space before braces containing numbers
+
 #### `cleanup_spacing`
 _default_: `true`
 - replaces more than one space with just a single one
