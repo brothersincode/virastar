@@ -174,6 +174,10 @@ _default_: `true`
 - cleans more than one diacritic characters
 - cleans spaces before diacritic characters
 
+### `remove_diacritics`
+_default_: `false`
+- removes all diacritic characters
+
 #### `fix_persian_glyphs`
 _default_: `true`
 - converts incorrect persian glyphs to standard characters

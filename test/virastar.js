@@ -443,5 +443,9 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('23/10/1355'), '۱۳۵۵/۱۰/۲۳');
       assert.strictEqual(virastar.cleanup('3/1/1355'), '۱۳۵۵/۱/۳');
     });
+
+    it('extra: removeDiacritics(): removes all diacritic characters', function () {
+      assert.strictEqual(virastar.cleanup('اذا عَمَّتِ الْبُلْدانَ الْفِتَنُ فَعَلَیکمْ بِقُمْ وَحَوالیها وَنَواحیها فَانَ الْبَلاءَ مَدْفُوعٌ عَنْها', { remove_diacritics: true }), 'اذا عمت البلدان الفتن فعلیکم بقم وحوالیها ونواحیها فان البلاء مدفوع عنها');
+    });
   });
 });

@@ -315,6 +315,14 @@
       "default": true
     },
     {
+      "key": "remove_diacritics",
+      "label": "Remove Diacritics",
+      "description": [
+        "removes all diacritic characters"
+      ],
+      "default": false
+    },
+    {
       "key": "fix_numeral_symbols",
       "label": "Fix Numeral Symbols",
       "description": [
