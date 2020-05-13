@@ -3,6 +3,7 @@
 - Added: new option `normalize_dates` to re-order date parts with slash as delimiter
 - Added: new option `fix_misc_spacing` to remove space before braces containing numbers
 - Added: new option `remove_diacritics` to remove all diacritic characters
+- Added: removes markdown link spaces inside normal parentheses
 - Changed: early fix persian glyphs
 - Changed: removing space between different/same marks
 - Fixed: lazy seek before dashes on frontmatter preserving
