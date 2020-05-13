@@ -1,4 +1,4 @@
-### [develop]
+### 0.21.0
 - Added: removes spaces between dots on `fix_three_dots`
 - Added: new option `normalize_dates` to re-order date parts with slash as delimiter
 - Added: new option `fix_misc_spacing` to remove space before braces containing numbers
