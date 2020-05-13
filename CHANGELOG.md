@@ -12,6 +12,7 @@
 - Fixed: combined pattern for removing kashidas
 - Fixed: prevent removing spaces after punctuations on the end of lines
 - Fixed: prevent removing double spaces on the end of lines
+- Fixed: prevent removing new-lines on normalize braces
 
 ### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
