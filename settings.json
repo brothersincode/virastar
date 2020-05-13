@@ -28,6 +28,7 @@
       "key": "fix_three_dots",
       "label": "Fix three dots",
       "description": [
+        "removes spaces between dots",
         "replaces three dots with ellipsis character"
       ],
       "default": true
@@ -38,6 +39,14 @@
       "description": [
         "replaces more than one ellipsis with one",
         "replaces (space|tab|zwnj) after ellipsis with one space"
+      ],
+      "default": true
+    },
+    {
+      "key": "normalize_dates",
+      "label": "Normalize Dates",
+      "description": [
+        "re-orders date parts with slash as delimiter"
       ],
       "default": true
     },
@@ -198,6 +207,7 @@
       "key": "cleanup_extra_marks",
       "label": "Cleanup Extra Marks",
       "description": [
+        "removes space between different/same marks",
         "replaces more than one exclamation mark with just one",
         "replaces more than one english or persian question mark with just one",
         "re-orders consecutive marks: `?!` into `!?`"
@@ -305,6 +315,14 @@
       "default": true
     },
     {
+      "key": "remove_diacritics",
+      "label": "Remove Diacritics",
+      "description": [
+        "removes all diacritic characters"
+      ],
+      "default": false
+    },
+    {
       "key": "fix_numeral_symbols",
       "label": "Fix Numeral Symbols",
       "description": [
@@ -323,15 +341,24 @@
       "default": true
     },
     {
+      "key": "fix_misc_spacing",
+      "label": "Fix Misc Spacing",
+      "description": [
+        "removes space before parentheses on misc cases",
+        "removes space before braces containing numbers"
+      ],
+      "default": true
+    },
+    {
       "key": "fix_spacing_for_punctuations",
       "label": "Fix Spacing for Punctuations",
       "description": [
-        "one space after and no space before `:`, `;`, `,`, `.`, `!`, `?` and their persian equivalents",
+        "removes space before punctuations",
+        "removes more than one space after punctuations, except followed by new-lines",
         "removes space after colon that separates time parts",
         "removes space after dots in numbers",
         "removes space before some common domain tlds",
-        "removes space between question and exclamation marks",
-        "removes space between same marks"
+        "removes space between different/same marks"
       ],
       "default": true
     },

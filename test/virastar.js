@@ -173,13 +173,6 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('"این" یا "آن"'), '«این» یا «آن»'); // not greedy
     });
 
-    it('should replace three dots with ellipsis', function () {
-      assert.strictEqual(virastar.cleanup('...'), '…');
-      assert.strictEqual(virastar.cleanup('....'), '…');
-      assert.strictEqual(virastar.cleanup('.........'), '…');
-      assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
-    });
-
     it('should convert ه ی to هٔ', function () {
       assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
       assert.strictEqual(virastar.cleanup('خانه ی ما'), 'خانهٔ ما');
@@ -325,13 +318,17 @@ describe('Virastar.js', function () {
   });
 
   describe('#cleanup(): Equals', function () {
-    it('should preserve the certain strings', function () {
+    it('should preserve certain strings', function () {
       var equals = [
+        '![alt name](https://example.com/media/image.jpg)',
+        '[![alt name](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
+        '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
+        '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg) [![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)'
       ];
 
       for (var equal in equals) {
-        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal] );
+        assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal]);
       }
     });
   });
@@ -433,6 +430,22 @@ describe('Virastar.js', function () {
     it('extra: fixHamzehArabic(): converts arabic hamza', function () {
       assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true }), 'آن دسته از علایم که مشخص‌کنندهٔ انتهای جمله');
       assert.strictEqual(virastar.cleanup('آن دسته از علایم که مشخص‌کنندة انتهای جمله', { fix_hamzeh_arabic: true, fix_hamzeh: false }), 'آن دسته از علایم که مشخص‌کننده‌ی انتهای جمله');
+    });
+
+    it('extra: fixThreeDots(): removes space between dots/replaces three dots with ellipsis character', function () {
+      assert.strictEqual(virastar.cleanup('...'), '…');
+      assert.strictEqual(virastar.cleanup('......'), '…');
+      assert.strictEqual(virastar.cleanup('. . . .   ...   ..... . . . .'), '…');
+      assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
+    });
+
+    it('extra: normalizeDates(): reorders date parts with slash as delimiter', function () {
+      assert.strictEqual(virastar.cleanup('23/10/1355'), '۱۳۵۵/۱۰/۲۳');
+      assert.strictEqual(virastar.cleanup('3/1/1355'), '۱۳۵۵/۱/۳');
+    });
+
+    it('extra: removeDiacritics(): removes all diacritic characters', function () {
+      assert.strictEqual(virastar.cleanup('اذا عَمَّتِ الْبُلْدانَ الْفِتَنُ فَعَلَیکمْ بِقُمْ وَحَوالیها وَنَواحیها فَانَ الْبَلاءَ مَدْفُوعٌ عَنْها', { remove_diacritics: true }), 'اذا عمت البلدان الفتن فعلیکم بقم وحوالیها ونواحیها فان البلاء مدفوع عنها');
     });
   });
 });

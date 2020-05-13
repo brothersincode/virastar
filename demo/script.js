@@ -1,7 +1,8 @@
-/* global Virastar, Diff, syncscroll */
+/* global Virastar, ClipboardJS, Diff, syncscroll */
 
 (function (w) {
   var virastar;
+  var clipboard;
   var app = {
 
     settings: undefined,
@@ -121,6 +122,7 @@
       var diff = Diff.diffChars(this.input.value, this.output.value, { ignoreWhitespace: false });
       var fragment = document.createDocumentFragment();
       var pre = document.createElement('pre');
+      var newLine = new RegExp(/[^\n]/, 'g');
       var span = null;
       var status = '';
 
@@ -129,6 +131,15 @@
 
         status = part.added ? '-added' : part.removed ? '-removed' : '-none';
         span.classList.add(status);
+
+        // skip if new-lines removed
+        if (part.removed) {
+          if (!newLine.test(part.value)) {
+            return;
+          }
+
+          part.value = part.value.replace(/\n/g, '');
+        }
 
         // zwnj
         if (part.value === '‌') {
@@ -164,6 +175,7 @@
 
       this.initSettings();
       this.initVirastar();
+      this.initClipboard();
       syncscroll.reset();
     },
 
@@ -189,6 +201,18 @@
       } else {
         this.doVirastar(initial, options);
       }
+    },
+
+    initClipboard: function () {
+      clipboard = new ClipboardJS('.copy');
+
+      clipboard.on('success', function (e) {
+        console.log(e);
+      });
+
+      clipboard.on('error', function (e) {
+        console.log(e);
+      });
     }
   };
 

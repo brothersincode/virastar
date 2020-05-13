@@ -1,3 +1,19 @@
+### 0.21.0
+- Added: removes spaces between dots on `fix_three_dots`
+- Added: new option `normalize_dates` to re-order date parts with slash as delimiter
+- Added: new option `fix_misc_spacing` to remove space before braces containing numbers
+- Added: new option `remove_diacritics` to remove all diacritic characters
+- Added: removes markdown link spaces inside normal parentheses
+- Changed: early fix persian glyphs
+- Changed: removing space between different/same marks
+- Fixed: lazy seek before dashes on frontmatter preserving
+- Fixed: combined preserving markdown links
+- Fixed: avoid new-lines as whitespaces
+- Fixed: combined pattern for removing kashidas
+- Fixed: prevent removing spaces after punctuations on the end of lines
+- Fixed: prevent removing double spaces on the end of lines
+- Fixed: prevent removing new-lines on normalize braces
+
 ### 0.20.0
 - Added: cleanup zwnj before/after ellipsis
 - Added: converting kashida between numbers to ndash
