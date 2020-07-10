@@ -126,7 +126,7 @@ _default_: `true`
 #### `fix_misc_non_persian_chars`
 _default_: `true`
 - replaces arabic normal/swash kaf with its persian equivalent
-- replaces arabic/urdu/pushtu/uyghur yeh with its persian equivalent
+- replaces arabic/urdu/pushtu/uyghur/barree yeh with its persian equivalent
 - replaces kurdish he with its persian equivalent
 
 #### `fix_punctuations`

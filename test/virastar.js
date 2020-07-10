@@ -447,5 +447,9 @@ describe('Virastar.js', function () {
     it('extra: removeDiacritics(): removes all diacritic characters', function () {
       assert.strictEqual(virastar.cleanup('اذا عَمَّتِ الْبُلْدانَ الْفِتَنُ فَعَلَیکمْ بِقُمْ وَحَوالیها وَنَواحیها فَانَ الْبَلاءَ مَدْفُوعٌ عَنْها', { remove_diacritics: true }), 'اذا عمت البلدان الفتن فعلیکم بقم وحوالیها ونواحیها فان البلاء مدفوع عنها');
     });
+
+    it('extra: fixMiscNonPersianChars()', function () {
+      assert.strictEqual(virastar.cleanup('دیر آمدے؛ ببخش کہ ویرانہ‌ایم ما!'), 'دیر آمدی؛ ببخش که ویرانه‌ایم ما!');
+    });
   });
 });

@@ -133,7 +133,7 @@
       "label": "Fix Misc Non-Persian Chars",
       "description": [
         "replaces arabic normal/swash kaf with its persian equivalent",
-        "replaces arabic/urdu/pushtu/uyghur yeh with its persian equivalent",
+        "replaces arabic/urdu/pushtu/uyghur/barree yeh with its persian equivalent",
         "replaces kurdish he with its persian equivalent"
       ],
       "default": true
