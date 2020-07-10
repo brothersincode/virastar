@@ -1,6 +1,7 @@
 ### Unreleased
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
-- 
+- Changed: now `fix_misc_non_persian_chars` applies on entire text
+
 ### 0.21.0
 - Added: removes spaces between dots on `fix_three_dots`
 - Added: new option `normalize_dates` to re-order date parts with slash as delimiter
