@@ -194,6 +194,7 @@ _default_: `true`
 
 #### `cleanup_line_breaks`
 _default_: `true`
+- cleans whitespace/zwnj between new-lines
 - cleans more than **two** contiguous line breaks
 
 #### `cleanup_begin_and_end`
