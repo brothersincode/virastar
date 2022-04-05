@@ -190,7 +190,7 @@ _default_: `true`
 #### `cleanup_spacing`
 _default_: `true`
 - replaces more than one space with just a single one
-- cleans whitespace/zwnj between new-lines
+- cleans tab/space/zwnj/zwj/nbsp between two new-lines
 
 #### `cleanup_line_breaks`
 _default_: `true`
