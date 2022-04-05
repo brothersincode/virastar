@@ -1,5 +1,6 @@
 ### Unreleased
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
+- Added: replace `U+01c3` with `ǃ`
 - Changed: now `fix_misc_non_persian_chars` applies on entire text
 
 ### 0.21.0
