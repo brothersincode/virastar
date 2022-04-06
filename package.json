@@ -16,7 +16,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -w",
-    "build": "cross-env NODE_ENV=production webpack -p",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
     "serve": "npx http-server -c-1"
   },
   "dependencies": {
@@ -28,24 +28,25 @@
     "virastar": "^0.21.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.7.6",
+    "@babel/core": "^7.12.0",
+    "@babel/preset-env": "^7.12.0",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
-    "css-loader": "^3.5.3",
+    "css-loader": "^5.0.0",
     "cssnano": "^4.1.10",
-    "file-loader": "^6.0.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "semistandard": "^14.2.0",
-    "stylelint": "^13.3.3",
-    "terser-webpack-plugin": "^3.0.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "file-loader": "^6.1.1",
+    "mini-css-extract-plugin": "^1.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.1",
+    "postcss-loader": "^4.0.4",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "semistandard": "^14.2.3",
+    "stylelint": "^13.7.2",
+    "terser-webpack-plugin": "^5.0.0",
+    "webpack": "^5.1.1",
+    "webpack-cli": "^4.0.0"
   },
   "semistandard": {
     "globals": [
