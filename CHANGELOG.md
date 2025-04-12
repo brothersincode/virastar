@@ -2,6 +2,7 @@
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
 - Added: replace `U+01c3` with `ǃ`
 - Added: tab/space/zwnj/zwj/nbsp between two new-lines, props @zoghal
+- Added: `remove_spaces_before_ellipsis` to keeping space before ellipsis
 - Added: converts all angled dash (`&not;`) into zwnj
 - Added: helper method for reverse a string with recursion
 - Added: angled dash (`&not;`) to preserved no-break space entities
