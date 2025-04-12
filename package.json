@@ -3,6 +3,7 @@
   "version": "0.21.0",
   "description": "Cleaning-up Persian Texts!",
   "homepage": "https://github.com/brothersincode/virastar#readme",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/brothersincode/virastar/issues",
     "email": "virastar@brothersincode.ir"
