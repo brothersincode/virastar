@@ -1,6 +1,24 @@
+.build
+.idea
+.gulp
+.imdone
 .temp
+.todos
+.TODOs
 
-/node_modules
+*.deps.json
+*.js.map
+
+node_modules
+
+npm-debug.log
+yarn-error.log
+
+environment.yml
+.env
+.ftpconfig
+
+*.WinMerge
 
 ## symlink
 virastar.js
