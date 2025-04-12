@@ -109,6 +109,7 @@ _default_: `true`
 #### `cleanup_zwnj`
 _default_: `true`
 - converts all soft hyphens (`&shy;`) into zwnj
+- converts all angled dash (`&not;`) into zwnj
 - removes more than one zwnj
 - cleans zwnj after characters that don't conncet to the next
 - cleans zwnj before and after numbers, english words, spaces and punctuations
