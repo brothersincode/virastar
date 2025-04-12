@@ -73,7 +73,12 @@ _default_: `true`
 #### `normalize_ellipsis`
 _default_: `true`
 - replaces more than one ellipsis with one
+- replaces more than one space before ellipsis with one space
 - replaces (space|tab|zwnj) after ellipsis with one space
+
+#### `remove_spaces_before_ellipsis`
+_default_: `true`
+- removes spaces before ellipsis
 
 #### `normalize_dates`
 _default_: `true`
