@@ -1,7 +1,7 @@
 const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: './src/javascript/index.js',
@@ -24,23 +24,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /.s?css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'postcss-loader'
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass')
-            }
-          }
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -70,16 +58,9 @@ module.exports = {
 
   optimization: {
     minimizer: [
+      // `...`,
       new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorPluginOptions: {
-          preset: ['default', {
-            discardComments: {
-              removeAll: true
-            }
-          }]
-        }
-      })
+      new CssMinimizerPlugin()
     ]
   },
 
