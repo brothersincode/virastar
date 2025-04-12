@@ -3,6 +3,7 @@
 - Added: replace `U+01c3` with `ǃ`
 - Added: tab/space/zwnj/zwj/nbsp between two new-lines, props @zoghal
 - Added: converts all angled dash (`&not;`) into zwnj
+- Added: helper method for reverse a string with recursion
 - Changed: `cleanup_line_breaks` cleans whitespace/zwnj between new-lines
 - Changed: now `fix_misc_non_persian_chars` applies on entire text
 
