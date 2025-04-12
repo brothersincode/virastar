@@ -437,6 +437,10 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('......'), '…');
       assert.strictEqual(virastar.cleanup('. . . .   ...   ..... . . . .'), '…');
       assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
+
+      // تست...
+      // تست  …
+      // تست ...
     });
 
     it('extra: normalizeDates(): reorders date parts with slash as delimiter', function () {
