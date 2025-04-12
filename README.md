@@ -177,7 +177,7 @@ _default_: `true`
 #### `fix_diacritics`
 _default_: `true`
 - cleans zwnj before diacritic characters
-- cleans more than one diacritic characters
+- cleans more than one of each diacritic characters
 - cleans spaces before diacritic characters
 
 ### `remove_diacritics`

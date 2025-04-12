@@ -403,6 +403,8 @@ describe('Virastar.js', function () {
 
     it('extra: fixDiacritics():‌ cleans more than one diacritic characters', function () {
       assert.strictEqual(virastar.cleanup('لطفاًً'), 'لطفاً');
+      assert.strictEqual(virastar.cleanup('رُّوح'), 'رُّوح');
+      assert.strictEqual(virastar.cleanup('بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ'), 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِیمِ');
     });
 
     it('extra: fixNumeralSymbols(): replaces english percent signs', function () {
