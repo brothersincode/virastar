@@ -1,3 +1,4 @@
+/* eslint no-var: off, prefer-regex-literals: off */
 import '../sass/styles.scss';
 
 const Virastar = require('virastar');
