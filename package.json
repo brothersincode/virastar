@@ -1,6 +1,6 @@
 {
   "name": "virastar-demo",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "description": "Cleaning-up Persian Texts!",
   "homepage": "https://github.com/brothersincode/virastar#readme",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "normalize.css": "^8.0.1",
     "sync-scroll": "^1.0.3",
     "tingle.js": "^0.16.0",
-    "virastar": "^0.22.0"
+    "virastar": "^0.22.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
