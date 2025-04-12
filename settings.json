@@ -43,6 +43,14 @@
       "default": true
     },
     {
+      "key": "remove_spaces_before_ellipsis",
+      "label": "Remove Spaces before Ellipsis",
+      "description": [
+        "removes spaces before ellipsis"
+      ],
+      "default": true
+    },
+    {
       "key": "normalize_dates",
       "label": "Normalize Dates",
       "description": [
