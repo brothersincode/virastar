@@ -1,13 +1,6 @@
 # Virastar (ویراستار)
-Virastar is a Persian text cleaner.
+Virastar is a Persian text cleaner. It started as A JavaScript port of [aziz/virastar](https://github.com/aziz/virastar). With lots of help from [ebraminio/persiantools](https://github.com/ebraminio/persiantools). See live [demo](https://virastar.brothersincode.ir).
 
-A javascript port of [aziz/virastar](https://github.com/aziz/virastar)
-with lots of help from [ebraminio/persiantools](https://github.com/ebraminio/persiantools)
-
-see live [demo](https://virastar.brothersincode.ir)
-
-[![Build Status](https://img.shields.io/travis/brothersincode/virastar/master.svg?style=flat-square)](https://travis-ci.org/brothersincode/virastar)
-[![Dependency Status](https://img.shields.io/david/brothersincode/virastar.svg?style=flat-square)](https://david-dm.org/brothersincode/virastar)
 [![NPM version](https://img.shields.io/npm/v/virastar.svg?style=flat-square)](https://www.npmjs.com/package/virastar)
 [![GitHub issues](https://img.shields.io/github/issues/brothersincode/virastar.svg?style=flat-square)](https://github.com/brothersincode/virastar/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/brothersincode/virastar/master/LICENSE)
