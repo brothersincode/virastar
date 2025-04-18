@@ -102,9 +102,10 @@ _default_: `true`
 _default_: `false`
 - converts arabic hamzeh `ة` to `هٔ`
 
-#### `cleanup_rlm`
+#### `cleanup_direction_marks`
 _default_: `true`
-- converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)
+- Converts right-to-left marks followed by Persian chars to single zero-width-non-joiner.
+- Converts left-to-right marks before Persian chars to single zero-width-non-joiner.
 
 #### `cleanup_zwnj`
 _default_: `true`

@@ -1,4 +1,6 @@
 ### Un-released
+- Added: converts left-to-right marks before Persian chars to single zero-width-non-joiner
+- Changed: `cleanup_rlm` deprecated in favor of `cleanup_direction_marks`
 
 ### 0.22.0
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`

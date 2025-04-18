@@ -93,10 +93,11 @@
       "default": false
     },
     {
-      "key": "cleanup_rlm",
-      "label": "Cleanup RLM",
+      "key": "cleanup_direction_marks",
+      "label": "Cleanup Direction Marks",
       "description": [
-        "converts Right-to-left marks followed by persian characters to zero-width non-joiners (ZWNJ)"
+        "Converts right-to-left marks followed by Persian chars to single zero-width-non-joiner.",
+        "Converts left-to-right marks before Persian chars to single zero-width-non-joiner."
       ],
       "default": true
     },
