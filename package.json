@@ -31,8 +31,8 @@
   },
   "semistandard": {
     "ignore": [
-      "/dist",
-      "*.min.js"
+      "**/.temp/",
+      "/dist/"
     ],
     "globals": [
       "define",
