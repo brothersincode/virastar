@@ -8,7 +8,7 @@
   "less.validate": false,
   "scss.validate": false,
   "stylelint.configFile": "./.stylelintrc.json",
-  "stylelint.packageManager": "yarn",
+  "stylelint.packageManager": "npm",
   "stylelint.snippet": [
     "css",
     "less",
@@ -22,8 +22,6 @@
     "scss"
   ],
   "git.ignoreLimitWarning": true,
-  "php.validate.enable": true,
-  "php.suggest.basic": true,
   "files.readonlyFromPermissions": true,
   "files.readonlyInclude": {
     "node_modules": true

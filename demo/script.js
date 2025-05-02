@@ -1,4 +1,5 @@
 /* global Virastar, ClipboardJS, Diff, syncscroll */
+/* eslint no-var: off */
 
 (function (w) {
   var virastar;
@@ -50,7 +51,7 @@
         var checkbox = document.createElement('input');
         var label = document.createElement('label');
 
-        var name = this.toProperCase(option.replace(new RegExp(/_/, 'g'), ' '));
+        var name = this.toProperCase(option.replace(new RegExp(/_/, 'g'), ' ')); // eslint-disable-line prefer-regex-literals
 
         checkbox.type = 'checkbox';
         checkbox.checked = options.hasOwnProperty(option) ? options[option] : defaults[option]; // eslint-disable-line no-prototype-builtins
@@ -122,7 +123,7 @@
       var diff = Diff.diffChars(this.input.value, this.output.value, { ignoreWhitespace: false });
       var fragment = document.createDocumentFragment();
       var pre = document.createElement('pre');
-      var newLine = new RegExp(/[^\n]/, 'g');
+      var newLine = new RegExp(/[^\n]/, 'g'); // eslint-disable-line prefer-regex-literals
       var span = null;
       var status = '';
 
