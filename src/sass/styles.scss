@@ -111,8 +111,9 @@ header h1 span a:hover {
 
 #links {
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 40px;
+  line-height: normal;
 }
 
 .input,
@@ -154,9 +155,9 @@ header h1 span a:hover {
   font-size: 1rem;
 }
 
-#links a,
+#links a:not(.badge),
 #links button {
-  padding: 2px 6px 0;
+  padding: 4px 8px 3px;
   background-color: #555;
   border-radius: 2px;
   margin: 0 2px 0 0;
@@ -167,10 +168,18 @@ header h1 span a:hover {
   font-weight: 400;
 }
 
-#links a:hover,
+#links a:not(.badge):hover,
 #links button:hover {
   text-decoration: none;
   background-color: #888;
+}
+
+#links a.badge {
+  img {
+    height: 25px;
+    width: auto;
+    vertical-align: bottom;
+  }
 }
 
 .settings {
