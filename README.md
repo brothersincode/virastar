@@ -60,7 +60,7 @@ _default_: `true`
 
 #### `fix_three_dots`
 _default_: `true`
-- removes spaces between dots 
+- removes spaces between dots
 - replaces three dots with ellipsis character
 
 #### `normalize_ellipsis`
