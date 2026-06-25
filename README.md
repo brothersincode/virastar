@@ -240,6 +240,14 @@ _default_: `true`
 _default_: `true`
 - preserves frontmatter data in the text
 
+#### `preserve_code_blocks`
+_default_: `true`
+- preserves code blocks in the text
+
+#### `preserve_inline_codes`
+_default_: `true`
+- preserves inilne codes in the text
+
 #### `preserve_HTML`
 _default_: `true`
 - preserves all html tags in the text

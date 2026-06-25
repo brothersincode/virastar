@@ -27,6 +27,10 @@ const optionsHTML = {
   cleanup_spacing: false
 };
 
+const optionCode = {
+  preserve_inline_codes: false
+};
+
 describe('Virastar.js', function () {
   let virastar;
 
@@ -167,8 +171,8 @@ describe('Virastar.js', function () {
     it('should replace English quotes with their Persian equivalent', function () {
       assert.strictEqual(virastar.cleanup('\'\'تست\'\''), '«تست»');
       assert.strictEqual(virastar.cleanup('\'تست\''), '«تست»');
-      assert.strictEqual(virastar.cleanup('`تست`'), '«تست»');
-      assert.strictEqual(virastar.cleanup('``تست``'), '«تست»');
+      assert.strictEqual(virastar.cleanup('`تست`', optionCode), '«تست»');
+      assert.strictEqual(virastar.cleanup('``تست``', optionCode), '«تست»');
       assert.strictEqual(virastar.cleanup('"گفت: سلام"'), '«گفت: سلام»');
       assert.strictEqual(virastar.cleanup('"این" یا "آن"'), '«این» یا «آن»'); // not greedy
     });
@@ -338,6 +342,12 @@ describe('Virastar.js', function () {
       assert.throws(() => virastar.cleanup(function () {}), TypeError, 'Expected a String');
       assert.throws(() => virastar.cleanup(new Error()), TypeError, 'Expected a String');
       assert.throws(() => virastar.cleanup(112), TypeError, 'Expected a String');
+    });
+
+    it('should preserve all code blocks', function () {
+      assert.strictEqual(virastar.cleanup(
+        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```'),
+        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```');
     });
 
     it('should preserve all HTML tags', function () {

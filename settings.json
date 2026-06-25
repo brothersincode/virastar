@@ -282,6 +282,22 @@
       "default": true
     },
     {
+      "key": "preserve_code_blocks",
+      "label": "Preserve Code Blocks",
+      "description": [
+        "preserves code blocks in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_inline_codes",
+      "label": "Preserve Inline Codes",
+      "description": [
+        "preserves inline codes in the text"
+      ],
+      "default": true
+    },
+    {
       "key": "preserve_URIs",
       "label": "Preserve URIs",
       "description": [
