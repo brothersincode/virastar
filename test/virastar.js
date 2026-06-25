@@ -383,6 +383,10 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('کتاب?????'), 'کتاب؟');
     });
 
+    it('should normalize markdown lists', function () {
+      assert.strictEqual(virastar.cleanup('· گزینه اول\n· گزینه دوم'), '- گزینه اول\n- گزینه دوم');
+    });
+
     it('extra: fixSuffixSpacing()', function () {
       assert.strictEqual(virastar.cleanup('"و من هم به خاطر جلب اعتماد او پذیرفته ام"'), '«و من هم به خاطر جلب اعتماد او پذیرفته‌ام»'); // within quotes
       assert.strictEqual(virastar.cleanup('و من هم به خاطر جلب اعتماد او پذیرفته ام.'), 'و من هم به خاطر جلب اعتماد او پذیرفته‌ام.'); // followed by dot

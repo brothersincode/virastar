@@ -211,6 +211,7 @@ _default_: `true`
 
 #### `markdown_normalize_lists`
 _default_: `true`
+- replaces starting `MIDDLE DOT (U+00B7)` following single space with dash
 - removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`
 
 #### `skip_markdown_ordered_lists_numbers_conversion`
