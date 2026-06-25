@@ -460,6 +460,7 @@ describe('Virastar.js', function () {
 
     it('extra: fixMiscNonPersianChars()', function () {
       assert.strictEqual(virastar.cleanup('دیر آمدے؛ ببخش کہ ویرانہ‌ایم ما!'), 'دیر آمدی؛ ببخش که ویرانه‌ایم ما!');
+      assert.strictEqual(virastar.cleanup('سلام عليكم و رحمۃاللہ'), 'سلام علیکم و رحمةالله');
     });
   });
 });

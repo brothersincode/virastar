@@ -87,6 +87,7 @@ _default_: `true`
 
 #### `fix_hamzeh`
 _default_: `true`
+- converts arabic `TEH MARBUTA GOAL (U+06C3)` into `TEH MARBUTA (U+0629)`
 - replaces `ه` followed by (space|ZWNJ|lrm) follow by `ی` with `هٔ`
 - replaces `ه` followed by (space|ZWNJ|lrm|nothing) follow by `ء` with `هٔ`
 - replaces `هٓ` or single-character `ۀ` with the standard `هٔ`
