@@ -462,6 +462,11 @@ describe('Virastar.js', function () {
     it('extra: normalizeDates(): reorders date parts with slash as delimiter', function () {
       assert.strictEqual(virastar.cleanup('23/10/1355'), '۱۳۵۵/۱۰/۲۳');
       assert.strictEqual(virastar.cleanup('3/1/1355'), '۱۳۵۵/۱/۳');
+
+      assert.strictEqual(virastar.cleanup('11 ‌ / 12 / 1403'), '۱۴۰۳/۱۲/۱۱');
+      assert.strictEqual(virastar.cleanup('11/12/1403'), '۱۴۰۳/۱۲/۱۱');
+      assert.strictEqual(virastar.cleanup('۱۱/۱۲/۱۴۰۳'), '۱۴۰۳/۱۲/۱۱');
+      assert.strictEqual(virastar.cleanup('۱۴۰۳/۱۲/۱۱'), '۱۴۰۳/۱۲/۱۱');
     });
 
     it('extra: removeDiacritics(): removes all diacritic characters', function () {

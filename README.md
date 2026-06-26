@@ -75,6 +75,7 @@ _default_: `true`
 
 #### `normalize_dates`
 _default_: `true`
+- removes the spaces around slash as delimiter
 - re-orders date parts with slash as delimiter
 
 #### `fix_english_quotes_pairs`
