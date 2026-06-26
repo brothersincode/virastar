@@ -328,7 +328,8 @@ describe('Virastar.js', function () {
         '[![alt name](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg) [![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
-        '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)'
+        '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)',
+        '#ربابــ_ڪلامے'
       ];
 
       for (var equal in equals) {

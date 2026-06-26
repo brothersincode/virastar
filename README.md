@@ -258,6 +258,10 @@ _default_: `true`
 _default_: `true`
 - preserves all html comments in the text
 
+#### `preserve_hashtags`
+_default_: `true`
+- preserves all hashtags in the text
+
 #### `preserve_entities`
 _default_: `true`
 - preserves all html entities in the text

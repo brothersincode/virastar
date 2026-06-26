@@ -1,5 +1,6 @@
 ### [Unreleased]
 - Added: preserves code blocks/inline codes in the text
+- Added: preserves all hashtags in the text
 - Added: converts arabic `TEH MARBUTA GOAL (U+06C3)` into `TEH MARBUTA (U+0629)`
 - Added: replaces starting `MIDDLE DOT (U+00B7)` following single space with dash
 - Added: converts left-to-right marks before Persian chars to single zero-width-non-joiner

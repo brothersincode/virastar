@@ -267,6 +267,14 @@
       "default": true
     },
     {
+      "key": "preserve_hashtags",
+      "label": "Preserve Hashtags",
+      "description": [
+        "preserves all hashtags in the text"
+      ],
+      "default": true
+    },
+    {
       "key": "preserve_entities",
       "label": "Preserve Entities",
       "description": [
