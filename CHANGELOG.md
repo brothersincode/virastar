@@ -1,3 +1,8 @@
+### [Unreleased]
+- Added: preserves code blocks/inline codes in the text
+- Added: converts arabic `TEH MARBUTA GOAL (U+06C3)` into `TEH MARBUTA (U+0629)`
+- Added: replaces starting `MIDDLE DOT (U+00B7)` following single space with dash
+
 ### 0.22.0
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
 - Added: replace `U+01c3` with `ǃ`
