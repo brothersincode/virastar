@@ -1,13 +1,6 @@
 # Virastar (ویراستار)
-Virastar is a Persian text cleaner.
+Virastar is a Persian text cleaner. It started as A JavaScript port of [aziz/virastar](https://github.com/aziz/virastar). With lots of help from [ebraminio/persiantools](https://github.com/ebraminio/persiantools). See live [demo](https://virastar.brothersincode.ir).
 
-A javascript port of [aziz/virastar](https://github.com/aziz/virastar)
-with lots of help from [ebraminio/persiantools](https://github.com/ebraminio/persiantools)
-
-see live [demo](https://virastar.brothersincode.ir)
-
-[![Build Status](https://img.shields.io/travis/brothersincode/virastar/master.svg?style=flat-square)](https://travis-ci.org/brothersincode/virastar)
-[![Dependency Status](https://img.shields.io/david/brothersincode/virastar.svg?style=flat-square)](https://david-dm.org/brothersincode/virastar)
 [![NPM version](https://img.shields.io/npm/v/virastar.svg?style=flat-square)](https://www.npmjs.com/package/virastar)
 [![GitHub issues](https://img.shields.io/github/issues/brothersincode/virastar.svg?style=flat-square)](https://github.com/brothersincode/virastar/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/brothersincode/virastar/master/LICENSE)
@@ -67,7 +60,7 @@ _default_: `true`
 
 #### `fix_three_dots`
 _default_: `true`
-- removes spaces between dots 
+- removes spaces between dots
 - replaces three dots with ellipsis character
 
 #### `normalize_ellipsis`
@@ -94,6 +87,7 @@ _default_: `true`
 
 #### `fix_hamzeh`
 _default_: `true`
+- converts arabic `TEH MARBUTA GOAL (U+06C3)` into `TEH MARBUTA (U+0629)`
 - replaces `ه` followed by (space|ZWNJ|lrm) follow by `ی` with `هٔ`
 - replaces `ه` followed by (space|ZWNJ|lrm|nothing) follow by `ء` with `هٔ`
 - replaces `هٓ` or single-character `ۀ` with the standard `هٔ`
@@ -219,6 +213,7 @@ _default_: `true`
 
 #### `markdown_normalize_lists`
 _default_: `true`
+- replaces starting `MIDDLE DOT (U+00B7)` following single space with dash
 - removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`
 
 #### `skip_markdown_ordered_lists_numbers_conversion`
@@ -245,6 +240,14 @@ _default_: `true`
 #### `preserve_frontmatter`
 _default_: `true`
 - preserves frontmatter data in the text
+
+#### `preserve_code_blocks`
+_default_: `true`
+- preserves code blocks in the text
+
+#### `preserve_inline_codes`
+_default_: `true`
+- preserves inilne codes in the text
 
 #### `preserve_HTML`
 _default_: `true`

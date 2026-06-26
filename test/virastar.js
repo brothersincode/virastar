@@ -27,6 +27,10 @@ const optionsHTML = {
   cleanup_spacing: false
 };
 
+const optionCode = {
+  preserve_inline_codes: false
+};
+
 describe('Virastar.js', function () {
   let virastar;
 
@@ -167,8 +171,8 @@ describe('Virastar.js', function () {
     it('should replace English quotes with their Persian equivalent', function () {
       assert.strictEqual(virastar.cleanup('\'\'تست\'\''), '«تست»');
       assert.strictEqual(virastar.cleanup('\'تست\''), '«تست»');
-      assert.strictEqual(virastar.cleanup('`تست`'), '«تست»');
-      assert.strictEqual(virastar.cleanup('``تست``'), '«تست»');
+      assert.strictEqual(virastar.cleanup('`تست`', optionCode), '«تست»');
+      assert.strictEqual(virastar.cleanup('``تست``', optionCode), '«تست»');
       assert.strictEqual(virastar.cleanup('"گفت: سلام"'), '«گفت: سلام»');
       assert.strictEqual(virastar.cleanup('"این" یا "آن"'), '«این» یا «آن»'); // not greedy
     });
@@ -340,6 +344,12 @@ describe('Virastar.js', function () {
       assert.throws(() => virastar.cleanup(112), TypeError, 'Expected a String');
     });
 
+    it('should preserve all code blocks', function () {
+      assert.strictEqual(virastar.cleanup(
+        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```'),
+        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```');
+    });
+
     it('should preserve all HTML tags', function () {
       assert.strictEqual(virastar.cleanup('<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>'), '<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>');
     });
@@ -381,6 +391,10 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('کتاب!!!!!!'), 'کتاب!');
       assert.strictEqual(virastar.cleanup('کتاب؟؟؟؟'), 'کتاب؟');
       assert.strictEqual(virastar.cleanup('کتاب?????'), 'کتاب؟');
+    });
+
+    it('should normalize markdown lists', function () {
+      assert.strictEqual(virastar.cleanup('· گزینه اول\n· گزینه دوم'), '- گزینه اول\n- گزینه دوم');
     });
 
     it('extra: fixSuffixSpacing()', function () {
@@ -456,6 +470,7 @@ describe('Virastar.js', function () {
 
     it('extra: fixMiscNonPersianChars()', function () {
       assert.strictEqual(virastar.cleanup('دیر آمدے؛ ببخش کہ ویرانہ‌ایم ما!'), 'دیر آمدی؛ ببخش که ویرانه‌ایم ما!');
+      assert.strictEqual(virastar.cleanup('سلام عليكم و رحمۃاللہ'), 'سلام علیکم و رحمةالله');
     });
   });
 });

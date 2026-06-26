@@ -3,9 +3,17 @@
   "version": "0.22.1",
   "description": "Cleaning-up Persian Texts!",
   "license": "MIT",
-  "author": {
-    "name": "juvee"
-  },
+  "authors": [
+    {
+      "name": "juvee",
+      "url": "https://github.com/juvee"
+    },
+    {
+      "name": "Nasser Rafie",
+      "email": "contact@geminorum.ir",
+      "url": "https://geminorum.ir"
+    }
+  ],
   "keywords": [
     "persian",
     "text"
@@ -21,18 +29,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.1",
-    "@babel/register": "^7.27.1",
-    "mocha": "^11.2.2",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "@babel/register": "^8.0.1",
+    "mocha": "^11.7.6",
     "semistandard": "^17.0.0",
     "sprintf-js": "^1.1.3",
-    "stylelint": "^16.19.1"
+    "stylelint": "^17.13.0"
   },
   "semistandard": {
     "ignore": [
-      "**/.temp/",
-      "/dist/"
+      "/dist",
+      "*.min.js"
     ],
     "globals": [
       "define",

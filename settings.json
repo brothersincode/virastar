@@ -78,6 +78,7 @@
       "key": "fix_hamzeh",
       "label": "Fix Hamzeh",
       "description": [
+        "converts arabic `TEH MARBUTA GOAL (U+06C3)` into `TEH MARBUTA (U+0629)`",
         "replaces ه followed by (space|ZWNJ|lrm) follow by ی with هٔ",
         "replaces ه followed by (space|ZWNJ|lrm|nothing) follow by ء with هٔ",
         "replaces هٓ or single-character ۀ with the standard هٔ"
@@ -282,6 +283,22 @@
       "default": true
     },
     {
+      "key": "preserve_code_blocks",
+      "label": "Preserve Code Blocks",
+      "description": [
+        "preserves code blocks in the text"
+      ],
+      "default": true
+    },
+    {
+      "key": "preserve_inline_codes",
+      "label": "Preserve Inline Codes",
+      "description": [
+        "preserves inline codes in the text"
+      ],
+      "default": true
+    },
+    {
       "key": "preserve_URIs",
       "label": "Preserve URIs",
       "description": [
@@ -386,6 +403,7 @@
       "key": "markdown_normalize_lists",
       "label": "Markdown Normalize Lists",
       "description": [
+        "replaces starting `MIDDLE DOT (U+00B7)` following single space with dash",
         "removes extra lines between two items on a markdown list beginning with `-`, `*` or `#`"
       ],
       "default": true
