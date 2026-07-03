@@ -54,6 +54,7 @@
       "key": "normalize_dates",
       "label": "Normalize Dates",
       "description": [
+        "removes the spaces around slash as delimiter",
         "re-orders date parts with slash as delimiter"
       ],
       "default": true
