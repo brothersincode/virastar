@@ -37,6 +37,10 @@
     "sprintf-js": "^1.1.3",
     "stylelint": "^17.13.0"
   },
+  "optionalDependencies": {
+    "normalize.css": "^8.0.1",
+    "clipboard": "^2.0.11"
+  },
   "semistandard": {
     "ignore": [
       "/dist",
