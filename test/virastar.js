@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: off */
 const assert = require('assert');
 const Virastar = require('../lib/virastar.js');
 const sprintf = require('sprintf-js').sprintf;
@@ -221,8 +222,8 @@ describe('Virastar.js', function () {
         ['«', '»']
       ];
 
-      for (var pair in matched) {
-        for (var str in templates) {
+      for (const pair in matched) {
+        for (const str in templates) {
           assert.strictEqual(virastar.cleanup(
             sprintf(templates[str][0], matched[pair][0], matched[pair][1])),
           sprintf(templates[str][1], matched[pair][0], matched[pair][1]));
@@ -238,8 +239,8 @@ describe('Virastar.js', function () {
         'mismatched brackets %sdon\'t apply %s yeah!'
       ];
 
-      for (var pair2 in mismatched) {
-        for (var str2 in templates2) {
+      for (const pair2 in mismatched) {
+        for (const str2 in templates2) {
           const template = sprintf(templates2[str2], mismatched[pair2][0], mismatched[pair2][1]);
           assert.strictEqual(virastar.cleanup(template), template);
         }
@@ -323,16 +324,18 @@ describe('Virastar.js', function () {
 
   describe('#cleanup(): Equals', function () {
     it('should preserve certain strings', function () {
-      var equals = [
+      const equals = [
         '![alt name](https://example.com/media/image.jpg)',
         '[![alt name](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg) [![](https://example.com/media/image.jpg)](https://example.com/media/image.jpg)',
         '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)',
+        '<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>',
+        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```',
         '#ربابــ_ڪلامے'
       ];
 
-      for (var equal in equals) {
+      for (const equal in equals) {
         assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal]);
       }
     });
@@ -343,16 +346,6 @@ describe('Virastar.js', function () {
       assert.throws(() => virastar.cleanup(function () {}), TypeError, 'Expected a String');
       assert.throws(() => virastar.cleanup(new Error()), TypeError, 'Expected a String');
       assert.throws(() => virastar.cleanup(112), TypeError, 'Expected a String');
-    });
-
-    it('should preserve all code blocks', function () {
-      assert.strictEqual(virastar.cleanup(
-        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```'),
-        '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```');
-    });
-
-    it('should preserve all HTML tags', function () {
-      assert.strictEqual(virastar.cleanup('<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>'), '<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>');
     });
 
     it('should fix heh plus standalone hamza', function () {
@@ -455,9 +448,9 @@ describe('Virastar.js', function () {
       assert.strictEqual(virastar.cleanup('. . . .   ...   ..... . . . .'), '…');
       assert.strictEqual(virastar.cleanup('خداحافظ ... به به'), 'خداحافظ… به به');
 
-      // تست...
-      // تست  …
-      // تست ...
+      assert.strictEqual(virastar.cleanup('تست...'), 'تست…');
+      assert.strictEqual(virastar.cleanup('تست  …', { remove_spaces_before_ellipsis: false }), 'تست …');
+      assert.strictEqual(virastar.cleanup('تست  ...', { remove_spaces_before_ellipsis: false }), 'تست …');
     });
 
     it('extra: normalizeDates(): reorders date parts with slash as delimiter', function () {
@@ -471,7 +464,9 @@ describe('Virastar.js', function () {
     });
 
     it('extra: removeDiacritics(): removes all diacritic characters', function () {
-      assert.strictEqual(virastar.cleanup('اذا عَمَّتِ الْبُلْدانَ الْفِتَنُ فَعَلَیکمْ بِقُمْ وَحَوالیها وَنَواحیها فَانَ الْبَلاءَ مَدْفُوعٌ عَنْها', { remove_diacritics: true }), 'اذا عمت البلدان الفتن فعلیکم بقم وحوالیها ونواحیها فان البلاء مدفوع عنها');
+      assert.strictEqual(virastar.cleanup(
+        'اذا عَمَّتِ الْبُلْدانَ الْفِتَنُ فَعَلَیکمْ بِقُمْ وَحَوالیها وَنَواحیها فَانَ الْبَلاءَ مَدْفُوعٌ عَنْها', { remove_diacritics: true }),
+      'اذا عمت البلدان الفتن فعلیکم بقم وحوالیها ونواحیها فان البلاء مدفوع عنها');
     });
 
     it('extra: fixMiscNonPersianChars()', function () {
