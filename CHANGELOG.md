@@ -7,6 +7,7 @@
 - Added: removes the spaces around slash as date delimiter
 - Changed: `cleanup_rlm` deprecated in favor of `cleanup_direction_marks`
 - Changed: Tokenizer avoid any phrase with English alphabets
+- Changed: the tokenizer avoids color hex when not preserving hashtags
 
 ### 0.22.0
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
