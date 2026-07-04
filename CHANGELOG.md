@@ -6,6 +6,7 @@
 - Added: converts left-to-right marks before Persian chars to single zero-width-non-joiner
 - Added: removes the spaces around slash as date delimiter
 - Changed: `cleanup_rlm` deprecated in favor of `cleanup_direction_marks`
+- Changed: Tokenizer avoid any phrase with English alphabets
 
 ### 0.22.0
 - Added: support for fixing arabic letter yeh barree on `fix_misc_non_persian_chars`
