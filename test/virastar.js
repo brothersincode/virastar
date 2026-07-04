@@ -332,11 +332,29 @@ describe('Virastar.js', function () {
         '[![](https://upload.wikimedia.org/wikipedia/commons/0/0c/Nastaliq-proportions.jpg)](https://en.wikipedia.org/wiki/File:Nastaliq-proportions.jpg)',
         '<strong title="نباید تغییر کند!!!!!">سلام جهان</strong>',
         '```\n(نمایش¬⋅نامه، ۱۳۹۰ شماره یک، ۲۸و۲۹)\n```',
-        '#ربابــ_ڪلامے'
+        '#ربابــ_ڪلامے', // custom hashtags
+        '#132654',
+        '#12345',
+        '#FFA500', '#00FF00', '#123', '#456DEF', // Valid colors
+        '#GHIJKL', '123ABC', '#12345', // Invalid colors
+        '&lrarr;',
+        '00FF00'
       ];
 
       for (const equal in equals) {
         assert.strictEqual(virastar.cleanup(equals[equal]), equals[equal]);
+      }
+    });
+
+    it('should preserve entities', () => {
+      const equals = [
+        '&#1777;'
+      ];
+
+      for (const equal in equals) {
+        assert.strictEqual(virastar.cleanup(equals[equal], {
+          decode_htmlentities: false
+        }), equals[equal]);
       }
     });
   });
