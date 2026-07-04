@@ -6,7 +6,7 @@
 - Added: converts left-to-right marks before Persian chars to single zero-width-non-joiner
 - Added: removes the spaces around slash as date delimiter
 - Changed: `cleanup_rlm` deprecated in favor of `cleanup_direction_marks`
-- Changed: Tokenizer avoid any phrase with English alphabets
+- Changed: the tokenizer avoids any phrase with English alphabets
 - Changed: the tokenizer avoids color hex when not preserving hashtags
 - Changed: differentiate hashtags with HTML entities
 
